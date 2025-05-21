@@ -1,0 +1,18 @@
+@model GelisimTablosu.Models.Kategori
+@{
+    ViewData["Title"] = "Yeni Kategori";
+}
+<h1>Yeni Kategori</h1>
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Ad" class="control-label"></label>
+        <input asp-for="Ad" class="form-control" />
+        <span asp-validation-for="Ad" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

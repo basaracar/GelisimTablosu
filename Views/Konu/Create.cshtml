@@ -1,0 +1,37 @@
+@model GelisimTablosu.Models.Konu
+@{
+    ViewData["Title"] = "Konu Ekle";
+    var kategoriler = ViewBag.Kategoriler as List<GelisimTablosu.Models.Kategori>;
+}
+
+<h2>Konu Ekle</h2>
+
+<form asp-action="Create" method="post" class="needs-validation" novalidate>
+    <div class="mb-3">
+        <label asp-for="Baslik" class="form-label">Başlık</label>
+        <input asp-for="Baslik" class="form-control" />
+        <span asp-validation-for="Baslik" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Zorluk" class="form-label">Zorluk</label>
+        <select asp-for="Zorluk" class="form-select">
+            <option value="">Seçiniz</option>
+            <option value="Kolay">Kolay</option>
+            <option value="Zor">Zor</option>
+        </select>
+        <span asp-validation-for="Zorluk" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="KategoriId" class="form-label">Kategori</label>
+        <select asp-for="KategoriId" class="form-select">
+            <option value="">Seçiniz</option>
+            @foreach (var kategori in kategoriler)
+            {
+                <option value="@kategori.Id">@kategori.Ad</option>
+            }
+        </select>
+        <span asp-validation-for="KategoriId" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Kaydet</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>

@@ -1,0 +1,20 @@
+@model IEnumerable<GelisimTablosu.Models.Konu>
+@{
+    ViewData["Title"] = "Konular";
+}
+
+<h2>Konular</h2>
+<a class="btn btn-primary mb-3" href="@Url.Action("Create")">Yeni Konu Ekle</a>
+
+<div class="container">
+    @foreach (var konu in Model)
+    {
+        <div class="card mb-2">
+            <div class="card-body">
+                <h5 class="card-title">@konu.Baslik</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Kategori: @konu.Kategori?.Ad</h6>
+                <span class="badge bg-info">@konu.Zorluk</span>
+            </div>
+        </div>
+    }
+</div>

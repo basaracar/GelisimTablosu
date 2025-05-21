@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GelisimTablosu", "GelisimTablosu.csproj", "{CBBB6E42-5CB5-508A-42C4-96D2A5193456}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBBB6E42-5CB5-508A-42C4-96D2A5193456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBBB6E42-5CB5-508A-42C4-96D2A5193456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBBB6E42-5CB5-508A-42C4-96D2A5193456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBBB6E42-5CB5-508A-42C4-96D2A5193456}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7952BBA7-D3BF-471D-BB7D-B12BB05171C5}
+	EndGlobalSection
+EndGlobal
