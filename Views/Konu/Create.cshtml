@@ -13,11 +13,16 @@
         <span asp-validation-for="Baslik" class="text-danger"></span>
     </div>
     <div class="mb-3">
+        <label asp-for="Aciklama" class="form-label">Açıklama</label>
+        <input asp-for="Aciklama" class="form-control" />
+        <span asp-validation-for="Aciklama" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
         <label asp-for="Zorluk" class="form-label">Zorluk</label>
         <select asp-for="Zorluk" class="form-select">
             <option value="">Seçiniz</option>
-            <option value="Kolay">Kolay</option>
-            <option value="Zor">Zor</option>
+            <option value="0">Kolay</option>
+            <option value="1">Zor</option>
         </select>
         <span asp-validation-for="Zorluk" class="text-danger"></span>
     </div>

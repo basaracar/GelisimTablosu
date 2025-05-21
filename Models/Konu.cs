@@ -16,6 +16,8 @@ namespace GelisimTablosu.Models
 
         [Required]
         public string Baslik { get; set; }
+        [Required]
+        public string Aciklama { get; set; }
 
         [Required]
         public Zorluk Zorluk { get; set; }

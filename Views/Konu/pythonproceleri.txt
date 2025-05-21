@@ -1,0 +1,39 @@
+[{"Hesap Makinesi Uygulaması","Toplama, çıkarma, çarpma, bölme işlemleri yapan basit bir hesap makinesi."},
+
+{"Not Ortalaması Hesaplayıcı","Girilen ders notlarına göre ortalama hesaplayıp geçip kalma durumu gösteren uygulama."},
+
+{"ATM Simülasyonu","Para çekme, para yatırma, bakiye görüntüleme işlemleri yapılabilir."},
+
+{"Sayı Tahmin Oyunu","Bilgisayarın rastgele tuttuğu sayıyı tahmin etmeye çalışılan oyun."},
+
+{"Şifre Güçlülüğü Kontrolü","Girilen şifrenin uzunluğu ve karakter çeşitliliğine göre zorluk derecesini hesaplar."},
+
+{"Vücut Kitle İndeksi (VKİ) Hesaplayıcı","Boy ve kilo bilgisine göre VKİ değeri ve yorumunu verir."},
+
+{"Basit Rehber Uygulaması","Kişi ekleme, silme, arama işlemleri yapılabilen telefon rehberi."},
+
+{"Sözlük Uygulaması","İngilizce kelimenin Türkçesini gösteren mini sözlük (hazır bir dictionary yapısı ile)."},
+
+{"Yarışma (Quiz) Uygulaması","5-10 soruluk bir bilgi yarışması. Kullanıcıdan cevap alıp puan hesaplar."},
+
+{"Doğum Günü Hatırlatıcı","Kayıtlı kişilerin doğum günlerini saklar ve sorgulama yapılabilir."},
+
+{"Zar Atma Simülatörü","1 ile 6 arasında rastgele zar atan uygulama. İstenirse çift zarla yapılabilir."},
+
+{"Çarpım Tablosu Yazdırıcı","Kullanıcının girdiği sayıya kadar çarpım tablosu oluşturan program."},
+
+{"Metin Şifreleme (Caesar Cipher)","Girilen metni belirli bir kaydırmayla şifreleyen ve çözebilen uygulama."},
+
+{"Kelime Sayacı","Kullanıcının girdiği metindeki kelime ve harf sayısını bulur."},
+
+{"Dosya Kayıt ve Okuma Uygulaması","Kullanıcı bilgilerini .txt dosyasına kaydeder ve okur."},
+
+{"Dijital Saat Gösterimi (Saniyelik)","Anlık olarak saat/dakika/saniye gösteren mini saat simülasyonu. (Zaman modülü kullanılarak)"},
+
+{"Basit Takvim Görüntüleyici","Ay ve yıl girildiğinde o ayın takvimini gösterir (calendar modülü ile)."},
+
+{"Asal Sayı Bulucu","Girilen aralıkta asal sayıları listeler."},
+
+{"Faktöriyel Hesaplayıcı","Kullanıcının girdiği sayının faktöriyelini hesaplar."},
+
+{"Mini Alışveriş Sepeti","Kullanıcı ürün ekler, siler ve toplam fiyatı gösteren basit bir uygulama."}]
