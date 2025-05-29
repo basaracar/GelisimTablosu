@@ -10,7 +10,16 @@
         <input asp-for="Ad" class="form-control" />
         <span asp-validation-for="Ad" class="text-danger"></span>
     </div>
-   
+      <div class="mb-3">
+        <label asp-for="Dal" class="form-label"></label>
+        <select asp-for="Dal" class="form-select">
+            @foreach (GelisimTablosu.Models.Dal dal in Enum.GetValues(typeof(GelisimTablosu.Models.Dal)))
+            {
+                <option value="@((int)dal)" selected="@(Model.Dal == dal ? "selected" : null)">@dal</option>
+            }
+        </select>
+        <span asp-validation-for="Dal" class="text-danger"></span>
+    </div>
     <button type="submit" class="btn btn-primary">Kaydet</button>
     <a asp-action="Index" class="btn btn-secondary">İptal</a>
 </form>

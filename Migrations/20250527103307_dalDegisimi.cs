@@ -5,25 +5,25 @@
 namespace GelisimTablosu.Migrations
 {
     /// <inheritdoc />
-    public partial class KonuyaAciklamaEkle : Migration
+    public partial class dalDegisimi : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
-                name: "Aciklama",
-                table: "Konular",
-                type: "TEXT",
+            migrationBuilder.AddColumn<int>(
+                name: "Dal",
+                table: "Kategoriler",
+                type: "INTEGER",
                 nullable: false,
-                defaultValue: "");
+                defaultValue: 0);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "Aciklama",
-                table: "Konular");
+                name: "Dal",
+                table: "Kategoriler");
         }
     }
 }

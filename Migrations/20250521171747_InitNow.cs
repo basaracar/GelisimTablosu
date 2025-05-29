@@ -5,11 +5,24 @@
 namespace GelisimTablosu.Migrations
 {
     /// <inheritdoc />
-    public partial class KonuEkle : Migration
+    public partial class InitNow : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Kategoriler",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Ad = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Kategoriler", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Konular",
                 columns: table => new
@@ -17,6 +30,7 @@ namespace GelisimTablosu.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Baslik = table.Column<string>(type: "TEXT", nullable: false),
+                    Aciklama = table.Column<string>(type: "TEXT", nullable: false),
                     Zorluk = table.Column<int>(type: "INTEGER", nullable: false),
                     KategoriId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
@@ -42,6 +56,9 @@ namespace GelisimTablosu.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Konular");
+
+            migrationBuilder.DropTable(
+                name: "Kategoriler");
         }
     }
 }

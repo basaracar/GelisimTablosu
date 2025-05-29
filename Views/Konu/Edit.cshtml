@@ -1,0 +1,47 @@
+@model GelisimTablosu.Models.Konu
+@{
+    ViewData["Title"] = "Konu Düzenle";
+}
+
+<h2>Konu Düzenle</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <label asp-for="Baslik" class="form-label"></label>
+        <input asp-for="Baslik" class="form-control" />
+        <span asp-validation-for="Baslik" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Aciklama" class="form-label"></label>
+        <textarea asp-for="Aciklama" class="form-control"></textarea>
+        <span asp-validation-for="Aciklama" class="text-danger"></span>
+    </div>
+ 
+    <div class="mb-3">
+        <label asp-for="Zorluk" class="form-label"></label>
+        <select asp-for="Zorluk" class="form-select">
+            @foreach (GelisimTablosu.Models.Zorluk zorluk in Enum.GetValues(typeof(GelisimTablosu.Models.Zorluk)))
+            {
+                <option value="@((int)zorluk)" selected="@(Model.Zorluk == zorluk ? "selected" : null)">@zorluk</option>
+            }
+        </select>
+        <span asp-validation-for="Zorluk" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="KategoriId" class="form-label"></label>
+        <select asp-for="KategoriId" class="form-select">
+            @foreach (var kategori in ViewBag.Kategoriler)
+            {
+                <option value="@kategori.Id" selected="@(Model.KategoriId == kategori.Id ? "selected" : null)">@kategori.Ad</option>
+            }
+        </select>
+        <span asp-validation-for="KategoriId" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Kaydet</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

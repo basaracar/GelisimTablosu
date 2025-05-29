@@ -1,39 +1,80 @@
-[{"Hesap Makinesi Uygulaması","Toplama, çıkarma, çarpma, bölme işlemleri yapan basit bir hesap makinesi."},
+Kişisel Blog Sitesi
 
-{"Not Ortalaması Hesaplayıcı","Girilen ders notlarına göre ortalama hesaplayıp geçip kalma durumu gösteren uygulama."},
+Yazı ekleme, düzenleme, silme, yorum yapma, kategorilere ayırma.
 
-{"ATM Simülasyonu","Para çekme, para yatırma, bakiye görüntüleme işlemleri yapılabilir."},
+Haber Sitesi
 
-{"Sayı Tahmin Oyunu","Bilgisayarın rastgele tuttuğu sayıyı tahmin etmeye çalışılan oyun."},
+Admin panelinden haber ekleme, ana sayfada listeleme, detay sayfası.
 
-{"Şifre Güçlülüğü Kontrolü","Girilen şifrenin uzunluğu ve karakter çeşitliliğine göre zorluk derecesini hesaplar."},
+Kütüphane Takip Sistemi
 
-{"Vücut Kitle İndeksi (VKİ) Hesaplayıcı","Boy ve kilo bilgisine göre VKİ değeri ve yorumunu verir."},
+Kitap, yazar, kategori yönetimi; ödünç verme ve iade etme işlemleri.
 
-{"Basit Rehber Uygulaması","Kişi ekleme, silme, arama işlemleri yapılabilen telefon rehberi."},
+Online Not Sistemi (Öğrenci için)
 
-{"Sözlük Uygulaması","İngilizce kelimenin Türkçesini gösteren mini sözlük (hazır bir dictionary yapısı ile)."},
+Öğrencilerin ders ve not bilgilerini görüntülediği sistem.
 
-{"Yarışma (Quiz) Uygulaması","5-10 soruluk bir bilgi yarışması. Kullanıcıdan cevap alıp puan hesaplar."},
+Basit E-Ticaret Sitesi (Sepetsiz)
 
-{"Doğum Günü Hatırlatıcı","Kayıtlı kişilerin doğum günlerini saklar ve sorgulama yapılabilir."},
+Ürün listeleme, ürün detayları, kategori filtreleme.
 
-{"Zar Atma Simülatörü","1 ile 6 arasında rastgele zar atan uygulama. İstenirse çift zarla yapılabilir."},
+Ziyaretçi Defteri Uygulaması
 
-{"Çarpım Tablosu Yazdırıcı","Kullanıcının girdiği sayıya kadar çarpım tablosu oluşturan program."},
+Ziyaretçilerin mesaj bırakabileceği bir sayfa ve admin kontrol paneli.
 
-{"Metin Şifreleme (Caesar Cipher)","Girilen metni belirli bir kaydırmayla şifreleyen ve çözebilen uygulama."},
+İletişim Formu + Mesaj Kayıt Sistemi
 
-{"Kelime Sayacı","Kullanıcının girdiği metindeki kelime ve harf sayısını bulur."},
+Kullanıcıların iletişim formu doldurup, verilerin admin panelinden görülmesi.
 
-{"Dosya Kayıt ve Okuma Uygulaması","Kullanıcı bilgilerini .txt dosyasına kaydeder ve okur."},
+CV Paylaşım Sitesi (Kariyer Profili)
 
-{"Dijital Saat Gösterimi (Saniyelik)","Anlık olarak saat/dakika/saniye gösteren mini saat simülasyonu. (Zaman modülü kullanılarak)"},
+Kullanıcılar eğitim, deneyim, beceri gibi verileri girer ve CV görüntülenir.
 
-{"Basit Takvim Görüntüleyici","Ay ve yıl girildiğinde o ayın takvimini gösterir (calendar modülü ile)."},
+Etkinlik Takip Uygulaması
 
-{"Asal Sayı Bulucu","Girilen aralıkta asal sayıları listeler."},
+Etkinlik ekleme, listeleme, kullanıcıların etkinliğe katılma durumu.
 
-{"Faktöriyel Hesaplayıcı","Kullanıcının girdiği sayının faktöriyelini hesaplar."},
+Duyuru ve Haber Yönetim Paneli
 
-{"Mini Alışveriş Sepeti","Kullanıcı ürün ekler, siler ve toplam fiyatı gösteren basit bir uygulama."}]
+Adminlerin duyuru ekleyebileceği, kullanıcıların okuyabileceği bir platform.
+
+Sınav Takip ve Sonuç Sistemi
+
+Öğrenciler sınavlara katılır, admin puan girer ve öğrenci sonucu görür.
+
+Galeri Uygulaması (Resim Yükleme)
+
+Kullanıcılar veya admin tarafından resim yüklenip kategorilere ayrılır.
+
+Kullanıcı Kayıt / Giriş Sistemi (Authentication)
+
+Kayıt, giriş, çıkış işlemleri; kullanıcı yetkilendirmesi.
+
+To-Do List (Görev Takip Uygulaması)
+
+Kullanıcılar görev ekleyebilir, tamamlandı olarak işaretleyebilir.
+
+Yorum ve Oylama Sistemi
+
+Kullanıcılar içeriklere yıldızla puan verebilir ve yorum yazabilir.
+
+Online Rezervasyon Sistemi (Randevu)
+
+Kullanıcılar tarih ve saat seçerek randevu alabilir (örnek: berber, dişçi vb).
+
+Hava Durumu Göstergesi (API ile)
+
+Lokasyon girerek o şehrin güncel hava durumunu gösteren uygulama (açık hava durumu API ile).
+
+Mini Forum Uygulaması
+
+Konu oluşturma, yorum yazma, kullanıcılar arası etkileşim.
+
+Basit Blog Yönetim Sistemi (Admin Paneli ile)
+
+CRUD işlemleri: Blog ekle, sil, güncelle; kullanıcılar okuyabilir.
+
+Film / Dizi İnceleme Platformu
+
+Filmler listelenir, kullanıcılar yorum yapabilir ve puan verebilir.
+

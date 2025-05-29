@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GelisimTablosu.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250521155358_KonuEkle")]
-    partial class KonuEkle
+    [Migration("20250527104551_dalDegisimi2")]
+    partial class dalDegisimi2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,6 +29,9 @@ namespace GelisimTablosu.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("Dal")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
 
                     b.ToTable("Kategoriler");
@@ -39,6 +42,10 @@ namespace GelisimTablosu.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("Aciklama")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Baslik")
                         .IsRequired()

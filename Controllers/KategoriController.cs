@@ -60,7 +60,7 @@ namespace GelisimTablosu.Controllers
         // POST: Kategori/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Ad")] Kategori kategori)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Ad,Dal")] Kategori kategori)
         {
             if (id != kategori.Id) return NotFound();
             if (ModelState.IsValid)

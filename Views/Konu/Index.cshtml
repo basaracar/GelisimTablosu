@@ -7,14 +7,67 @@
 <a class="btn btn-primary mb-3" href="@Url.Action("Create")">Yeni Konu Ekle</a>
 
 <div class="container">
+    <div class="row">
+        <div class="col-md-3">
+             <form method="get" action="@Url.Action("Index")">
+                <div class="mb-3">
+                    <label for="kategoriId" class="form-label">Kategori</label>
+                    <select id="kategoriSec" name="kategoriId" class="form-select">
+                        <option value="">Tümü</option>
+                        @foreach (var kategori in ViewBag.Kategoriler)
+                        {
+                          if (kategori.Id == ViewBag.SeciliKategoriId)
+                            {
+                                <option value="@kategori.Id" selected>@kategori.Ad</option>
+                            }
+                            else
+                            {
+                                <option value="@kategori.Id">@kategori.Ad</option>
+                            }
+                       
+                        }
+                    </select>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-8">
+            <form method="get" action="@Url.Action("Index")">
+                <div class="row mb-3">
+                    <div class="col-md-8">
+                        <label for="arama" class="form-label">Arama</label>
+                        <input type="text" id="arama" name="arama" class="form-control" placeholder="Konu başlığı veya açıklaması girin" />
+                    </div>
+                    <div class="col-md-4 d-flex align-items-end">
+                        <button type="submit" class="btn btn-primary w-100">Ara</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
     @foreach (var konu in Model)
     {
+        <div class="col-md-4">   
         <div class="card mb-2">
             <div class="card-body">
+                  <span class="badge bg-success">@konu.Kategori.Dal</span><span class="badge bg-info">@konu.Zorluk</span>
                 <h5 class="card-title">@konu.Baslik</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Kategori: @konu.Kategori?.Ad</h6>
-                <span class="badge bg-info">@konu.Zorluk</span>
+                <p class="card-text">@konu.Aciklama</p>
+               <a href="@Url.Action("Edit", new { id = konu.Id })" class="btn btn-primary">Düzelt</a>
+
             </div>
         </div>
-    }
+        </div>
+    }</div>
 </div>
+<script>
+    document.getElementById('kategoriSec').addEventListener('change', function () {
+        var secilenId = this.value;
+        if (secilenId) {
+            window.location.href = '/Konu/Index/' + secilenId;
+        } else {
+            window.location.href = '/Konu/Index';
+        }
+    });
+</script>

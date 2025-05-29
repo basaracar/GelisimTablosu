@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GelisimTablosu.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250521164847_InitialCreate2")]
-    partial class InitialCreate2
+    [Migration("20250521171747_InitNow")]
+    partial class InitNow
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

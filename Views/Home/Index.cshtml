@@ -1,8 +1,25 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model GelisimTablosu.Models.ViewModels.TableModel
+@{
+    ViewData["Title"] = "Gelişim Tablo Yapıcı 3000";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+<h2>Tablo Oluştur</h2>
+
+<form asp-action="CreateTablo" method="post">
+    <div class="form-group mb-3">
+        <label asp-for="Dal" class="control-label"></label>
+        <select asp-for="Dal" class="form-control" asp-items="Html.GetEnumSelectList<GelisimTablosu.Models.Dal>()"></select>
+        <span asp-validation-for="Dal" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Adet" class="control-label"></label>
+        <input asp-for="Adet" class="form-control" />
+        <span asp-validation-for="Adet" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Oluştur</button>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

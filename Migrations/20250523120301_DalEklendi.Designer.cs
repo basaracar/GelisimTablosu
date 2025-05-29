@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GelisimTablosu.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250521161542_KonuyaAciklamaEkle")]
-    partial class KonuyaAciklamaEkle
+    [Migration("20250523120301_DalEklendi")]
+    partial class DalEklendi
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,6 +47,9 @@ namespace GelisimTablosu.Migrations
                     b.Property<string>("Baslik")
                         .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("Dal")
+                        .HasColumnType("INTEGER");
 
                     b.Property<int>("KategoriId")
                         .HasColumnType("INTEGER");

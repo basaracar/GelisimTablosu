@@ -1,0 +1,79 @@
+@model Dictionary<int, List<Konu>>
+
+    @{
+    ViewData["Title"] = "Tablo Oluştur";
+
+    string[] dalim=["Yazılım Geliştirme","Ağ İşletmenliği"];
+    var d=Model.First().Value.FirstOrDefault()?.Kategori?.Dal;
+
+    }
+    @foreach (var kategori in Model)
+    {
+    <div style="page-break-after: always;" class="print-content">
+
+        <h5 class="text-center"><strong>ŞEHİT UZMAN ÇAVUŞ HARUN ŞENÖZÜAR MESLEKİ VE TEKNİK ANADOLU LİSESİ
+            </strong></h5>
+        <h5 class="text-center"><strong>İŞLETMELERDE MESLEK EĞİTİMİNE DEVAM EDEN ÖĞRENCİLERE AİT GELİŞİM TABLOSU
+            </strong></h5>
+
+        <div class="row  justify-content-end">
+            <div class="col-2 ms-auto"><strong>İME-GELİŞİM</strong></div>
+        </div>
+        <div class="row">
+            <div class="col"><strong>İşletmenin Adı :</strong></div>
+            <div class="col"><strong>Meslek Alan/Dalı :Bilişim Teknolojileri /@dalim[(int)d] </strong></div>
+        </div>
+        <div class="row">
+
+            <div class="col">
+                <strong> Öğrencinin Adı</strong>
+            </div>
+            <div class="col">
+                <strong> Sınıfı : </strong>
+            </div>
+        </div>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Konu Başlığı</th>
+                    <th>Kategori</th>
+                    <th>Açıklama</th>
+                    <th>Yapıldı</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var konu in kategori.Value)
+                {
+                <tr>
+                    <td>@konu.Baslik</td>
+                    <td>@konu.Kategori?.Ad</td>
+                    <td>@konu.Aciklama</td>
+                    <td>&nbsp;</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-12"><strong>AÇIKLAMA: </strong></div>
+            <div class="col-12">
+                <ol>
+                    <li> Bu gelişim tablosu, zümre öğretmenlerince öğretim programları esas alınarak her meslek alanı
+                        için ayrı hazırlanacak ve uygulamaya konulacaktır.</li>
+                    <li> Gelişim tablosu, işletmelerde öğretim programlarına uygun eğitim yapılıp yapılmadığını ve
+                        öğrencilerin telâfi eğitimine ihtiyaç duyulup duyulmadığının tespiti amacıyla kullanılacaktır.
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="row  g-2">
+            <div class="col"><br /><br /><br /><strong>İşletme İmza</strong></div>
+            <div class="col"></div>
+
+        </div>
+
+
+
+    </div>
+    }

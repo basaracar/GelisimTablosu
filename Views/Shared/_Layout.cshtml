@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="~/GelisimTablosu.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
+    <header class="no-print">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Gelişim Tablosu Yapıcı</a>
@@ -43,13 +43,13 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container-fluid">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted no-print">
         <div class="container">
             &copy; 2025 - GelisimTablosu - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>

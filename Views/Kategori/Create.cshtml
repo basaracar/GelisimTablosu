@@ -4,12 +4,16 @@
 }
 <h1>Yeni Kategori</h1>
 <form asp-action="Create">
-    <div class="form-group">
+    <div class="form-group mb-3">
         <label asp-for="Ad" class="control-label"></label>
         <input asp-for="Ad" class="form-control" />
         <span asp-validation-for="Ad" class="text-danger"></span>
     </div>
-
+ <div class="form-group mb-3">
+        <label asp-for="Dal" class="control-label"></label>
+        <select asp-for="Dal" class="form-control" asp-items="Html.GetEnumSelectList<GelisimTablosu.Models.Dal>()"></select>
+        <span asp-validation-for="Dal" class="text-danger"></span>
+    </div>
     <button type="submit" class="btn btn-primary">Kaydet</button>
     <a asp-action="Index" class="btn btn-secondary">İptal</a>
 </form>
