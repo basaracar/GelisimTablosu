@@ -17,6 +17,17 @@
         <input asp-for="Adet" class="form-control" />
         <span asp-validation-for="Adet" class="text-danger"></span>
     </div>
+     <div class="form-group mb-3"></div>
+        <label asp-for="EgitimYili" class="control-label"></label>
+        <select asp-for="EgitimYili" class="form-control">
+            <option value="">Seçiniz</option>
+            @foreach (var egitimYili in ViewBag.EgitimYillari)
+            {
+                <option value="@egitimYili.Id">@egitimYili.Ad</option>
+            }
+        </select>
+        <span asp-validation-for="EgitimYili" class="text-danger"></span>
+    </div>
     <button type="submit" class="btn btn-primary">Oluştur</button>
 </form>
 

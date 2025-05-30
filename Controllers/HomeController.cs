@@ -18,6 +18,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        ViewBag.EgitimYillari = _context.EgitimYillari.ToList();
         return View();
     }
 
@@ -117,8 +118,8 @@ public class HomeController : Controller
                 tamListe.Add(i, tumKonular);
                 tumKonular = new List<Konu>();
             }
-            //ViewBag.tamListe = tamListe;
-            return View(tamListe);
+            ViewBag.tamListe = tamListe;
+            return View();
         }
         
         return View(model);

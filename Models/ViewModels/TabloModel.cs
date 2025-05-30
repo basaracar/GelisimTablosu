@@ -7,12 +7,13 @@ namespace GelisimTablosu.Models.ViewModels
     public class TableModel
     {
 
-         [Display(Name = "Dal Adı")]
+        [Display(Name = "Dal Adı")]
         [Required(ErrorMessage = "Dal adı zorunludur.")]
 
         public Dal Dal { get; set; }
 
-         [Display(Name = "Adet")]
+        [Display(Name = "Adet")]
         public int Adet { get; set; }
+        public EgitimYili EgitimYili { get; set; }
     }
 }

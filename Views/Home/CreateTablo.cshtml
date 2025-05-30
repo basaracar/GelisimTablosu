@@ -1,4 +1,4 @@
-@model Dictionary<int, List<Konu>>
+
 
     @{
     ViewData["Title"] = "Tablo Oluştur";
@@ -7,7 +7,7 @@
     var d=Model.First().Value.FirstOrDefault()?.Kategori?.Dal;
 
     }
-    @foreach (var kategori in Model)
+    @foreach (var kategori in ViewBag.tamListe)
     {
     <div style="page-break-after: always;" class="print-content">
 

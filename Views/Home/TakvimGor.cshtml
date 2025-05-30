@@ -5,6 +5,7 @@
     var haftalar = new List<string>();
     var ilkHafta = Model.FirstOrDefault()?.Hafta;
     var ayAdi = string.Empty;
+    int i=0;
     if (!string.IsNullOrEmpty(ilkHafta))
     {
     
@@ -32,6 +33,13 @@
     }
     int? egitimYiliId = Model.FirstOrDefault()?.EgitimYiliId;
 }
+.<div class="row mb-2">
+   <form asp-action="TakvimTopluSil" asp-controller="Home" method="post">
+        <input type="hidden" name="egitimYiliId" value="@egitimYiliId" />
+        <button type="submit" class="btn btn-danger">Tümünü Sil</button>
+    </form>
+</div>
+
 <div class="row">
     @foreach (var ay in ayGruplari)
     {
@@ -43,7 +51,9 @@
                 <ul class="list-group list-group-flush">
                     @foreach (var hafta in ay.Value)
                     {
-                        <li class="list-group-item">@hafta</li>
+                        i++;
+                        <li class="list-group-item">@i -> @hafta </li>
+                        
                     }
                 </ul>
             </div>
