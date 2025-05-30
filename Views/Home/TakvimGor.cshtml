@@ -1,0 +1,52 @@
+@model List<GelisimTablosu.Models.Takvim>
+@{
+    ViewData["Title"] = "Takvim Göster";
+    var ayGruplari = new Dictionary<string, List<string>>();
+    var haftalar = new List<string>();
+    var ilkHafta = Model.FirstOrDefault()?.Hafta;
+    var ayAdi = string.Empty;
+    if (!string.IsNullOrEmpty(ilkHafta))
+    {
+    
+        ayAdi = DateTime.Parse(ilkHafta.Split('-')[0].Trim()).ToString("MMMM");
+    }
+    foreach (var item in Model)
+    {
+        var ay0 = DateTime.Parse(item.Hafta.Split('-')[0].Trim()).ToString("MMMM");
+         var ay1 = DateTime.Parse(item.Hafta.Split('-')[1].Trim()).ToString("MMMM");
+       
+        if (ayAdi != ay0 )
+        {
+            ayGruplari.Add(ayAdi, haftalar);
+            ayAdi = ay0;
+            haftalar = new List<string>();
+        }
+  
+    
+     haftalar.Add(item.Hafta);
+     }
+    // Son ayı da ekle
+    if (!ayGruplari.ContainsKey(ayAdi))
+    {
+        ayGruplari.Add(ayAdi, haftalar);
+    }
+    int? egitimYiliId = Model.FirstOrDefault()?.EgitimYiliId;
+}
+<div class="row">
+    @foreach (var ay in ayGruplari)
+    {
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <strong>@ay.Key</strong>
+                </div>
+                <ul class="list-group list-group-flush">
+                    @foreach (var hafta in ay.Value)
+                    {
+                        <li class="list-group-item">@hafta</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+</div>

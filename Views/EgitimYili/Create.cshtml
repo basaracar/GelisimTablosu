@@ -1,0 +1,27 @@
+@model GelisimTablosu.Models.EgitimYili
+@{
+    ViewData["Title"] = "Yeni Eğitim Yılı";
+}
+<h2>Yeni Eğitim Yılı Ekle</h2>
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="Ad" class="form-label"></label>
+        <input asp-for="Ad" class="form-control" />
+        <span asp-validation-for="Ad" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="BaslangicTarihi" class="form-label"></label>
+        <input asp-for="BaslangicTarihi" type="date" class="form-control" />
+        <span asp-validation-for="BaslangicTarihi" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="BitisTarihi" class="form-label"></label>
+        <input asp-for="BitisTarihi" type="date" class="form-control" />
+        <span asp-validation-for="BitisTarihi" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Kaydet</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

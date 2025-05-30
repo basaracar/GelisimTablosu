@@ -1,0 +1,54 @@
+@model Dictionary<string, List<string>>;
+@{
+    ViewData["Title"] = "Takvim";
+  
+}
+
+<h2>Takvim</h2>
+
+
+    @if (Model != null)
+    {
+        <form asp-action="TakvimEkle" asp-controller="Home" method="post" class="mb-4">
+            <input type="hidden" name="EgitimYili" value="@ViewBag.EgitimYili" />
+            <div class="row">
+                <div class="col-4"><button type="submit" class="btn btn-primary">Kaydet</button>
+            <a asp-action="Index" class="btn btn-secondary">Geri Dön</a>
+       </div></div>
+             <div class="row">
+        @foreach (var ay in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">@ay.Key</h5>
+                    </div>
+                    <div class="card-body">
+
+                            @foreach (var hafta in ay.Value)
+                            {
+                                <div class="form-check">
+                                <input type="checkbox" name="hafta[]" class="form-check-input" value="@hafta" checked>
+                                <label class="form-check-label" for="checkDefault"> @hafta</label> </div>
+                            }
+                    </div>
+                </div>
+            </div>
+        }
+        </div>
+         </form>
+    }
+    else
+    {
+        <div class="row">
+        <div class="col-12">
+            <div class="alert alert-warning">Takvim verisi bulunamadı.</div>
+        </div></div>
+    }
+
+
+<style>
+.card {
+    min-height: 250px;
+}
+</style>

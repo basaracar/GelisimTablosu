@@ -1,0 +1,39 @@
+@model IEnumerable<GelisimTablosu.Models.EgitimYili>
+@{
+    ViewData["Title"] = "Eğitim Yılları";
+    var takvimler = ViewBag.Takvimler as Dictionary<int, bool>;
+}
+<h2>Eğitim Yılları</h2>
+<a class="btn btn-primary mb-3" asp-action="Create">Yeni Eğitim Yılı Ekle</a>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Ad</th>
+            <th>Başlangıç Tarihi</th>
+            <th>Bitiş Tarihi</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Ad</td>
+            <td>@item.BaslangicTarihi.ToString("dd.MM.yyyy")</td>
+            <td>@item.BitisTarihi.ToString("dd.MM.yyyy")</td>
+            <td>
+                <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.Id">Düzenle</a>
+                <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+
+                @if(takvimler[item.Id]==true){
+                        <a class="btn btn-sm btn-success" asp-action="TakvimGor" asp-controller="Home" asp-route-id="@item.Id">Takvim Goster</a>
+        
+                } else {
+                         <a class="btn btn-sm btn-success" asp-action="Takvim" asp-controller="Home" asp-route-id="@item.Id">Takvim Ekle</a>
+        
+                }
+              </td>
+        </tr>
+    }
+    </tbody>
+</table>

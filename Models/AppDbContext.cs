@@ -9,6 +9,9 @@ namespace GelisimTablosu.Models
 
         public DbSet<Kategori> Kategoriler { get; set; }
         public DbSet<Konu> Konular { get; set; }
+        public DbSet<EgitimYili> EgitimYillari { get; set; }
+        public DbSet<Takvim> Takvimler { get; set; }
+       
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -19,7 +22,10 @@ namespace GelisimTablosu.Models
                 .HasForeignKey(k => k.KategoriId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-
+            modelBuilder.Entity<Takvim>()
+            .HasOne(G => G.EgitimYili)
+            .WithMany()
+            .HasForeignKey(g => g.EgitimYiliId);
             base.OnModelCreating(modelBuilder);
         }
         public async Task SeedKategori()
@@ -94,26 +100,26 @@ konular.Add(new Konu { Baslik = "7 Segment Display ile Sayı Gösterimi", Acikla
 konular.Add(new Konu { Baslik = "Joystick ile LED Parlaklık Kontrolü", Aciklama = "Joystick modülüyle bir LED’in parlaklığını veya servo pozisyonunu kontrol etme.", Zorluk = Zorluk.Kolay, KategoriId = 2 });
 konular.Add(new Konu { Baslik = "Basit Park Sensörü (Mesafeye Göre Buzzer)", Aciklama = "Araç park sistemi benzeri, yaklaştıkça buzzer sesi artar.", Zorluk = Zorluk.Kolay, KategoriId = 2 });
 konular.Add(new Konu { Baslik = "Klavye ile Arduino Kontrolü (Serial üzerinden)", Aciklama = "Klavyeden girilen komutlara göre LED aç/kapa işlemleri.", Zorluk = Zorluk.Kolay, KategoriId = 2 });
-konular.Add(new Konu { Baslik = "Kişisel Blog Sitesi", Aciklama = "Yazı ekleme, düzenleme, silme, yorum yapma, kategorilere ayırma.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
-konular.Add(new Konu { Baslik = "Haber Sitesi", Aciklama = "Admin panelinden haber ekleme, ana sayfada listeleme, detay sayfası.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
-konular.Add(new Konu { Baslik = "Kütüphane Takip Sistemi", Aciklama = "Kitap, yazar, kategori yönetimi; ödünç verme ve iade etme işlemleri.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
-konular.Add(new Konu { Baslik = "Online Not Sistemi (Öğrenci için)", Aciklama = "Öğrencilerin ders ve not bilgilerini görüntülediği sistem.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
-konular.Add(new Konu { Baslik = "Basit E-Ticaret Sitesi (Sepetsiz)", Aciklama = "Ürün listeleme, ürün detayları, kategori filtreleme.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
-konular.Add(new Konu { Baslik = "Ziyaretçi Defteri Uygulaması", Aciklama = "Ziyaretçilerin mesaj bırakabileceği bir sayfa ve admin kontrol paneli.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
-konular.Add(new Konu { Baslik = "İletişim Formu + Mesaj Kayıt Sistemi", Aciklama = "Kullanıcıların iletişim formu doldurup, verilerin admin panelinden görülmesi.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
-konular.Add(new Konu { Baslik = "CV Paylaşım Sitesi (Kariyer Profili)", Aciklama = "Kullanıcılar eğitim, deneyim, beceri gibi verileri girer ve CV görüntülenir.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
-konular.Add(new Konu { Baslik = "Etkinlik Takip Uygulaması", Aciklama = "Etkinlik ekleme, listeleme, kullanıcıların etkinliğe katılma durumu.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
-konular.Add(new Konu { Baslik = "Duyuru ve Haber Yönetim Paneli", Aciklama = "Adminlerin duyuru ekleyebileceği, kullanıcıların okuyabileceği bir platform.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
-konular.Add(new Konu { Baslik = "Sınav Takip ve Sonuç Sistemi", Aciklama = "Öğrenciler sınavlara katılır, admin puan girer ve öğrenci sonucu görür.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
-konular.Add(new Konu { Baslik = "Galeri Uygulaması (Resim Yükleme)", Aciklama = "Kullanıcılar veya admin tarafından resim yüklenip kategorilere ayrılır.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
-konular.Add(new Konu { Baslik = "Kullanıcı Kayıt / Giriş Sistemi (Authentication)", Aciklama = "Kayıt, giriş, çıkış işlemleri; kullanıcı yetkilendirmesi.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
-konular.Add(new Konu { Baslik = "To-Do List (Görev Takip Uygulaması)", Aciklama = "Kullanıcılar görev ekleyebilir, tamamlandı olarak işaretleyebilir.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
-konular.Add(new Konu { Baslik = "Yorum ve Oylama Sistemi", Aciklama = "Kullanıcılar içeriklere yıldızla puan verebilir ve yorum yazabilir.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
-konular.Add(new Konu { Baslik = "Online Rezervasyon Sistemi (Randevu)", Aciklama = "Kullanıcılar tarih ve saat seçerek randevu alabilir (örnek: berber, dişçi vb).", Zorluk = Zorluk.Kolay, KategoriId = 8 });
-konular.Add(new Konu { Baslik = "Hava Durumu Göstergesi (API ile)", Aciklama = "Lokasyon girerek o şehrin güncel hava durumunu gösteren uygulama (açık hava durumu API ile).", Zorluk = Zorluk.Kolay, KategoriId = 8 });
-konular.Add(new Konu { Baslik = "Mini Forum Uygulaması", Aciklama = "Konu oluşturma, yorum yazma, kullanıcılar arası etkileşim.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
-konular.Add(new Konu { Baslik = "Basit Blog Yönetim Sistemi (Admin Paneli ile)", Aciklama = "CRUD işlemleri: Blog ekle, sil, güncelle; kullanıcılar okuyabilir.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
-konular.Add(new Konu { Baslik = "Film / Dizi İnceleme Platformu", Aciklama = "Filmler listelenir, kullanıcılar yorum yapabilir ve puan verebilir.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
+konular.Add(new Konu { Baslik = "Kişisel Blog Sitesi", Aciklama = "Yazı ekleme, düzenleme, silme, yorum yapma, kategorilere ayırma.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
+konular.Add(new Konu { Baslik = "Haber Sitesi", Aciklama = "Admin panelinden haber ekleme, ana sayfada listeleme, detay sayfası.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
+konular.Add(new Konu { Baslik = "Kütüphane Takip Sistemi", Aciklama = "Kitap, yazar, kategori yönetimi; ödünç verme ve iade etme işlemleri.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
+konular.Add(new Konu { Baslik = "Online Not Sistemi (Öğrenci için)", Aciklama = "Öğrencilerin ders ve not bilgilerini görüntülediği sistem.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
+konular.Add(new Konu { Baslik = "Basit E-Ticaret Sitesi (Sepetsiz)", Aciklama = "Ürün listeleme, ürün detayları, kategori filtreleme.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
+konular.Add(new Konu { Baslik = "Ziyaretçi Defteri Uygulaması", Aciklama = "Ziyaretçilerin mesaj bırakabileceği bir sayfa ve admin kontrol paneli.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
+konular.Add(new Konu { Baslik = "İletişim Formu + Mesaj Kayıt Sistemi", Aciklama = "Kullanıcıların iletişim formu doldurup, verilerin admin panelinden görülmesi.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
+konular.Add(new Konu { Baslik = "CV Paylaşım Sitesi (Kariyer Profili)", Aciklama = "Kullanıcılar eğitim, deneyim, beceri gibi verileri girer ve CV görüntülenir.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
+konular.Add(new Konu { Baslik = "Etkinlik Takip Uygulaması", Aciklama = "Etkinlik ekleme, listeleme, kullanıcıların etkinliğe katılma durumu.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
+konular.Add(new Konu { Baslik = "Duyuru ve Haber Yönetim Paneli", Aciklama = "Adminlerin duyuru ekleyebileceği, kullanıcıların okuyabileceği bir platform.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
+konular.Add(new Konu { Baslik = "Sınav Takip ve Sonuç Sistemi", Aciklama = "Öğrenciler sınavlara katılır, admin puan girer ve öğrenci sonucu görür.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
+konular.Add(new Konu { Baslik = "Galeri Uygulaması (Resim Yükleme)", Aciklama = "Kullanıcılar veya admin tarafından resim yüklenip kategorilere ayrılır.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
+konular.Add(new Konu { Baslik = "Kullanıcı Kayıt / Giriş Sistemi (Authentication)", Aciklama = "Kayıt, giriş, çıkış işlemleri; kullanıcı yetkilendirmesi.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
+konular.Add(new Konu { Baslik = "To-Do List (Görev Takip Uygulaması)", Aciklama = "Kullanıcılar görev ekleyebilir, tamamlandı olarak işaretleyebilir.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
+konular.Add(new Konu { Baslik = "Yorum ve Oylama Sistemi", Aciklama = "Kullanıcılar içeriklere yıldızla puan verebilir ve yorum yazabilir.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
+konular.Add(new Konu { Baslik = "Online Rezervasyon Sistemi (Randevu)", Aciklama = "Kullanıcılar tarih ve saat seçerek randevu alabilir (örnek: berber, dişçi vb).", Zorluk = Zorluk.Kolay, KategoriId = 7 });
+konular.Add(new Konu { Baslik = "Hava Durumu Göstergesi (API ile)", Aciklama = "Lokasyon girerek o şehrin güncel hava durumunu gösteren uygulama (açık hava durumu API ile).", Zorluk = Zorluk.Kolay, KategoriId = 7 });
+konular.Add(new Konu { Baslik = "Mini Forum Uygulaması", Aciklama = "Konu oluşturma, yorum yazma, kullanıcılar arası etkileşim.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
+konular.Add(new Konu { Baslik = "Basit Blog Yönetim Sistemi (Admin Paneli ile)", Aciklama = "CRUD işlemleri: Blog ekle, sil, güncelle; kullanıcılar okuyabilir.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
+konular.Add(new Konu { Baslik = "Film / Dizi İnceleme Platformu", Aciklama = "Filmler listelenir, kullanıcılar yorum yapabilir ve puan verebilir.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
 konular.Add(new Konu { Baslik = "Not Defteri Uygulaması", Aciklama = "Metin yazma, kaydetme ve düzenleme yapabilen basit bir metin editörü.", Zorluk = Zorluk.Kolay, KategoriId = 3 });
 konular.Add(new Konu { Baslik = "Hesap Makinesi", Aciklama = "Temel matematiksel işlemler (toplama, çıkarma, çarpma, bölme) yapan bir uygulama.", Zorluk = Zorluk.Kolay, KategoriId = 3 });
 konular.Add(new Konu { Baslik = "Görev Yönetim Uygulaması", Aciklama = "Kullanıcıların görev ekleyip, tamamlandı olarak işaretleyebileceği bir to-do listesi.", Zorluk = Zorluk.Kolay, KategoriId = 3 });
@@ -154,66 +160,26 @@ konular.Add(new Konu { Baslik = "Müzik Çalma Listesi", Aciklama = "Şarkılar�
 konular.Add(new Konu { Baslik = "Spor Salonu Tanıtımı", Aciklama = "Spor salonunun hizmetlerini ve programlarını tanıtan bir ana sayfa.", Zorluk = Zorluk.Kolay, KategoriId = 4 });
 konular.Add(new Konu { Baslik = "Kitap Tanıtım Sayfası", Aciklama = "Bir kitabın kapağı, özeti ve yazar bilgilerinin yer aldığı sayfa.", Zorluk = Zorluk.Kolay, KategoriId = 4 });
 konular.Add(new Konu { Baslik = "Minimalist Saat Tasarımı", Aciklama = "CSS ile stilize edilmiş bir dijital veya analog saat gösteren sayfa.", Zorluk = Zorluk.Kolay, KategoriId = 4 });
-konular.Add(new Konu { Baslik = "Basit Hesap Makinesi", Aciklama = "Dört temel matematiksel işlemi gerçekleştiren bir mobil hesap makinesi.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
-konular.Add(new Konu { Baslik = "Not Tutucu", Aciklama = "Kullanıcıların kısa notlar yazıp görüntüleyebileceği bir uygulama.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
-konular.Add(new Konu { Baslik = "Zamanlayıcı Uygulaması", Aciklama = "Geri sayım yapabilen ve alarm çalan basit bir zamanlayıcı.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
-konular.Add(new Konu { Baslik = "Rastgele Sayı Üretici", Aciklama = "Belirtilen aralıkta rastgele sayılar üreten bir uygulama.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
-konular.Add(new Konu { Baslik = "Metin Okuyucu", Aciklama = "Kullanıcının yazdığı metni sesli okuyan bir metin-konuşma uygulaması.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
-konular.Add(new Konu { Baslik = "Renk Değiştirici", Aciklama = "Butona basıldığında ekranın arka plan rengini değiştiren bir uygulama.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
-konular.Add(new Konu { Baslik = "Sayı Tahmin Oyunu", Aciklama = "Kullanıcının rastgele bir sayıyı tahmin etmeye çalıştığı bir oyun.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
-konular.Add(new Konu { Baslik = "Basit Çizim Uygulaması", Aciklama = "Dokunmatik ekranda basit çizimler yapmaya olanak tanıyan bir uygulama.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
-konular.Add(new Konu { Baslik = "Fener Uygulaması", Aciklama = "Telefonun flaşını açıp kapatan bir el feneri uygulaması.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
-konular.Add(new Konu { Baslik = "Müzik Çalar", Aciklama = "Cihazda yüklü bir ses dosyasını oynatıp durduran basit bir medya oynatıcı.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
-konular.Add(new Konu { Baslik = "Hava Durumu Kartı", Aciklama = "Statik veriyle bir şehrin hava durumunu gösteren basit bir ekran.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
-konular.Add(new Konu { Baslik = "Egzersiz Sayacı", Aciklama = "Kullanıcının egzersiz tekrarlarını sayan ve gösteren bir uygulama.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
-konular.Add(new Konu { Baslik = "Resim Görüntüleyici", Aciklama = "Önceden yüklenmiş resimleri gösteren ve geçiş yapan bir galeri uygulaması.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
-konular.Add(new Konu { Baslik = "Basit Quiz Oyunu", Aciklama = "Önceden tanımlı soruların yer aldığı bir bilgi yarışması uygulaması.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
-konular.Add(new Konu { Baslik = "Döviz Çevirici", Aciklama = "Sabit kurlarla para birimleri arasında dönüşüm yapan bir uygulama.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
-konular.Add(new Konu { Baslik = "Alışveriş Listesi", Aciklama = "Kullanıcıların ürün ekleyip listeleyebileceği bir alışveriş listesi uygulaması.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
-konular.Add(new Konu { Baslik = "Kronometre", Aciklama = "Süre ölçen ve başlat/durdur butonları olan bir kronometre uygulaması.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
-konular.Add(new Konu { Baslik = "Motivasyon Sözleri", Aciklama = "Rastgele motivasyonel sözler gösteren bir uygulama.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
-konular.Add(new Konu { Baslik = "Telefon Titreşim Uygulaması", Aciklama = "Butona basıldığında telefonun titreşim özelliğini aktive eden bir uygulama.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
-konular.Add(new Konu { Baslik = "Basit Hesap Defteri", Aciklama = "Gelir ve giderleri kaydedip toplamı gösteren bir finans uygulaması.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
-konular.Add(new Konu { Baslik = "Sosyal Medya Gönderi Tasarımı", Aciklama = "Photoshop ile Instagram için dikkat çekici bir kare veya hikaye tasarımı.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
-konular.Add(new Konu { Baslik = "Logo Tasarımı", Aciklama = "Photoshop’ta basit bir marka logosu oluşturma ve vektör benzeri düzenleme.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
-konular.Add(new Konu { Baslik = "Etkinlik Afişi", Aciklama = "Photoshop ile bir konser veya seminer için renkli bir afiş tasarımı.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
-konular.Add(new Konu { Baslik = "Fotoğraf Renk Düzenleme", Aciklama = "Photoshop’ta bir fotoğrafın parlaklık, kontrast ve renk tonlarını düzenleme.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
-konular.Add(new Konu { Baslik = "Kartvizit Tasarımı", Aciklama = "Photoshop ile profesyonel bir kartvizit şablonu oluşturma.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
-konular.Add(new Konu { Baslik = "Davetiye Tasarımı", Aciklama = "Photoshop’ta düğün veya doğum günü için zarif bir davetiye tasarımı.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
-konular.Add(new Konu { Baslik = "Ürün Kapağı Tasarımı", Aciklama = "Photoshop ile bir kitap veya albüm kapağı için görsel düzenleme.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
-konular.Add(new Konu { Baslik = "Restoran Menü Tasarımı", Aciklama = "Photoshop’ta yemek kategorileri ve görselleriyle bir menü tasarımı.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
-konular.Add(new Konu { Baslik = "Kolaj Fotoğraf Tasarımı", Aciklama = "Photoshop ile birden fazla fotoğrafı birleştirerek tematik bir kolaj oluşturma.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
-konular.Add(new Konu { Baslik = "Tipografi Posteri", Aciklama = "Photoshop’ta yaratıcı metin stilleriyle ilham verici bir poster tasarımı.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
-konular.Add(new Konu { Baslik = "Kısa Tanıtım Videosu", Aciklama = "Premiere Pro’da metin ve görsellerle bir ürün veya hizmet tanıtım videosu.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
-konular.Add(new Konu { Baslik = "Vlog Videosu Düzenleme", Aciklama = "Premiere Pro’da kısa bir vlog klibini kesip geçiş efektleri ekleme.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
-konular.Add(new Konu { Baslik = "Slayt Gösterisi Videosu", Aciklama = "Premiere Pro’da fotoğraflardan müzik eşliğinde bir slayt gösterisi oluşturma.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
-konular.Add(new Konu { Baslik = "Eğitim Videosu Tasarımı", Aciklama = "Premiere Pro’da metin ve görsellerle basit bir eğitim videosu düzenleme.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
-konular.Add(new Konu { Baslik = "Sosyal Medya Hikaye Videosu", Aciklama = "Premiere Pro’da Instagram hikayeleri için kısa bir animasyonlu video.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
-konular.Add(new Konu { Baslik = "Seyahat Videosu Montajı", Aciklama = "Premiere Pro’da seyahat kliplerini birleştirip müzik ve geçiş ekleme.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
-konular.Add(new Konu { Baslik = "Etkinlik Teaser Videosu", Aciklama = "Premiere Pro’da bir etkinlik için kısa ve heyecan verici bir teaser videosu.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
-konular.Add(new Konu { Baslik = "Fotoğraf Filtre Uygulaması", Aciklama = "Photoshop’ta bir fotoğrafa vintage veya modern filtre efekti uygulama.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
-konular.Add(new Konu { Baslik = "YouTube Thumbnail Tasarımı", Aciklama = "Photoshop ile dikkat çekici bir YouTube video küçük resmi oluşturma.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
-konular.Add(new Konu { Baslik = "Video Başlık Animasyonu", Aciklama = "Premiere Pro’da bir videoya basit metin animasyonları ekleme.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
-konular.Add(new Konu { Baslik = "Basit Hesap Makinesi", Aciklama = "PHP ile form üzerinden girilen sayılarla temel matematiksel işlemler yapan bir sayfa.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
-konular.Add(new Konu { Baslik = "Döviz Çevirici", Aciklama = "Sabit kurlarla para birimleri arasında dönüşüm yapan bir PHP formu.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
-konular.Add(new Konu { Baslik = "Giriş Formu Kontrolü", Aciklama = "Kullanıcı adı ve şifreyi kontrol eden basit bir PHP login sayfası.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
-konular.Add(new Konu { Baslik = "Sayı Tahmin Oyunu", Aciklama = "PHP ile rastgele bir sayıyı tahmin etmeye çalışan bir web oyunu.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
-konular.Add(new Konu { Baslik = "Basit Anket Sistemi", Aciklama = "Kullanıcıların bir soruya oy verip sonuçları gören bir PHP anket sayfası.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
-konular.Add(new Konu { Baslik = "Metin Analiz Aracı", Aciklama = "Girilen metnin kelime ve karakter sayısını hesaplayan bir PHP formu.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
-konular.Add(new Konu { Baslik = "BMI Hesaplayıcı", Aciklama = "Kullanıcıdan boy ve kilo alarak vücut kitle indeksini hesaplayan bir sayfa.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
-konular.Add(new Konu { Baslik = "Rastgele Şifre Üretici", Aciklama = "PHP ile rastgele güvenli şifreler üreten bir web uygulaması.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
-konular.Add(new Konu { Baslik = "Ziyaretçi Sayacı", Aciklama = "Sayfa her yenilendiğinde ziyaret sayısını artıran bir PHP uygulaması.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
-konular.Add(new Konu { Baslik = "Basit Alışveriş Listesi", Aciklama = "Kullanıcıların ürün ekleyip listeleyebileceği bir PHP formu.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
-konular.Add(new Konu { Baslik = "Sıcaklık Dönüştürücü", Aciklama = "Celsius ve Fahrenheit arasında dönüşüm yapan bir PHP uygulaması.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
-konular.Add(new Konu { Baslik = "Renk Seçici", Aciklama = "Kullanıcıdan renk kodu alıp arka planı değiştiren bir PHP sayfası.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
-konular.Add(new Konu { Baslik = "Basit Quiz Uygulaması", Aciklama = "Önceden tanımlı sorularla bir bilgi yarışması yapan PHP formu.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
-konular.Add(new Konu { Baslik = "Haftanın Günü Bulucu", Aciklama = "Girilen tarihe göre haftanın gününü gösteren bir PHP uygulaması.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
-konular.Add(new Konu { Baslik = "Basit Not Hesaplayıcı", Aciklama = "Öğrenci notlarını alıp ortalamayı hesaplayan bir PHP formu.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
-konular.Add(new Konu { Baslik = "Yemek Tarifi Sayfası", Aciklama = "PHP ile dinamik olarak yemek tariflerini listeleyen bir sayfa.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
-konular.Add(new Konu { Baslik = "Motivasyon Sözleri", Aciklama = "Rastgele motivasyonel sözler gösteren bir PHP uygulaması.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
-konular.Add(new Konu { Baslik = "Birim Çevirici", Aciklama = "Uzunluk, ağırlık veya hacim birimlerini çeviren bir PHP formu.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
-konular.Add(new Konu { Baslik = "Basit İletişim Formu", Aciklama = "Kullanıcıdan ad, e-posta ve mesaj alıp ekranda gösteren bir PHP formu.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
-konular.Add(new Konu { Baslik = "Dinamik Galeri Sayfası", Aciklama = "PHP ile önceden tanımlı resimleri listeleyen bir galeri sayfası.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
+konular.Add(new Konu { Baslik = "Basit Hesap Makinesi", Aciklama = "PHP ile form üzerinden girilen sayılarla temel matematiksel işlemler yapan bir sayfa.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
+konular.Add(new Konu { Baslik = "Döviz Çevirici", Aciklama = "Sabit kurlarla para birimleri arasında dönüşüm yapan bir PHP formu.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
+konular.Add(new Konu { Baslik = "Giriş Formu Kontrolü", Aciklama = "Kullanıcı adı ve şifreyi kontrol eden basit bir PHP login sayfası.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
+konular.Add(new Konu { Baslik = "Sayı Tahmin Oyunu", Aciklama = "PHP ile rastgele bir sayıyı tahmin etmeye çalışan bir web oyunu.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
+konular.Add(new Konu { Baslik = "Basit Anket Sistemi", Aciklama = "Kullanıcıların bir soruya oy verip sonuçları gören bir PHP anket sayfası.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
+konular.Add(new Konu { Baslik = "Metin Analiz Aracı", Aciklama = "Girilen metnin kelime ve karakter sayısını hesaplayan bir PHP formu.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
+konular.Add(new Konu { Baslik = "BMI Hesaplayıcı", Aciklama = "Kullanıcıdan boy ve kilo alarak vücut kitle indeksini hesaplayan bir sayfa.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
+konular.Add(new Konu { Baslik = "Rastgele Şifre Üretici", Aciklama = "PHP ile rastgele güvenli şifreler üreten bir web uygulaması.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
+konular.Add(new Konu { Baslik = "Ziyaretçi Sayacı", Aciklama = "Sayfa her yenilendiğinde ziyaret sayısını artıran bir PHP uygulaması.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
+konular.Add(new Konu { Baslik = "Basit Alışveriş Listesi", Aciklama = "Kullanıcıların ürün ekleyip listeleyebileceği bir PHP formu.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
+konular.Add(new Konu { Baslik = "Sıcaklık Dönüştürücü", Aciklama = "Celsius ve Fahrenheit arasında dönüşüm yapan bir PHP uygulaması.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
+konular.Add(new Konu { Baslik = "Renk Seçici", Aciklama = "Kullanıcıdan renk kodu alıp arka planı değiştiren bir PHP sayfası.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
+konular.Add(new Konu { Baslik = "Basit Quiz Uygulaması", Aciklama = "Önceden tanımlı sorularla bir bilgi yarışması yapan PHP formu.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
+konular.Add(new Konu { Baslik = "Haftanın Günü Bulucu", Aciklama = "Girilen tarihe göre haftanın gününü gösteren bir PHP uygulaması.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
+konular.Add(new Konu { Baslik = "Basit Not Hesaplayıcı", Aciklama = "Öğrenci notlarını alıp ortalamayı hesaplayan bir PHP formu.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
+konular.Add(new Konu { Baslik = "Yemek Tarifi Sayfası", Aciklama = "PHP ile dinamik olarak yemek tariflerini listeleyen bir sayfa.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
+konular.Add(new Konu { Baslik = "Motivasyon Sözleri", Aciklama = "Rastgele motivasyonel sözler gösteren bir PHP uygulaması.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
+konular.Add(new Konu { Baslik = "Birim Çevirici", Aciklama = "Uzunluk, ağırlık veya hacim birimlerini çeviren bir PHP formu.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
+konular.Add(new Konu { Baslik = "Basit İletişim Formu", Aciklama = "Kullanıcıdan ad, e-posta ve mesaj alıp ekranda gösteren bir PHP formu.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
+konular.Add(new Konu { Baslik = "Dinamik Galeri Sayfası", Aciklama = "PHP ile önceden tanımlı resimleri listeleyen bir galeri sayfası.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
                 await Konular.AddRangeAsync(konular);
 
             }

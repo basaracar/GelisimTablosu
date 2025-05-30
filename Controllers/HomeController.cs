@@ -21,12 +21,60 @@ public class HomeController : Controller
         return View();
     }
 
+    [Route("/Home/Takvim/{id?}")]
+    public IActionResult Takvim(int id)
+    {
+       var egitimYili = _context.EgitimYillari.FirstOrDefault(x => x.Id == id);
+       ViewBag.EgitimYili = egitimYili.Id;
+       
+        var startDate = egitimYili.BaslangicTarihi;
+        var endDate = egitimYili.BitisTarihi;
+        var takvim = Helper.GetWeekdaysByMonthWeeks(startDate, endDate);
+     //   ViewBag.Takvim = takvim;
+        return View(takvim);
+    }
+    [HttpPost]
+    public IActionResult TakvimEkle(int EgitimYili, List<string> hafta)
+    {
+        if (hafta != null && hafta.Count > 0)
+        {
+            foreach (var h in hafta)
+            {
+                var takvim = new Takvim
+                {
+                    Hafta = h,
+                    EgitimYiliId = EgitimYili
+                };
+                _context.Takvimler.Add(takvim);
+            }
+            _context.SaveChanges();
+            TempData["Success"] = "Takvim başarıyla kaydedildi.";
+        }
+        else
+        {
+            TempData["Error"] = "Hiçbir hafta seçilmedi.";
+        }
+        return RedirectToAction("Index");
+    }
+
+    [Route("/Home/TakvimGor/{id?}")]
+    public IActionResult TakvimGor(int id)
+    {
+        var takvim = _context.Takvimler.Where(x => x.EgitimYiliId == id).ToList();
+        if (takvim.Count == 0)
+        {
+            TempData["Error"] = "Bu eğitim yılı için takvim bulunamadı.";
+            return RedirectToAction("Index");
+        }
+        return View(takvim);
+    }
+
     [HttpPost]
     async public Task<IActionResult> CreateTablo(GelisimTablosu.Models.ViewModels.TableModel model)
     {
         var random = new Random();
          DateTime startDate = new DateTime(2025, 9, 8);
-        DateTime endDate = new DateTime(2026, 7, 26);
+        DateTime endDate = new DateTime(2026, 6, 26);
         // API'den tatil günlerini al
         var holidays2025 = await Helper.GetHolidaysAsync(2025, "TR");
         var holidays2026 = await Helper.GetHolidaysAsync(2026, "TR");
@@ -74,6 +122,41 @@ public class HomeController : Controller
         }
         
         return View(model);
+    }
+
+    [HttpPost]
+    public IActionResult TakvimSil(int id)
+    {
+        var takvim = _context.Takvimler.FirstOrDefault(x => x.Id == id);
+        if (takvim != null)
+        {
+            _context.Takvimler.Remove(takvim);
+            _context.SaveChanges();
+            TempData["Success"] = "Hafta başarıyla silindi.";
+        }
+        else
+        {
+            TempData["Error"] = "Hafta bulunamadı.";
+        }
+        // Silinen kaydın eğitim yılına geri dön
+        return RedirectToAction("TakvimGoster", new { id = takvim?.EgitimYiliId ?? 0 });
+    }
+
+    [HttpPost]
+    public IActionResult TakvimTopluSil(int egitimYiliId)
+    {
+        var takvimler = _context.Takvimler.Where(x => x.EgitimYiliId == egitimYiliId).ToList();
+        if (takvimler.Count > 0)
+        {
+            _context.Takvimler.RemoveRange(takvimler);
+            _context.SaveChanges();
+            TempData["Success"] = "Tüm takvim başarıyla silindi.";
+        }
+        else
+        {
+            TempData["Error"] = "Silinecek takvim bulunamadı.";
+        }
+        return RedirectToAction("TakvimGor", new { id = egitimYiliId });
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

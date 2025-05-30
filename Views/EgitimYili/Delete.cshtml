@@ -1,0 +1,23 @@
+@model GelisimTablosu.Models.EgitimYili
+@{
+    ViewData["Title"] = "Eğitim Yılı Sil";
+}
+<h2>Eğitim Yılı Sil</h2>
+<div class="alert alert-danger">
+    <strong>Silmek istediğinize emin misiniz?</strong>
+</div>
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">Ad</dt>
+        <dd class="col-sm-9">@Model.Ad</dd>
+        <dt class="col-sm-3">Başlangıç Tarihi</dt>
+        <dd class="col-sm-9">@Model.BaslangicTarihi.ToString("dd.MM.yyyy")</dd>
+        <dt class="col-sm-3">Bitiş Tarihi</dt>
+        <dd class="col-sm-9">@Model.BitisTarihi.ToString("dd.MM.yyyy")</dd>
+    </dl>
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Evet, Sil</button>
+        <a asp-action="Index" class="btn btn-secondary">İptal</a>
+    </form>
+</div>
