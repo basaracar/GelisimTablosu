@@ -69,51 +69,68 @@ public class HomeController : Controller
         }
         return View(takvim);
     }
-
+   
     [HttpPost]
     async public Task<IActionResult> CreateTablo(GelisimTablosu.Models.ViewModels.TableModel model)
+{
+    if (!ModelState.IsValid)
     {
-
-        if (ModelState.IsValid)
-        {
-            Dictionary<int, List<Konu>> konular = new Dictionary<int, List<Konu>>();
-            List<Konu> tumKonular = new List<Konu>();
-            Dictionary<int, List<Konu>> tamListe = new Dictionary<int, List<Konu>>();
-            List<Kategori> kategoriler = await _context.Kategoriler.Where(x => x.Dal == model.Dal).ToListAsync();
-            if (kategoriler.Count == 0)
-            {
-                ModelState.AddModelError("", "Bu dalda kategori bulunamadı.");
-                return View(model);
-            }
-            foreach (var kategori in kategoriler)
-            {
-                var konus = (await _context.Konular
-                    .Where(x => x.KategoriId == kategori.Id)
-                    .ToListAsync())
-                    .OrderBy(x => Guid.NewGuid())
-                    .Take(model.Adet)
-                    .ToList();
-                konular.Add(kategori.Id, konus);
-            }
-
-            for (int i = 0; i < model.Adet; i++)
-            {
-                foreach (var kategori in kategoriler)
-                {
-                    var bune = konular[kategori.Id][i];
-                    tumKonular.Add(bune);
-
-                }
-                tamListe.Add(i, tumKonular);
-                tumKonular = new List<Konu>();
-            }
-            ViewBag.tamListe = tamListe;
-            ViewBag.Dal = model.Dal;
-            return View();
-        }
-
         return View(model);
     }
+
+    // Kategorileri al
+    var kategoriler = await _context.Kategoriler.Where(x => x.Dal == model.Dal).ToListAsync();
+    if (kategoriler.Count == 0)
+    {
+        ModelState.AddModelError("", "Bu dalda kategori bulunamadı.");
+        return View(model);
+    }
+
+    // Kategorilere göre konuları al ve rastgele karıştır
+    var konular = new Dictionary<int, List<Konu>>();
+    foreach (var kategori in kategoriler)
+    {
+        var konus = (await _context.Konular
+            .Where(x => x.KategoriId == kategori.Id).ToListAsync())
+            .OrderBy(x => Guid.NewGuid())
+            .Take(model.Adet * model.KonuAdet).ToList();
+        if (konus.Count < model.Adet * model.KonuAdet)
+        {
+            ModelState.AddModelError("", $"Kategori {kategori.Id} için yeterli konu bulunamadı.");
+            return View(model);
+        }
+        konular[kategori.Id] = konus;
+    }
+
+    // Her öğrenci için konuların atandığı liste
+    var tamListe = new Dictionary<int, List<List<Konu>>>();
+    for (int i = 0; i < model.Adet; i++) // Her öğrenci için
+    {
+        var ogrenciKategoriKonular = new List<List<Konu>>();
+        foreach (var kategori in kategoriler)
+        {
+            // Her kategori için model.KonuAdet kadar konu seç
+            var kategoriKonular = konular[kategori.Id]
+                .Skip(i * model.KonuAdet)
+                .Take(model.KonuAdet)
+                .ToList();
+
+            if (kategoriKonular.Count < model.KonuAdet)
+            {
+                ModelState.AddModelError("", $"Kategori {kategori.Id} için yeterli konu bulunamadı.");
+                return View(model);
+            }
+
+            ogrenciKategoriKonular.Add(kategoriKonular);
+        }
+        tamListe.Add(i, ogrenciKategoriKonular);
+    }
+
+    ViewBag.tamListe = tamListe;
+    ViewBag.Dal = model.Dal;
+    return View("CreateTablo");
+}
+    
 
     [HttpPost]
     public IActionResult TakvimSil(int id)
