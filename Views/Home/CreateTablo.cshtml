@@ -2,12 +2,12 @@
 
     @{
     ViewData["Title"] = "Tablo Oluştur";
-
+    var tamListe=  ViewBag.tamListe;
     string[] dalim=["Yazılım Geliştirme","Ağ İşletmenliği"];
-    var d=Model.First().Value.FirstOrDefault()?.Kategori?.Dal;
+    int d=(int)ViewBag.dal;
 
     }
-    @foreach (var kategori in ViewBag.tamListe)
+    @foreach (var kategori in tamListe)
     {
     <div style="page-break-after: always;" class="print-content">
 
@@ -36,8 +36,8 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Konu Başlığı</th>
-                    <th>Kategori</th>
+                   <th>Kategori</th> <th>Konu Başlığı</th>
+                    
                     <th>Açıklama</th>
                     <th>Yapıldı</th>
                 </tr>
@@ -46,8 +46,7 @@
                 @foreach (var konu in kategori.Value)
                 {
                 <tr>
-                    <td>@konu.Baslik</td>
-                    <td>@konu.Kategori?.Ad</td>
+                    <td>@konu.Kategori?.Ad</td> <td>@konu.Baslik</td>
                     <td>@konu.Aciklama</td>
                     <td>&nbsp;</td>
                 </tr>

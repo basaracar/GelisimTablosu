@@ -12,8 +12,11 @@ namespace GelisimTablosu.Models.ViewModels
 
         public Dal Dal { get; set; }
 
-        [Display(Name = "Adet")]
+        [Display(Name = "Öğrenci Adeti")]
         public int Adet { get; set; }
-        public EgitimYili EgitimYili { get; set; }
+
+        [Display(Name = "Konu Adeti")]
+        public int KonuAdet { get; set; }
+        public int EgitimYili { get; set; }
     }
 }

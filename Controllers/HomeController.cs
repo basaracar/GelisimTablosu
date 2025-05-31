@@ -73,18 +73,7 @@ public class HomeController : Controller
     [HttpPost]
     async public Task<IActionResult> CreateTablo(GelisimTablosu.Models.ViewModels.TableModel model)
     {
-        var random = new Random();
-         DateTime startDate = new DateTime(2025, 9, 8);
-        DateTime endDate = new DateTime(2026, 6, 26);
-        // API'den tatil günlerini al
-        var holidays2025 = await Helper.GetHolidaysAsync(2025, "TR");
-        var holidays2026 = await Helper.GetHolidaysAsync(2026, "TR");
-        var holidays = holidays2025.Concat(holidays2026).ToList();
 
-
-        // Hafta bazlı çalışma günlerini al
-        var weeks = Helper.GetWeekdaysByWeekWithHolidays(startDate, endDate, holidays);
-     //   var weeks = Helper.GetWeekdaysByWeek(startDate, endDate);
         if (ModelState.IsValid)
         {
             Dictionary<int, List<Konu>> konular = new Dictionary<int, List<Konu>>();
@@ -119,9 +108,10 @@ public class HomeController : Controller
                 tumKonular = new List<Konu>();
             }
             ViewBag.tamListe = tamListe;
+            ViewBag.Dal = model.Dal;
             return View();
         }
-        
+
         return View(model);
     }
 
