@@ -41,12 +41,13 @@ namespace GelisimTablosu.Models
                 Kategoriler.Add(new Kategori {  Ad = "Grafik Tasarım",Dal = Dal.Yazilim  });//6
                 Kategoriler.Add(new Kategori {  Ad = "Web Tasarım ASP" ,Dal = Dal.Yazilim });//7
                 Kategoriler.Add(new Kategori {  Ad = "Web Tasarım PHP" ,Dal = Dal.Yazilim });//8
-                Kategoriler.Add(new Kategori {  Ad = "Ağ Sistemleri Anahtarlama" ,Dal = Dal.Ag});
-                Kategoriler.Add(new Kategori {  Ad = "Ağ Sistemleri ve Yönlendirme" ,Dal = Dal.Ag});
-                
-                Kategoriler.Add(new Kategori {  Ad = "Siber Güvenlik Temelleri" ,Dal = Dal.Ag});
-                Kategoriler.Add(new Kategori {  Ad = "Sunucu İşletim Sistemi" ,Dal = Dal.Ag});
+                Kategoriler.Add(new Kategori {  Ad = "Ağ Sistemleri Anahtarlama" ,Dal = Dal.Ag});//9
 
+                Kategoriler.Add(new Kategori {  Ad = "Ağ Sistemleri ve Yönlendirme" ,Dal = Dal.Ag});//10
+                Kategoriler.Add(new Kategori {  Ad = "Siber Güvenlik Temelleri" ,Dal = Dal.Ag});//11
+                Kategoriler.Add(new Kategori {  Ad = "Sunucu İşletim Sistemi" ,Dal = Dal.Ag});//12
+                Kategoriler.Add(new Kategori {  Ad = "VLSM Ağ Tasarımı" ,Dal = Dal.Ag});//13
+                Kategoriler.Add(new Kategori {  Ad = "Temel Cihaz Yapılandırma" ,Dal = Dal.Ag});//14
                 await SaveChangesAsync();
             }
         }
@@ -55,7 +56,7 @@ namespace GelisimTablosu.Models
             if (!Konular.Any())
             {
                 var konular = new List<Konu>();
-   konular.Add(new Konu { Baslik = "Hesap Makinesi Uygulaması", Aciklama = "Toplama, çıkarma, çarpma, bölme işlemleri yapan basit bir hesap makinesi.", Zorluk = Zorluk.Kolay, KategoriId = 1 });
+konular.Add(new Konu { Baslik = "Hesap Makinesi Uygulaması", Aciklama = "Toplama, çıkarma, çarpma, bölme işlemleri yapan basit bir hesap makinesi.", Zorluk = Zorluk.Kolay, KategoriId = 1 });
 konular.Add(new Konu { Baslik = "Not Ortalaması Hesaplayıcı", Aciklama = "Girilen ders notlarına göre ortalama hesaplayıp geçip kalma durumu gösteren uygulama.", Zorluk = Zorluk.Kolay, KategoriId = 1 });
 konular.Add(new Konu { Baslik = "ATM Simülasyonu", Aciklama = "Para çekme, para yatırma, bakiye görüntüleme işlemleri yapılabilir.", Zorluk = Zorluk.Kolay, KategoriId = 1 });
 konular.Add(new Konu { Baslik = "Sayı Tahmin Oyunu", Aciklama = "Bilgisayarın rastgele tuttuğu sayıyı tahmin etmeye çalışılan oyun.", Zorluk = Zorluk.Kolay, KategoriId = 1 });
@@ -138,7 +139,7 @@ konular.Add(new Konu { Baslik = "Düğün Davetiyesi Sayfası", Aciklama = "Dü�
 konular.Add(new Konu { Baslik = "Alışveriş Listesi Sayfası", Aciklama = "Kullanıcıların alışveriş listelerini görsel olarak düzenleyen bir sayfa.", Zorluk = Zorluk.Kolay, KategoriId = 4 });
 konular.Add(new Konu { Baslik = "Müzik Çalma Listesi", Aciklama = "Şarkıların listelendiği ve albüm kapaklarının gösterildiği bir sayfa.", Zorluk = Zorluk.Kolay, KategoriId = 4 });
 konular.Add(new Konu { Baslik = "Spor Salonu Tanıtımı", Aciklama = "Spor salonunun hizmetlerini ve programlarını tanıtan bir ana sayfa.", Zorluk = Zorluk.Kolay, KategoriId = 4 });
-                konular.Add(new Konu { Baslik = "Kitap Tanıtım Sayfası", Aciklama = "Bir kitabın kapağı, özeti ve yazar bilgilerinin yer aldığı sayfa.", Zorluk = Zorluk.Kolay, KategoriId = 4 });
+konular.Add(new Konu { Baslik = "Kitap Tanıtım Sayfası", Aciklama = "Bir kitabın kapağı, özeti ve yazar bilgilerinin yer aldığı sayfa.", Zorluk = Zorluk.Kolay, KategoriId = 4 });
 konular.Add(new Konu { Baslik = "Basit Hesap Makinesi", Aciklama = "Dört temel matematiksel işlemi gerçekleştiren bir mobil hesap makinesi.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
 konular.Add(new Konu { Baslik = "Not Tutucu", Aciklama = "Kullanıcıların kısa notlar yazıp görüntüleyebileceği bir uygulama.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
 konular.Add(new Konu { Baslik = "Zamanlayıcı Uygulaması", Aciklama = "Geri sayım yapabilen ve alarm çalan basit bir zamanlayıcı.", Zorluk = Zorluk.Kolay, KategoriId = 5 });
@@ -179,7 +180,7 @@ konular.Add(new Konu { Baslik = "Etkinlik Teaser Videosu", Aciklama = "Premiere 
 konular.Add(new Konu { Baslik = "Fotoğraf Filtre Uygulaması", Aciklama = "Photoshop’ta bir fotoğrafa vintage veya modern filtre efekti uygulama.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
 konular.Add(new Konu { Baslik = "YouTube Thumbnail Tasarımı", Aciklama = "Photoshop ile dikkat çekici bir YouTube video küçük resmi oluşturma.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
 konular.Add(new Konu { Baslik = "Video Başlık Animasyonu", Aciklama = "Premiere Pro’da bir videoya basit metin animasyonları ekleme.", Zorluk = Zorluk.Kolay, KategoriId = 6 });
-            konular.Add(new Konu { Baslik = "Minimalist Saat Tasarımı", Aciklama = "CSS ile stilize edilmiş bir dijital veya analog saat gösteren sayfa.", Zorluk = Zorluk.Kolay, KategoriId = 4 });
+konular.Add(new Konu { Baslik = "Minimalist Saat Tasarımı", Aciklama = "CSS ile stilize edilmiş bir dijital veya analog saat gösteren sayfa.", Zorluk = Zorluk.Kolay, KategoriId = 4 });
 konular.Add(new Konu { Baslik = "Kişisel Blog Sitesi", Aciklama = "Yazı ekleme, düzenleme, silme, yorum yapma, kategorilere ayırma.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
 konular.Add(new Konu { Baslik = "Haber Sitesi", Aciklama = "Admin panelinden haber ekleme, ana sayfada listeleme, detay sayfası.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
 konular.Add(new Konu { Baslik = "Kütüphane Takip Sistemi", Aciklama = "Kitap, yazar, kategori yönetimi; ödünç verme ve iade etme işlemleri.", Zorluk = Zorluk.Kolay, KategoriId = 7 });
@@ -220,6 +221,107 @@ konular.Add(new Konu { Baslik = "Motivasyon Sözleri", Aciklama = "Rastgele moti
 konular.Add(new Konu { Baslik = "Birim Çevirici", Aciklama = "Uzunluk, ağırlık veya hacim birimlerini çeviren bir PHP formu.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
 konular.Add(new Konu { Baslik = "Basit İletişim Formu", Aciklama = "Kullanıcıdan ad, e-posta ve mesaj alıp ekranda gösteren bir PHP formu.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
 konular.Add(new Konu { Baslik = "Dinamik Galeri Sayfası", Aciklama = "PHP ile önceden tanımlı resimleri listeleyen bir galeri sayfası.", Zorluk = Zorluk.Kolay, KategoriId = 8 });
+konular.Add(new Konu { Baslik = "Alt Ağlara Bölme", Aciklama = "Durum: Bir küçük ofis, 192.168.1.0/24 ağını 3 departman için bölmek istiyor: Yönetim (10 host), Satış (20 host), IT (50 host). Görev: VLSM kullanarak her departman için uygun alt ağ maskelerini, ağ adreslerini ve host aralıklarını belirleyin.", Zorluk = Zorluk.Kolay, KategoriId = 13 });
+konular.Add(new Konu { Baslik = "Alt Ağlara Bölme", Aciklama = "Durum: Bir okul, 172.16.0.0/16 ağını 4 sınıfa bölmek istiyor: Sınıf A (100 host), Sınıf B (60 host), Sınıf C (30 host), Sınıf D (15 host). Görev: VLSM ile alt ağ maskelerini ve host aralıklarını hesaplayın.", Zorluk = Zorluk.Kolay, KategoriId = 13 });
+konular.Add(new Konu { Baslik = "Alt Ağlara Bölme", Aciklama = "Durum: Bir kafe, 192.168.10.0/24 ağını 2 bölüme ayırmak istiyor: Müşteriler (60 host), Personel (20 host). Görev: VLSM ile alt ağ maskelerini ve host aralıklarını belirleyin.", Zorluk = Zorluk.Kolay, KategoriId = 13 });
+konular.Add(new Konu { Baslik = "Alt Ağlara Bölme", Aciklama = "Durum: Bir şirket, 10.0.0.0/8 ağını 8 eşit alt ağa bölmek istiyor. Görev: Yeni alt ağ maskesini ve her alt ağdaki host sayısını hesaplayın.", Zorluk = Zorluk.Kolay, KategoriId = 13 });
+konular.Add(new Konu { Baslik = "Alt Ağlara Bölme", Aciklama = "Durum: Bir ev ağı, 192.168.0.0/24 adresini 4 eşit alt ağa bölmek istiyor. Görev: Alt ağ maskesini, her alt ağın ağ adresini ve host sayısını hesaplayın.", Zorluk = Zorluk.Kolay, KategoriId = 13 });
+konular.Add(new Konu { Baslik = "Alt Ağlara Bölme", Aciklama = "Durum: Bir şirket, 172.30.0.0/16 ağını 5 departman için bölmek istiyor: HR (200 host), Finans (100 host), Pazarlama (50 host), Destek (30 host), Yönetim (10 host). Görev: VLSM ile alt ağ maskelerini ve host aralıklarını belirleyin.", Zorluk = Zorluk.Kolay, KategoriId = 13 });
+konular.Add(new Konu { Baslik = "Alt Ağlara Bölme", Aciklama = "Durum: Bir üniversite, 10.10.0.0/16 ağını 3 bölüme ayırmak istiyor: Kütüphane (500 host), Laboratuvar (200 host), İdari Ofis (50 host). Görev: VLSM ile alt ağ maskelerini ve host aralıklarını hesaplayın.", Zorluk = Zorluk.Kolay, KategoriId = 13 });
+konular.Add(new Konu { Baslik = "Alt Ağlara Bölme", Aciklama = "Durum: Bir e-ticaret şirketi, 192.168.20.0/24 ağını 2 alt ağa bölmek istiyor: Sunucular (10 host), Çalışanlar (100 host). Görev: VLSM ile alt ağ maskelerini ve host aralıklarını belirleyin.", Zorluk = Zorluk.Kolay, KategoriId = 13 });
+konular.Add(new Konu { Baslik = "Alt Ağlara Bölme", Aciklama = "Durum: Bir otel, 192.168.50.0/24 ağını 3 bölüme ayırmak istiyor: Misafir Wi-Fi (120 host), Resepsiyon (30 host), Güvenlik (10 host). Görev: VLSM ile alt ağ maskelerini ve host aralıklarını hesaplayın.", Zorluk = Zorluk.Kolay, KategoriId = 13 });
+konular.Add(new Konu { Baslik = "Alt Ağlara Bölme", Aciklama = "Durum: Bir fabrika, 172.18.0.0/16 ağını 4 bölüme ayırmak istiyor: Üretim (300 host), Depo (100 host), Ofis (50 host), Yönetim (20 host). Görev: VLSM ile alt ağ maskelerini ve host aralıklarını belirleyin.", Zorluk = Zorluk.Kolay, KategoriId = 13 });
+konular.Add(new Konu { Baslik = "Alt Ağlara Bölme", Aciklama = "Durum: Bir hastane, 192.168.100.0/24 ağını 3 bölüme ayırmak istiyor: Poliklinikler (80 host), Acil Servis (40 host), Yönetim (20 host). Görev: VLSM ile alt ağ maskelerini ve host aralıklarını hesaplayın.", Zorluk = Zorluk.Kolay, KategoriId = 13 });
+konular.Add(new Konu { Baslik = "Alt Ağlara Bölme", Aciklama = "Durum: Bir havaalanı, 10.1.0.0/16 ağını 4 birime ayırmak istiyor: Güvenlik (150 host), Yolcu Hizmetleri (100 host), Teknik Ekip (60 host), Yönetim (30 host). Görev: VLSM ile uygun alt ağları ve maskeleri belirleyin.", Zorluk = Zorluk.Kolay, KategoriId = 13 });
+konular.Add(new Konu { Baslik = "Alt Ağlara Bölme", Aciklama = "Durum: Bir yazılım firması, 172.20.0.0/16 ağını 5 departmana bölmek istiyor: Geliştirme (120 host), Test (80 host), IT (50 host), İnsan Kaynakları (20 host), Yönetim (10 host). Görev: VLSM kullanarak her birine uygun alt ağları oluşturun.", Zorluk = Zorluk.Kolay, KategoriId = 13 });
+konular.Add(new Konu { Baslik = "Alt Ağlara Bölme", Aciklama = "Durum: Bir belediye binası, 192.168.200.0/24 ağını 4 alt ağa ayırmak istiyor: Halkla İlişkiler (40 host), Mali Hizmetler (30 host), Zabıta (25 host), Yönetim (10 host). Görev: VLSM ile ağları bölün ve adres aralıklarını hesaplayın.", Zorluk = Zorluk.Kolay, KategoriId = 13 });
+konular.Add(new Konu { Baslik = "Alt Ağlara Bölme", Aciklama = "Durum: Bir alışveriş merkezi, 192.168.150.0/24 ağını 3 bölüme ayırmak istiyor: Mağazalar (100 host), Kamera Sistemleri (50 host), Yönetim (20 host). Görev: VLSM ile uygun alt ağları ve maskeleri belirleyin.", Zorluk = Zorluk.Kolay, KategoriId = 13 });
+konular.Add(new Konu { Baslik = "Alt Ağlara Bölme", Aciklama = "Durum: Bir tren istasyonu, 10.5.0.0/16 ağını 3 bölüme ayırmak istiyor: Bilet Gişeleri (150 host), Güvenlik (100 host), Yönetim (25 host). Görev: VLSM kullanarak alt ağları belirleyin.", Zorluk = Zorluk.Kolay, KategoriId = 13 });
+konular.Add(new Konu { Baslik = "Alt Ağlara Bölme", Aciklama = "Durum: Bir müzik festivali organizasyonu, 192.168.60.0/24 ağını 4 bölüme ayırmak istiyor: Sahne (80 host), Teknik Ekip (30 host), Sanatçılar (20 host), Yönetim (10 host). Görev: VLSM ile alt ağlara ayırın ve adres aralıklarını hesaplayın.", Zorluk = Zorluk.Kolay, KategoriId = 13 });
+konular.Add(new Konu { Baslik = "Alt Ağlara Bölme", Aciklama = "Durum: Bir araştırma laboratuvarı, 172.31.0.0/16 ağını 4 alt ağa bölmek istiyor: Genetik Birimi (200 host), Biyokimya (100 host), IT (60 host), İdari Ofis (15 host). Görev: VLSM ile ağları planlayın.", Zorluk = Zorluk.Kolay, KategoriId = 13 });
+konular.Add(new Konu { Baslik = "Alt Ağlara Bölme", Aciklama = "Durum: Bir medya ajansı, 192.168.70.0/24 ağını 3 departmana bölmek istiyor: Video Prodüksiyon (60 host), Grafik Tasarım (30 host), İdari Ofis (10 host). Görev: VLSM kullanarak uygun ağları oluşturun.", Zorluk = Zorluk.Kolay, KategoriId = 13 });
+konular.Add(new Konu { Baslik = "Alt Ağlara Bölme", Aciklama = "Durum: Bir kamu kurumu, 10.2.0.0/16 ağını 6 bölüme ayırmak istiyor: Arşiv (300 host), Teknik Servis (150 host), Bilgi İşlem (80 host), Personel (60 host), Halkla İlişkiler (40 host), Yönetim (20 host). Görev: VLSM kullanarak her bölüm için ağ maskesi ve adres aralıklarını hesaplayın.", Zorluk = Zorluk.Kolay, KategoriId = 13 });
+konular.Add(new Konu { Baslik = "Temel Anahtar Yapılandırması", Aciklama = "Durum: Bir küçük ofiste yeni bir 24 portlu anahtar kuruldu. Anahtar, ofis ağını yönetmek için kullanılacak. Görev: Komut arayüzü üzerinden anahtarın hostname'ini 'Office-Switch' olarak ayarlayın, yönetici şifresini yapılandırın ve konsol erişimini güvenli hale getirmek için bir parola belirleyin.", Zorluk = Zorluk.Kolay, KategoriId = 14 });
+konular.Add(new Konu { Baslik = "Temel Anahtar Yapılandırması", Aciklama = "Durum: Bir okulun bilgisayar laboratuvarında 16 portlu bir anahtar kullanılıyor. Laboratuvardaki 10 bilgisayar aynı VLAN'da olmalı. Görev: Komut arayüzü üzerinden VLAN 10 oluşturun, VLAN'a 'Lab-VLAN' adını verin ve 1-10 numaralı portları bu VLAN'a atayın.", Zorluk = Zorluk.Kolay, KategoriId = 14 });
+konular.Add(new Konu { Baslik = "Temel Anahtar Yapılandırması", Aciklama = "Durum: Bir kafe, müşteri Wi-Fi ağı için bir anahtara bağlı bir erişim noktası kullanıyor. Anahtar, yönetim için bir IP adresine ihtiyaç duyuyor. Görev: Komut arayüzü üzerinden anahtara VLAN 1 üzerinde 192.168.1.10/24 IP adresini atayın ve varsayılan ağ geçidini 192.168.1.1 olarak ayarlayın.", Zorluk = Zorluk.Kolay, KategoriId = 14 });
+konular.Add(new Konu { Baslik = "Temel Anahtar Yapılandırması", Aciklama = "Durum: Bir e-ticaret şirketinde 24 portlu bir anahtar, sunucular ve çalışan cihazları için kullanılıyor. Güvenlik için kullanılmayan portlar kapatılmalı. Görev: Komut arayüzü üzerinden 20-24 numaralı portları devre dışı bırakın ve anahtarın hostname'ini 'Server-Switch' olarak ayarlayın.", Zorluk = Zorluk.Kolay, KategoriId = 14 });
+konular.Add(new Konu { Baslik = "Temel Anahtar Yapılandırması", Aciklama = "Durum: Bir ev ağında 8 portlu bir anahtar, medya cihazlarını bağlamak için kullanılıyor. Anahtar, uzaktan yönetim için yapılandırılacak. Görev: Komut arayüzü üzerinden anahtara VLAN 1 üzerinde 192.168.0.100/24 IP adresini atayın ve Telnet erişimini etkinleştirin.", Zorluk = Zorluk.Kolay, KategoriId = 14 });
+konular.Add(new Konu { Baslik = "Temel Anahtar Yapılandırması", Aciklama = "Durum: Bir hastanede 24 portlu bir anahtar, tıbbi cihazlar ve bilgisayarlar için kullanılıyor. Tıbbi cihazlar ayrı bir VLAN'da olmalı. Görev: Komut arayüzü üzerinden VLAN 20 oluşturun, VLAN'a 'Medical-VLAN' adını verin ve 1-5 numaralı portları bu VLAN'a atayın.", Zorluk = Zorluk.Kolay, KategoriId = 14 });
+konular.Add(new Konu { Baslik = "Temel Anahtar Yapılandırması", Aciklama = "Durum: Bir üniversite kütüphanesinde iki 16 portlu anahtar kullanılıyor. Anahtarlar birbirine bağlanacak ve yönetim için yapılandırılacak. Görev: Komut arayüzü üzerinden birinci anahtarın hostname'ini 'Lib-Switch1' olarak ayarlayın ve 16 numaralı portu başka bir anahtara bağlanmak için trunk port olarak yapılandırın.", Zorluk = Zorluk.Kolay, KategoriId = 14 });
+konular.Add(new Konu { Baslik = "Temel Anahtar Yapılandırması", Aciklama = "Durum: Bir fabrikada 24 portlu bir anahtar, üretim cihazları için kullanılıyor. Güvenlik için yalnızca belirli portlar aktif olmalı. Görev: Komut arayüzü üzerinden 1-12 numaralı portları erişim portu olarak yapılandırın, VLAN 30'a atayın ve diğer portları devre dışı bırakın.", Zorluk = Zorluk.Kolay, KategoriId = 14 });
+konular.Add(new Konu { Baslik = "Temel Anahtar Yapılandırması", Aciklama = "Durum: Bir otel lobisinde 16 portlu bir PoE anahtar, IP telefonlar ve Wi-Fi AP'ler için kullanılıyor. Yönetim için anahtar yapılandırılacak. Görev: Komut arayüzü üzerinden anahtara VLAN 1 üzerinde 192.168.50.5/24 IP adresini atayın ve SSH erişimini etkinleştirin.", Zorluk = Zorluk.Kolay, KategoriId = 14 });
+konular.Add(new Konu { Baslik = "Temel Anahtar Yapılandırması", Aciklama = "Durum: Bir spor salonunda 12 portlu bir anahtar, akıllı TV'ler ve bilgisayarlar için kullanılıyor. Cihazlar iki farklı VLAN'da olmalı. Görev: Komut arayüzü üzerinden VLAN 10 ('TV-VLAN') ve VLAN 20 ('PC-VLAN') oluşturun, 1-6 portları VLAN 10'a, 7-12 portları VLAN 20'ye atayın.", Zorluk = Zorluk.Kolay, KategoriId = 14 });             
+        konular.Add(new Konu {
+    Baslik = "Statik Yönlendirme ile 3 Ağa Erişim",
+    Aciklama = "Durum: Üç farklı LAN ağına sahip küçük bir firma, bu ağları birbirine yönlendirmek istiyor. Router'lar arasında sadece statik yönlendirme kullanılacak. Görev: Her bir router’da gerekli yönlendirme komutlarını yapılandırın ve ağlar arası iletişimi sağlayın.",
+    Zorluk = Zorluk.Kolay,
+    KategoriId = 14
+});
+
+konular.Add(new Konu {
+    Baslik = "Farklı Alt Ağlar Arası Statik Yönlendirme",
+    Aciklama = "Durum: 192.168.1.0/24 ve 192.168.2.0/24 olmak üzere iki farklı LAN, iki farklı router ile bağlanmıştır. Görev: Statik yönlendirme yapılandırarak ağlar arası ping başarısı sağlayın.",
+    Zorluk = Zorluk.Kolay,
+    KategoriId = 14
+});
+
+konular.Add(new Konu {
+    Baslik = "Statik Yönlendirme ile Yıldız Topoloji",
+    Aciklama = "Durum: Merkezde bir router ve ona bağlı 3 farklı şube router’ı var. Şubelerde 3 farklı LAN ağı bulunuyor. Görev: Statik yönlendirme kullanarak merkezden tüm şubelere ulaşımı sağlayın.",
+    Zorluk = Zorluk.Kolay,
+    KategoriId = 14
+});
+
+konular.Add(new Konu {
+    Baslik = "Yedekli Statik Yönlendirme (Floating Routes)",
+    Aciklama = "Durum: Bir kurum, iki router arasında ana bağlantı ve yedek bağlantı olmak üzere iki yol yapılandırmak istiyor. Görev: Primary ve backup route olacak şekilde statik yönlendirme yapın.",
+    Zorluk = Zorluk.Kolay,
+    KategoriId = 14
+});
+
+konular.Add(new Konu {
+    Baslik = "2 Router, 3 Ağ: Statik Route ile İletişim",
+    Aciklama = "Durum: Router A'ya bağlı 192.168.10.0/24 ağı, Router B'ye bağlı 192.168.20.0/24 ve 192.168.30.0/24 ağları bulunuyor. Görev: Router A'dan diğer iki ağa erişim için yönlendirme yapılandırması yapın.",
+    Zorluk = Zorluk.Kolay,
+    KategoriId = 14
+});
+
+konular.Add(new Konu {
+    Baslik = "Statik Yönlendirme ile Default Route Kullanımı",
+    Aciklama = "Durum: Bir LAN sadece internete çıkış için bir yönlendirme yapmak istiyor. Görev: Varsayılan yön (default route) tanımlayarak yönlendirmeyi sağlayın.",
+    Zorluk = Zorluk.Kolay,
+    KategoriId = 14
+});
+
+konular.Add(new Konu {
+    Baslik = "Statik Yönlendirme ile Küçük Ofis Ağı",
+    Aciklama = "Durum: Ofiste iki router ve üç farklı ağ bulunmakta. Router'lar sadece statik yönlendirme kullanabiliyor. Görev: PC'lerin tüm ağlarla iletişim kurabilmesi için yönlendirme yapılandırması yapın.",
+    Zorluk = Zorluk.Kolay,
+    KategoriId = 14
+});
+
+konular.Add(new Konu {
+    Baslik = "Statik Yönlendirme ile İntranet Erişimi",
+    Aciklama = "Durum: Merkez ofis ile 2 farklı şube ofisi arasında özel bir intranet bağlantısı kurmak isteniyor. Görev: Tüm router’lara gerekli yönlendirme bilgilerini statik olarak girin.",
+    Zorluk = Zorluk.Kolay,
+    KategoriId = 14
+});
+
+konular.Add(new Konu {
+    Baslik = "Statik ve Default Route Birlikte Kullanımı",
+    Aciklama = "Durum: Router A, 2 yerel ağa doğrudan bağlı. İnternet erişimi ise Router B üzerinden sağlanıyor. Görev: Router A’ya bağlı yerel ağlar için statik, internete çıkış için default route yapılandırın.",
+    Zorluk = Zorluk.Kolay,
+    KategoriId = 14
+});
+
+konular.Add(new Konu {
+    Baslik = "Statik Yönlendirme ile Bölge Bağlantısı",
+    Aciklama = "Durum: Bir kamu kuruluşunun üç bölge müdürlüğü kendi LAN’larına sahip. Tüm bölgelerin kendi arasında iletişim kurması isteniyor. Görev: Router’larda statik yönlendirme yapılandırması yaparak iletişimi sağlayın.",
+    Zorluk = Zorluk.Kolay,
+    KategoriId = 14
+});
+       
+               
                 await Konular.AddRangeAsync(konular);
 
             }
