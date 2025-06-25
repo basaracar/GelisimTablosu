@@ -2,3 +2,6 @@ bin/
 obj/
 appsettings.json
 !appsettings.Development.json
+App.db
+App.db-shm
+App.db-wal
