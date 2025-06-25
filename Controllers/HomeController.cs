@@ -77,12 +77,12 @@ public class HomeController : Controller
     {
         return View(model);
     }
-
+      ViewBag.Dal = model.Dal;
     // Kategorileri al
     var kategoriler = await _context.Kategoriler.Where(x => x.Dal == model.Dal).ToListAsync();
     if (kategoriler.Count == 0)
     {
-        ModelState.AddModelError("", "Bu dalda kategori bulunamadı.");
+        ModelState.AddModelError("Adet", "Bu dalda kategori bulunamadı.");
         return View(model);
     }
 
@@ -96,7 +96,7 @@ public class HomeController : Controller
             .Take(model.Adet * model.KonuAdet).ToList();
         if (konus.Count < model.Adet * model.KonuAdet)
         {
-            ModelState.AddModelError("", $"Kategori {kategori.Id} için yeterli konu bulunamadı.");
+            ModelState.AddModelError("adet", $"Kategori {kategori.Id} için yeterli konu bulunamadı.");
             return View(model);
         }
         konular[kategori.Id] = konus;
@@ -115,10 +115,11 @@ public class HomeController : Controller
                 .Take(model.KonuAdet)
                 .ToList();
 
-            if (kategoriKonular.Count < model.KonuAdet)
-            {
-                ModelState.AddModelError("", $"Kategori {kategori.Id} için yeterli konu bulunamadı.");
-                return View(model);
+                if (kategoriKonular.Count < model.KonuAdet)
+                {
+                    ModelState.AddModelError("adet", $"Kategori {kategori.Id} için yeterli konu bulunamadı.");
+                    //  return View(model);
+                    continue;
             }
 
             ogrenciKategoriKonular.Add(kategoriKonular);
