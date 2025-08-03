@@ -1,76 +1,64 @@
+@using System.Text.Json
 @{
     ViewData["Title"] = "Tablo Oluştur";
-    // Controller'da: Dictionary<int, List<List<Konu>>> olarak gönderiliyor
-    var tamListe = ViewBag.tamListe as Dictionary<int, List<List<GelisimTablosu.Models.Konu>>>;
     string[] dalim = { "Yazılım Geliştirme", "Ağ İşletmenliği" };
-    int d = (int)ViewBag.Dal;
+    int d = ViewBag.Dal != null ? (int)ViewBag.Dal : 0;
 }
 
-@if (tamListe != null)
-{
-    foreach (var tablo in tamListe)
-    {
-        // tablo.Key: int (adet index)
-        // tablo.Value: List<List<Konu>> (her kategori için konu listeleri)
-       
-            <div style="page-break-after: always;" class="print-content">
-                <h5 class="text-center"><strong>ŞEHİT UZMAN ÇAVUŞ HARUN ŞENÖZÜAR MESLEKİ VE TEKNİK ANADOLU LİSESİ</strong></h5>
-                <h5 class="text-center"><strong>İŞLETMELERDE MESLEK EĞİTİMİNE DEVAM EDEN ÖĞRENCİLERE AİT GELİŞİM TABLOSU</strong></h5>
-
-                <div class="row  justify-content-end">
-                    <div class="col-2 ms-auto"><strong>İME-GELİŞİM</strong></div>
-                </div>
-                <div class="row">
-                    <div class="col"><strong>İşletmenin Adı :</strong></div>
-                    <div class="col"><strong>Meslek Alan/Dalı : Bilişim Teknolojileri / @dalim[d] </strong></div>
-                </div>
-                <div class="row">
-                    <div class="col"><strong>Öğrencinin Adı</strong></div>
-                    <div class="col"><strong>Sınıfı :</strong></div>
-                </div>
- 
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Kategori</th>
-                            <th>Konu Başlığı</th>
-                            <th>Açıklama</th>
-                            <th>Yapıldı</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var kategoriKonuListesi in tablo.Value)
-        {
-                        @foreach (var konu in kategoriKonuListesi)
-                        {
-                            <tr>
-                                <td>@konu.Kategori?.Ad</td>
-                                <td>@konu.Baslik</td>
-                                <td>@konu.Aciklama</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                 }       }
-                    </tbody>
-                </table>
-                
-                <div class="row">
-                    <div class="col-12"><strong>AÇIKLAMA: </strong></div>
-                    <div class="col-12">
-                        <ol>
-                            <li>Bu gelişim tablosu, zümre öğretmenlerince öğretim programları esas alınarak her meslek alanı için ayrı hazırlanacak ve uygulamaya konulacaktır.</li>
-                            <li>Gelişim tablosu, işletmelerde öğretim programlarına uygun eğitim yapılıp yapılmadığını ve öğrencilerin telâfi eğitimine ihtiyaç duyulup duyulmadığının tespiti amacıyla kullanılacaktır.</li>
-                        </ol>
-                    </div>
-                </div>
-                <div class="row  g-2">
-                    <div class="col"><br /><br /><br /><strong>İşletme İmza</strong></div>
-                    <div class="col"></div>
-                </div>
-            </div>
+<div id="tablo-container"></div>
+<script>
+    // Razor ile JSON'u güvenli şekilde serialize ediyoruz
+    var tamListe = JSON.parse('@Html.Raw(JsonSerializer.Serialize(ViewBag.tamListe ?? null))');
+    if(tamListe==null || tamListe.length === 0) {
+        document.getElementById('tablo-container').innerHTML = '<div class="alert alert-danger">Veri bulunamadı.</div>';
+    }
+    // Dal isimlerini enum'dan alıyoruz
+    var dalim = ["Yazılım Geliştirme", "Ağ İşletmenliği"];
+    var d = @d;
+    var sayac = 1;
+    function createTabloHtml(tablo) {
+        // tablo: { Student: {...}, Konular: [...] }
+        var html = '';
+        html += '<div style="page-break-after: always;" class="print-content">';
+        html += '<h5 class="text-center"><strong>ŞEHİT UZMAN ÇAVUŞ HARUN ŞENÖZÜAR MESLEKİ VE TEKNİK ANADOLU LİSESİ</strong></h5>';
+        html += '<h5 class="text-center"><strong>İŞLETMELERDE MESLEK EĞİTİMİNE DEVAM EDEN ÖĞRENCİLERE AİT GELİŞİM TABLOSU</strong></h5>';
+        html += '<div class="row  justify-content-end"><div class="col-2 ms-auto"><strong>İME-GELİŞİM</strong></div></div>';
+        html += '<div class="row"><div class="col"><strong>İşletmenin Adı :' + (tablo.Student?.Isletme ?? "") + '</strong></div>';
+        html += '<div class="col"><strong>Meslek Alan/Dalı : Bilişim Teknolojileri / ' + dalim[d] + '</strong></div></div>';
+        html += '<div class="row"><div class="col"><strong>Öğrencinin Adı: ' + (tablo.Student?.Ad ?? "") + '</strong></div>';
+        html += '<div class="col"><strong>Sınıfı : ' + (tablo.Student?.Sinif ?? "") + '</strong></div></div>';
+        html += '<table class="table table-bordered"><thead><tr><th>Kategori</th><th>Konu Başlığı</th><th>Yapıldı</th></tr></thead><tbody>';
+        // Konular: kategori bazında
+        if (Array.isArray(tablo.Konular)) {
+            tablo.Konular.forEach(function(kategoriKonular) {
+                // kategoriKonular: array of konu objeleri
+                kategoriKonular.forEach(function(konu) {
+                    html += '<tr>';
+                    html += '<td>' + sayac + '</td>';
+                    html += '<td>' + (konu.Baslik ?? "") + '</td>';
+                    html += '<td></td>';
+                    html += '</tr>';
+                    sayac++;
+                });
+            });
         }
-    
-}
-else
-{
-    <div class="alert alert-danger">Tablo verisi bulunamadı.</div>
-}
+        html += '</tbody></table>';
+        html += '<div class="row"><div class="col-12"><strong>AÇIKLAMA: </strong></div>';
+        html += '<div class="col-12"><ol>';
+        html += '<li>Bu gelişim tablosu, zümre öğretmenlerince öğretim programları esas alınarak her meslek alanı için ayrı hazırlanacak ve uygulamaya konulacaktır.</li>';
+        html += '<li>Gelişim tablosu, işletmelerde öğretim programlarına uygun eğitim yapılıp yapılmadığını ve öğrencilerin telâfi eğitimine ihtiyaç duyulup duyulmadığının tespiti amacıyla kullanılacaktır.</li>';
+        html += '</ol></div></div>';
+        html += '<div class="row  g-2"><div class="col"><br /><br /><br /><strong>İşletme İmza</strong></div><div class="col"></div></div>';
+        html += '</div>';
+        return html;
+    }
+
+    if (tamListe && Array.isArray(tamListe)) {
+        var container = document.getElementById('tablo-container');
+        tamListe.forEach(function(tablo) {
+            container.innerHTML += createTabloHtml(tablo);
+        });
+    } else {
+        document.getElementById('tablo-container').innerHTML = '<div class="alert alert-danger">Tablo verisi bulunamadı.</div>';
+    }
+</script>

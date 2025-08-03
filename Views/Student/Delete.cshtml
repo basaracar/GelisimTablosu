@@ -1,0 +1,16 @@
+@model GelisimTablosu.Models.Student
+@{
+    ViewData["Title"] = "Öğrenci Sil";
+}
+<h1>Öğrenci Sil</h1>
+<h3>Silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>Ad: @Model.Ad</h4>
+    <h4>Sınıf: @Model.Sinif</h4>
+    <h4>Dal: @Model.Dal.ToString()</h4>
+</div>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Sil</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>

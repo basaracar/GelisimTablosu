@@ -1,0 +1,15 @@
+@model GelisimTablosu.Models.Student
+@{
+    ViewData["Title"] = "Öğrenci Detay";
+}
+<h1>Öğrenci Detay</h1>
+<div>
+    <h4>Ad: @Model.Ad</h4>
+    <h4>Sınıf: @Model.Sinif</h4>
+    <h4>Dal: @Model.Dal.ToString()</h4>
+     <h4>İşletme: @Model.Isletme</h4>
+</div>
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Düzenle</a> |
+    <a asp-action="Index">Listeye Dön</a>
+</p>

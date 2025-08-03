@@ -13,6 +13,8 @@ namespace GelisimTablosu.Models
         public DbSet<EgitimYili> EgitimYillari { get; set; }
         public DbSet<Takvim> Takvimler { get; set; }
 
+        public DbSet<Student> Students { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

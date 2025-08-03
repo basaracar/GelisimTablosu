@@ -77,8 +77,7 @@ public class HomeController : Controller
     {
         return View(model);
     }
-      ViewBag.Dal = model.Dal;
-    // Kategorileri al
+    var students = await _context.Students.Where(x => x.Dal == model.Dal).ToListAsync();
     var kategoriler = await _context.Kategoriler.Where(x => x.Dal == model.Dal).ToListAsync();
     if (kategoriler.Count == 0)
     {
@@ -86,7 +85,6 @@ public class HomeController : Controller
         return View(model);
     }
 
-    // Kategorilere göre konuları al ve rastgele karıştır
     var konular = new Dictionary<int, List<Konu>>();
     foreach (var kategori in kategoriler)
     {
@@ -103,33 +101,43 @@ public class HomeController : Controller
     }
 
     // Her öğrenci için konuların atandığı liste
-    var tamListe = new Dictionary<int, List<List<Konu>>>();
-    for (int i = 0; i < model.Adet; i++) // Her öğrenci için
+    var resultList = new List<object>();
+    for (int i = 0; i < students.Count(); i++)
     {
-        var ogrenciKategoriKonular = new List<List<Konu>>();
+        var ogrenci = students[i];
+        var ogrenciKategoriKonular = new List<object>();
         foreach (var kategori in kategoriler)
         {
-            // Her kategori için model.KonuAdet kadar konu seç
             var kategoriKonular = konular[kategori.Id]
                 .Skip(i * model.KonuAdet)
                 .Take(model.KonuAdet)
                 .ToList();
 
-                if (kategoriKonular.Count < model.KonuAdet)
-                {
-                    ModelState.AddModelError("adet", $"Kategori {kategori.Id} için yeterli konu bulunamadı.");
-                    //  return View(model);
-                    continue;
+            if (kategoriKonular.Count < model.KonuAdet)
+            {
+                ModelState.AddModelError("adet", $"Kategori {kategori.Id} için yeterli konu bulunamadı.");
+                continue;
             }
-
-            ogrenciKategoriKonular.Add(kategoriKonular);
+            ogrenciKategoriKonular.Add(kategoriKonular.Select(k => new {
+                k.Id,
+                Baslik = k.Baslik,
+                k.KategoriId
+            }));
         }
-        tamListe.Add(i, ogrenciKategoriKonular);
+        resultList.Add(new {
+            Student = new
+            {
+                ogrenci.Id,
+                ogrenci.Ad,
+                ogrenci.Sinif,
+                Dal = ogrenci.Dal.ToString(),
+                Isletme = ogrenci.Isletme ?? "N/A"
+            },
+            Konular = ogrenciKategoriKonular
+        });
     }
-
-    ViewBag.tamListe = tamListe;
-    ViewBag.Dal = model.Dal;
-    return View("CreateTablo");
+    ViewBag.tamListe= resultList;
+        return View("CreateTablo");
 }
     
 
