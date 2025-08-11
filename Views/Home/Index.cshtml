@@ -15,11 +15,7 @@
         <select asp-for="Dal" class="form-control" asp-items="Html.GetEnumSelectList<GelisimTablosu.Models.Dal>()"></select>
         <span asp-validation-for="Dal" class="text-danger"></span>
     </div>
-    <div class="form-group mb-3">
-        <label asp-for="Adet" class="control-label"></label>
-        <input asp-for="Adet" class="form-control" />
-        <span asp-validation-for="Adet" class="text-danger"></span>
-    </div>
+    
      <div class="form-group mb-3">
         <label asp-for="KonuAdet" class="control-label"></label>
         <input asp-for="KonuAdet" class="form-control" value="1" />

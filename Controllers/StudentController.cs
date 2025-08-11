@@ -14,6 +14,20 @@ namespace GelisimTablosu.Controllers
         {
             _context = context;
         }
+        public IActionResult ViewTablo(int id)
+        {
+            var student = _context.Students.FirstOrDefault(s => s.Id == id);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            var konuAtamalar = _context.OgrenciKonuAtamalari
+                .Include(o => o.Konu)
+                .Where(o => o.StudentId == id)
+                .ToList();
+            ViewBag.Student= student;
+            return View(konuAtamalar);
+        }
 
         // GET: Student
         public async Task<IActionResult> Index()
@@ -101,6 +115,7 @@ namespace GelisimTablosu.Controllers
             if (student != null)
             {
                 _context.Students.Remove(student);
+                _context.OgrenciKonuAtamalari.RemoveRange(_context.OgrenciKonuAtamalari.Where(o => o.StudentId == id));
                 await _context.SaveChangesAsync();
             }
             return RedirectToAction(nameof(Index));

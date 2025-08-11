@@ -8,12 +8,13 @@ namespace GelisimTablosu.Models
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
+
         public DbSet<Kategori> Kategoriler { get; set; }
         public DbSet<Konu> Konular { get; set; }
         public DbSet<EgitimYili> EgitimYillari { get; set; }
         public DbSet<Takvim> Takvimler { get; set; }
-
         public DbSet<Student> Students { get; set; }
+        public DbSet<OgrenciKonuAtama> OgrenciKonuAtamalari { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
