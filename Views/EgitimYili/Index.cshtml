@@ -44,9 +44,15 @@
 
                         @if (takvimler[item.Id][1] == true)
                         {
-                            <a class="btn btn-sm btn-info" asp-action="TakvimGor" asp-controller="Home"
-                                asp-route-id="@item.Id">Yazilim Gelişim Tablosu Göster</a>
+                            <form asp-action="CreateTablo" asp-controller="Home" method="post">
+                                    <input name="KonuAdet" value="1" type="hidden" />
 
+                                
+
+                                <input type="hidden" name="Dal" value="0" />
+                                <input type="hidden" name="EgitimYili" value="@item.Id" />
+                                <button type="submit" class="btn btn-sm btn-outline-info">Yazilim Gelişim Tablosu Göster</button>
+                            </form>
                         }
                         else
                         {
@@ -67,8 +73,13 @@
                     <td>
                         @if (takvimler[item.Id][2] == true)
                         {
-                            <a class="btn btn-sm btn-warning" asp-action="TakvimGor" asp-controller="Home"
-                                asp-route-id="@item.Id">Ağ Gelişim Tablosu Göster</a>
+                           <form asp-action="CreateTablo" asp-controller="Home" method="post">
+                            
+                                <input type="hidden" name="KonuAdet" value="1" />
+                                <input type="hidden" name="Dal" value="1" />
+                                <input type="hidden" name="EgitimYili" value="@item.Id" />
+                                <button type="submit" class="btn btn-sm btn-outline-info">Yazilim Gelişim Tablosu Gör</button>
+                            </form>
 
                         }
                         else
