@@ -24,10 +24,16 @@
      <div class="form-group mb-3">
         <label asp-for="EgitimYili" class="control-label"></label>
         <select asp-for="EgitimYili" class="form-control">
-            <option value="">Seçiniz</option>
+         
             @foreach (var egitimYili in ViewBag.EgitimYillari)
             {
+                if(ViewBag.egitimYili!=null&& ViewBag.egitimYili == egitimYili.Id)
+                {
+                    <option value="@egitimYili.Id" selected>@egitimYili.Ad</option>
+                }
+                else{
                 <option value="@egitimYili.Id">@egitimYili.Ad</option>
+                }
             }
         </select>
         <span asp-validation-for="EgitimYili" class="text-danger"></span>

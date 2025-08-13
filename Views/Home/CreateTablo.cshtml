@@ -27,16 +27,19 @@
         html += '<div class="col"><strong>Meslek Alan/Dalı : Bilişim Teknolojileri / ' + dalim[d] + '</strong></div></div>';
         html += '<div class="row"><div class="col"><strong>Öğrencinin Adı: ' + (tablo.Student?.Ad ?? "") + '</strong></div>';
         html += '<div class="col"><strong>Sınıfı : ' + (tablo.Student?.Sinif ?? "") + '</strong></div></div>';
-        html += '<table class="table table-bordered"><thead><tr><th>Kategori</th><th>Konu Başlığı</th><th>Yapıldı</th></tr></thead><tbody>';
+        html += '<table class="table table-bordered"><thead><tr><th>Kategori</th><th>Konu Başlığı</th><th>Açıklama</th><th>Yapıldı</th></tr></thead><tbody>';
         // Konular: kategori bazında
         if (Array.isArray(tablo.Konular)) {
+            sayac=1;
             tablo.Konular.forEach(function(kategoriKonular) {
                 if (Array.isArray(kategoriKonular)) {
                     kategoriKonular.forEach(function(konu) {
                         html += '<tr>';
                         html += '<td>' + sayac + '</td>';
                         html += '<td>' + (konu.Baslik ?? "") + '</td>';
+                        html += '<td>' + (konu.Aciklama ?? "") + '</td>';
                         html += '<td></td>';
+                    
                         html += '</tr>';
                         sayac++;
                     });
@@ -44,7 +47,9 @@
                     html += '<tr>';
                     html += '<td>' + sayac + '</td>';
                     html += '<td>' + (kategoriKonular.Baslik ?? "") + '</td>';
+                    html += '<td>' + (kategoriKonular.Aciklama ?? "") + '</td>';
                     html += '<td></td>';
+                    
                     html += '</tr>';
                     sayac++;
                 }

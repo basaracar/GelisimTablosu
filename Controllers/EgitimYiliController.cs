@@ -22,27 +22,29 @@ namespace GelisimTablosu.Controllers
             foreach (var item in list)
             {
                 var bayraklar = new List<bool>();
+                // Takvim var mı?
                 bayraklar.Add(await _context.Takvimler.AnyAsync(x => x.EgitimYiliId == item.Id));
-                if (await _context.OgrenciKonuAtamalari.AnyAsync(x => x.EgitimYiliId == item.Id))
-                {
-                    var yazilimOgrencisi = await _context.OgrenciKonuAtamalari
-                        .Include(x => x.Student)
-                        .AnyAsync(x => x.EgitimYiliId == item.Id && x.Student.Dal == Dal.Yazilim);
-                    bayraklar.Add(yazilimOgrencisi);
-                    var agOgrencisi = await _context.OgrenciKonuAtamalari
-                        .Include(x => x.Student)
-                        .AnyAsync(x => x.EgitimYiliId == item.Id && x.Student.Dal == Dal.Ag);
-                    bayraklar.Add(agOgrencisi);
-                }
-                else
-                {
-                    // Eğer hiç öğrenci ataması yoksa, false ekle
-                    bayraklar.Add(false); // Yazılım
-                    bayraklar.Add(false); // Ağ
-                }
-                takvimler.Add(item.Id, bayraklar);
-            }
 
+                // Yazılım öğrencisi var mı?
+                var yazilimOgrencisi = await _context.OgrenciKonuAtamalari
+                    .Include(x => x.Student)
+                    .AnyAsync(x => x.EgitimYiliId == item.Id && x.Student != null && x.Student.Dal == Dal.Yazilim);
+                bayraklar.Add(yazilimOgrencisi);
+
+                // Ağ öğrencisi var mı?
+                var agOgrencisi = await _context.OgrenciKonuAtamalari
+                    .Include(x => x.Student)
+                    .AnyAsync(x => x.EgitimYiliId == item.Id && x.Student != null && x.Student.Dal == Dal.Ag);
+                bayraklar.Add(agOgrencisi);
+
+                // Her zaman 3 elemanlı olacak şekilde ekle
+                while (bayraklar.Count < 3)
+                {
+                    bayraklar.Add(false);
+                }
+                takvimler[item.Id] = bayraklar;
+            }
+            ViewBag.OgreciVarmi=await _context.Students.AnyAsync();
             ViewBag.Takvimler = takvimler;  
             return View(list);
         }

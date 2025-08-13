@@ -28,6 +28,13 @@ namespace GelisimTablosu.Controllers
             ViewBag.Student = student;
             return View(konuAtamalar);
         }
+        public async Task<IActionResult> GelisimSil()
+        {
+         
+            _context.OgrenciKonuAtamalari.RemoveRange(await _context.OgrenciKonuAtamalari.ToListAsync());
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index", "EgitimYili");
+        }
 
         // GET: Student
         public async Task<IActionResult> Index()
@@ -39,7 +46,7 @@ namespace GelisimTablosu.Controllers
                 gelisimListe.Add(item.Id, await _context.OgrenciKonuAtamalari
                     .AnyAsync(o => o.StudentId == item.Id));
             }
-          
+
 
             ViewBag.GelisimListe = gelisimListe;
             return View(students);

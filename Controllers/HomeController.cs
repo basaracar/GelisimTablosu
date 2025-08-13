@@ -9,15 +9,18 @@ namespace GelisimTablosu.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-      private readonly AppDbContext _context;
+    private readonly AppDbContext _context;
 
-    public HomeController(ILogger<HomeController> logger, AppDbContext context){
-        _context = context; 
+    public HomeController(ILogger<HomeController> logger, AppDbContext context)
+    {
+        _context = context;
         _logger = logger;
     }
 
-    public IActionResult Index()
+    public IActionResult Index(int? id)
     {
+        if (id != null)
+            ViewBag.egitimYili = id;
         ViewBag.EgitimYillari = _context.EgitimYillari.ToList();
         return View();
     }
@@ -25,13 +28,13 @@ public class HomeController : Controller
     [Route("/Home/Takvim/{id?}")]
     public IActionResult Takvim(int id)
     {
-       var egitimYili = _context.EgitimYillari.FirstOrDefault(x => x.Id == id);
-       ViewBag.EgitimYili = egitimYili.Id;
-       
+        var egitimYili = _context.EgitimYillari.FirstOrDefault(x => x.Id == id);
+        ViewBag.EgitimYili = egitimYili.Id;
+
         var startDate = egitimYili.BaslangicTarihi;
         var endDate = egitimYili.BitisTarihi;
         var takvim = Helper.GetWeekdaysByMonthWeeks(startDate, endDate);
-     //   ViewBag.Takvim = takvim;
+        //   ViewBag.Takvim = takvim;
         return View(takvim);
     }
     [HttpPost]
@@ -69,19 +72,19 @@ public class HomeController : Controller
         }
         return View(takvim);
     }
-   
+
     [HttpPost]
     async public Task<IActionResult> CreateTablo(GelisimTablosu.Models.ViewModels.TableModel model)
-{
-    if (!ModelState.IsValid)
     {
-        return View(model);
-    }
-    
+        if (!ModelState.IsValid)
+        {
+            return View(model);
+        }
+      
         if (!await _context.OgrenciKonuAtamalari.Include("Student").AnyAsync(x => x.EgitimYiliId == model.EgitimYili && x.Student.Dal == model.Dal))
         {
 
-
+              var resultList = new List<object>();
             var students = await _context.Students.Where(x => x.Dal == model.Dal).ToListAsync();
             var kategoriler = await _context.Kategoriler.Where(x => x.Dal == model.Dal).ToListAsync();
             if (kategoriler.Count == 0)
@@ -106,7 +109,7 @@ public class HomeController : Controller
             }
 
             // Her öğrenci için konuların atandığı liste
-            var resultList = new List<object>();
+            
             var ogrenciKonular = new List<OgrenciKonuAtama>();
             for (int i = 0; i < students.Count(); i++)
             {
@@ -125,17 +128,24 @@ public class HomeController : Controller
                         continue;
                     }
                     ogrenciKategoriKonular.Add(kategoriKonular.Select(k => new
+                        {
+                            k.Id,
+                            Baslik = k.Baslik,
+                            Aciklama =k.Aciklama,
+                            k.KategoriId
+                        }));
+                    foreach (var item in kategoriKonular)
                     {
-                        k.Id,
-                        Baslik = k.Baslik,
-                        k.KategoriId
-                    }));
-                    ogrenciKonular.Add(new OgrenciKonuAtama
-                    {
-                        StudentId = ogrenci.Id,
-                        EgitimYiliId = model.EgitimYili,
-                        KonuId = kategoriKonular.First().Id
-                    });
+                        
+                        ogrenciKonular.Add(new OgrenciKonuAtama
+                        {
+                            StudentId = ogrenci.Id,
+                            EgitimYiliId = model.EgitimYili,
+                            KonuId = item.Id
+                        });
+                    }
+
+
 
                 }
                 resultList.Add(new
@@ -150,6 +160,8 @@ public class HomeController : Controller
                     },
                     Konular = ogrenciKategoriKonular
                 });
+
+
             }
             await _context.OgrenciKonuAtamalari.AddRangeAsync(ogrenciKonular);
             await _context.SaveChangesAsync();
@@ -184,6 +196,7 @@ public class HomeController : Controller
                     {
                         Id = a.Konu.Id,
                         Baslik = a.Konu.Baslik,
+                        Aciklama = a.Konu.Aciklama,
                         KategoriId = a.Konu.KategoriId
                     } : null).Where(k => k != null).ToList()
                 })
@@ -192,8 +205,8 @@ public class HomeController : Controller
             ViewBag.tamListe = resultList;
             return View("CreateTablo");
         }
-}
-    
+    }
+
 
     [HttpPost]
     public IActionResult TakvimSil(int id)

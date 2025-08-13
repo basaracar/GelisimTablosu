@@ -15,39 +15,88 @@
         </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.Ad</td>
-            <td>@item.BaslangicTarihi.ToString("dd.MM.yyyy")</td>
-            <td>@item.BitisTarihi.ToString("dd.MM.yyyy")</td>
-            <td>
-                <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.Id">Düzenle</a>
-                <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Ad</td>
+                <td>@item.BaslangicTarihi.ToString("dd.MM.yyyy")</td>
+                <td>@item.BitisTarihi.ToString("dd.MM.yyyy")</td>
+                <td>
+                    <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.Id">Düzenle</a>
+                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
 
-                @if(takvimler[item.Id][0]==true){
-                        <a class="btn btn-sm btn-success" asp-action="TakvimGor" asp-controller="Home" asp-route-id="@item.Id">Takvim Goster</a>
-        
-                } else {
-                         <a class="btn btn-sm btn-success" asp-action="Takvim" asp-controller="Home" asp-route-id="@item.Id">Takvim Ekle</a>
-        
+                    @if (takvimler[item.Id][0] == true)
+                    {
+                        <a class="btn btn-sm btn-success" asp-action="TakvimGor" asp-controller="Home"
+                            asp-route-id="@item.Id">Takvim Goster</a>
+
+                    }
+                    else
+                    {
+                        <a class="btn btn-sm btn-success" asp-action="Takvim" asp-controller="Home"
+                            asp-route-id="@item.Id">Takvim Ekle</a>
+
+                    }
+                </td>
+                @if (ViewBag.OgreciVarmi)
+                {
+                    <td>
+
+                        @if (takvimler[item.Id][1] == true)
+                        {
+                            <a class="btn btn-sm btn-info" asp-action="TakvimGor" asp-controller="Home"
+                                asp-route-id="@item.Id">Yazilim Gelişim Tablosu Göster</a>
+
+                        }
+                        else
+                        {
+                            <form asp-action="CreateTablo" asp-controller="Home" method="post">
+                                <div class="form-group mb-3">
+                                    <label class="control-label">Konu Adeti</label>
+                                    <input name="KonuAdet" class="form-control" value="1" type="number" />
+
+                                </div>
+
+                                <input type="hidden" name="Dal" value="0" />
+                                <input type="hidden" name="EgitimYili" value="@item.Id" />
+                                <button type="submit" class="btn btn-sm btn-outline-info">Yazilim Gelişim Tablosu Ekle</button>
+                            </form>
+                        }
+
+                    </td>
+                    <td>
+                        @if (takvimler[item.Id][2] == true)
+                        {
+                            <a class="btn btn-sm btn-warning" asp-action="TakvimGor" asp-controller="Home"
+                                asp-route-id="@item.Id">Ağ Gelişim Tablosu Göster</a>
+
+                        }
+                        else
+                        {
+                            <form asp-action="CreateTablo" asp-controller="Home" method="post">
+                                <div class="form-group mb-3">
+                                    <label class="control-label">Konu Adeti</label>
+                                    <input name="KonuAdet" class="form-control" value="1" type="number" />
+
+                                </div>
+                                <input type="hidden" name="Dal" value="1" />
+                                <input type="hidden" name="EgitimYili" value="@item.Id" />
+                                <button type="submit" class="btn btn-sm btn-outline-warning">Ağ Gelişim Tablosu Ekle</button>
+                            </form>
+
+                        }
+
+                    </td>
                 }
-                 @if(takvimler[item.Id][1]==true){
-                        <a class="btn btn-sm btn-success" asp-action="TakvimGor" asp-controller="Home" asp-route-id="@item.Id">Yazilim Gelişim Tablosu Göster</a>
-        
-                } else {
-                         <a class="btn btn-sm btn-success" asp-action="Takvim" asp-controller="Home" asp-route-id="@item.Id">Yazilim Gelişim Tablosu Ekle</a>
-        
+                else
+                {
+
+                    <span>&nbsp;</span>
+
                 }
-                     @if(takvimler[item.Id][2]==true){
-                        <a class="btn btn-sm btn-success" asp-action="TakvimGor" asp-controller="Home" asp-route-id="@item.Id">Ağ Gelişim Tablosu Göster</a>
-        
-                } else {
-                         <a class="btn btn-sm btn-success" asp-action="Takvim" asp-controller="Home" asp-route-id="@item.Id">Ağ Gelişim Tablosu Ekle</a>
-        
-                }
-              </td>
-        </tr>
-    }
+
+            </tr>
+        }
     </tbody>
 </table>
+</td>
