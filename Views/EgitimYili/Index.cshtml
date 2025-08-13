@@ -1,7 +1,7 @@
 @model IEnumerable<GelisimTablosu.Models.EgitimYili>
 @{
     ViewData["Title"] = "Eğitim Yılları";
-    var takvimler = ViewBag.Takvimler as Dictionary<int, bool>;
+    var takvimler = ViewBag.Takvimler as Dictionary<int, List<bool>>;
 }
 <h2>Eğitim Yılları</h2>
 <a class="btn btn-primary mb-3" asp-action="Create">Yeni Eğitim Yılı Ekle</a>
@@ -25,11 +25,25 @@
                 <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.Id">Düzenle</a>
                 <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
 
-                @if(takvimler[item.Id]==true){
+                @if(takvimler[item.Id][0]==true){
                         <a class="btn btn-sm btn-success" asp-action="TakvimGor" asp-controller="Home" asp-route-id="@item.Id">Takvim Goster</a>
         
                 } else {
                          <a class="btn btn-sm btn-success" asp-action="Takvim" asp-controller="Home" asp-route-id="@item.Id">Takvim Ekle</a>
+        
+                }
+                 @if(takvimler[item.Id][1]==true){
+                        <a class="btn btn-sm btn-success" asp-action="TakvimGor" asp-controller="Home" asp-route-id="@item.Id">Yazilim Gelişim Tablosu Göster</a>
+        
+                } else {
+                         <a class="btn btn-sm btn-success" asp-action="Takvim" asp-controller="Home" asp-route-id="@item.Id">Yazilim Gelişim Tablosu Ekle</a>
+        
+                }
+                     @if(takvimler[item.Id][2]==true){
+                        <a class="btn btn-sm btn-success" asp-action="TakvimGor" asp-controller="Home" asp-route-id="@item.Id">Ağ Gelişim Tablosu Göster</a>
+        
+                } else {
+                         <a class="btn btn-sm btn-success" asp-action="Takvim" asp-controller="Home" asp-route-id="@item.Id">Ağ Gelişim Tablosu Ekle</a>
         
                 }
               </td>

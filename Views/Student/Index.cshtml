@@ -26,7 +26,15 @@
             <a asp-action="Edit" asp-route-id="@item.Id">Düzenle</a> |
             <a asp-action="Details" asp-route-id="@item.Id">Detay</a> |
             <a asp-action="Delete" asp-route-id="@item.Id">Sil</a> |
-            <a asp-action="ViewTablo" asp-route-id="@item.Id">Tablo Gör</a>
+            @if (ViewBag.GelisimListe != null && ViewBag.GelisimListe.ContainsKey(item.Id) && ViewBag.GelisimListe[item.Id])
+            {
+                 <a asp-action="ViewTablo" asp-route-id="@item.Id">Tablo Gör</a>
+            }
+            else
+            {
+                <a asp-action="CreateTablo" asp-route-id="@item.Id">Gelişim Tablosu Oluştur</a>
+            }
+           
         </td>
     </tr>
 }

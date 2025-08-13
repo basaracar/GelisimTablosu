@@ -25,7 +25,7 @@ namespace GelisimTablosu.Controllers
                 .Include(o => o.Konu)
                 .Where(o => o.StudentId == id)
                 .ToList();
-            ViewBag.Student= student;
+            ViewBag.Student = student;
             return View(konuAtamalar);
         }
 
@@ -33,6 +33,15 @@ namespace GelisimTablosu.Controllers
         public async Task<IActionResult> Index()
         {
             var students = await _context.Students.ToListAsync();
+            var gelisimListe = new Dictionary<int, bool>();
+            foreach (var item in students)
+            {
+                gelisimListe.Add(item.Id, await _context.OgrenciKonuAtamalari
+                    .AnyAsync(o => o.StudentId == item.Id));
+            }
+          
+
+            ViewBag.GelisimListe = gelisimListe;
             return View(students);
         }
 
