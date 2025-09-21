@@ -42,11 +42,21 @@ namespace GelisimTablosu.Models
                 await SaveChangesAsync();
             }
         }
+        public async Task SeedStudent()
+        {
+            if (!Students.Any())
+            {
+                var json = File.ReadAllText("Data/Ogrenciler.json");
+                var ogrenciler = JsonSerializer.Deserialize<List<Student>>(json);
+                await Students.AddRangeAsync(ogrenciler);
+                await SaveChangesAsync();
+            }
+        }
         public async Task SeedKonu()
         {
             if (!Konular.Any())
             {
-                var json = File.ReadAllText("Data/Konular.json");
+                var json = File.ReadAllText("Data/yeniKonular.json");
                 var konular = JsonSerializer.Deserialize<List<Konu>>(json);
                 await Konular.AddRangeAsync(konular);
                 await SaveChangesAsync();

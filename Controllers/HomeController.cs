@@ -76,67 +76,82 @@ public class HomeController : Controller
     [HttpPost]
     async public Task<IActionResult> CreateTablo(GelisimTablosu.Models.ViewModels.TableModel model)
     {
+        // ModelState geçerli mi kontrol edilir
         if (!ModelState.IsValid)
         {
+            // Model geçerli değilse aynı view tekrar döndürülür
             return View(model);
         }
-      
+        // Seçilen dal ViewBag'e atanır
+        ViewBag.Dal = model.Dal;
+        // Eğer bu eğitim yılı ve dal için daha önce atama yapılmamışsa
         if (!await _context.OgrenciKonuAtamalari.Include("Student").AnyAsync(x => x.EgitimYiliId == model.EgitimYili && x.Student.Dal == model.Dal))
         {
-
-              var resultList = new List<object>();
+            // Sonuçları tutacak liste oluşturulur
+            var resultList = new List<object>();
+            // Seçilen dala ait öğrenciler çekilir
             var students = await _context.Students.Where(x => x.Dal == model.Dal).ToListAsync();
+            // Seçilen dala ait kategoriler çekilir
             var kategoriler = await _context.Kategoriler.Where(x => x.Dal == model.Dal).ToListAsync();
+            // Eğer kategori yoksa hata döndürülür
             if (kategoriler.Count == 0)
             {
                 ModelState.AddModelError("Adet", "Bu dalda kategori bulunamadı.");
                 return View(model);
             }
 
+            // Her kategori için konular sözlüğü oluşturulur
             var konular = new Dictionary<int, List<Konu>>();
             foreach (var kategori in kategoriler)
             {
+                // Her kategori için rastgele konular seçilir
                 var konus = (await _context.Konular
                     .Where(x => x.KategoriId == kategori.Id).ToListAsync())
                     .OrderBy(x => Guid.NewGuid())
                     .Take(students.Count() * model.KonuAdet).ToList();
+                // Yeterli konu yoksa hata döndürülür
                 if (konus.Count < students.Count() * model.KonuAdet)
                 {
                     ModelState.AddModelError("adet", $"Kategori {kategori.Id} için yeterli konu bulunamadı.");
                     return View(model);
                 }
+                // Seçilen konular sözlüğe eklenir
                 konular[kategori.Id] = konus;
             }
 
-            // Her öğrenci için konuların atandığı liste
-            
+            // Her öğrenci için konuların atandığı liste oluşturulur
             var ogrenciKonular = new List<OgrenciKonuAtama>();
             for (int i = 0; i < students.Count(); i++)
             {
+                // İlgili öğrenci alınır
                 var ogrenci = students[i];
+                // Öğrencinin kategorilere göre konuları tutulacak liste
                 var ogrenciKategoriKonular = new List<object>();
                 foreach (var kategori in kategoriler)
                 {
+                    // O öğrenciye atanacak konular seçilir
                     var kategoriKonular = konular[kategori.Id]
                         .Skip(i * model.KonuAdet)
                         .Take(model.KonuAdet)
                         .ToList();
 
+                    // Yeterli konu yoksa hata eklenir ve devam edilir
                     if (kategoriKonular.Count < model.KonuAdet)
                     {
                         ModelState.AddModelError("adet", $"Kategori {kategori.Id} için yeterli konu bulunamadı.");
                         continue;
                     }
+                    // Öğrenciye atanacak konular listeye eklenir
                     ogrenciKategoriKonular.Add(kategoriKonular.Select(k => new
-                        {
-                            k.Id,
-                            Baslik = k.Baslik,
-                            Aciklama =k.Aciklama,
-                            k.KategoriId
-                        }));
+                    {
+                        k.Id,
+                        Baslik = k.Baslik,
+                        Aciklama = k.Aciklama,
+                        KategoriId = k.Kategori?.Ad
+                    }));
+                    // Her konu için OgrenciKonuAtama nesnesi oluşturulur
                     foreach (var item in kategoriKonular)
                     {
-                        
                         ogrenciKonular.Add(new OgrenciKonuAtama
                         {
                             StudentId = ogrenci.Id,
@@ -144,10 +159,8 @@ public class HomeController : Controller
                             KonuId = item.Id
                         });
                     }
-
-
-
                 }
+                // Sonuç listesine öğrenci ve konuları eklenir
                 resultList.Add(new
                 {
                     Student = new
@@ -160,15 +173,18 @@ public class HomeController : Controller
                     },
                     Konular = ogrenciKategoriKonular
                 });
-
-
             }
+            // OgrenciKonuAtama nesneleri veritabanına eklenir
             await _context.OgrenciKonuAtamalari.AddRangeAsync(ogrenciKonular);
+            // Değişiklikler kaydedilir
             await _context.SaveChangesAsync();
+            // Sonuçlar ViewBag'e atanır
             ViewBag.tamListe = resultList;
+
+            // CreateTablo view'i döndürülür
             return View("CreateTablo");
         }
-
+        // Eğer daha önce atama yapılmışsa
         else
         {
             // Kayıtlı OgrenciKonuAtama verilerini getir
@@ -176,33 +192,40 @@ public class HomeController : Controller
                 .Include(x => x.Student)
                 .Include(x => x.EgitimYili)
                 .Include(x => x.Konu)
+                .Include(x => x.Konu.Kategori)
                 .Where(x => x.EgitimYiliId == model.EgitimYili && x.Student != null && x.Student.Dal == model.Dal)
                 .ToListAsync();
 
             // resultList formatında ViewBag.tamListe oluştur
             var resultList = kayitliAtamalar
                 .GroupBy(x => x.StudentId)
-                .Select(g => new
+                .Select(g =>
                 {
-                    Student = g.First().Student != null ? new
+                    var firstStudent = g.FirstOrDefault(x => x.Student != null)?.Student;
+                    return new
                     {
-                        Id = g.First().Student.Id,
-                        Ad = g.First().Student.Ad,
-                        Sinif = g.First().Student.Sinif,
-                        Dal = g.First().Student.Dal != null ? g.First().Student.Dal.ToString() : "",
-                        Isletme = g.First().Student.Isletme ?? "N/A"
-                    } : null,
-                    Konular = g.Select(a => a.Konu != null ? new
-                    {
-                        Id = a.Konu.Id,
-                        Baslik = a.Konu.Baslik,
-                        Aciklama = a.Konu.Aciklama,
-                        KategoriId = a.Konu.KategoriId
-                    } : null).Where(k => k != null).ToList()
+                        Student = firstStudent != null ? new
+                        {
+                            Id = firstStudent.Id,
+                            Ad = firstStudent.Ad,
+                            Sinif = firstStudent.Sinif,
+                            Dal = firstStudent.Dal.ToString(),
+                            Isletme = firstStudent.Isletme ?? "N/A"
+                        } : null,
+                        Konular = g.Select(a => a.Konu != null ? new
+                        {
+                            Id = a.Konu.Id,
+                            Baslik = a.Konu.Baslik,
+                            Aciklama = a.Konu.Aciklama,
+                            KategoriId = a.Konu.Kategori?.Ad
+                        } : null).Where(k => k != null).ToList()
+                    };
                 })
                 .ToList();
 
+            // Sonuçlar ViewBag'e atanır
             ViewBag.tamListe = resultList;
+            // CreateTablo view'i döndürülür
             return View("CreateTablo");
         }
     }

@@ -23,15 +23,16 @@ namespace GelisimTablosu.Controllers
             }
             var konuAtamalar = _context.OgrenciKonuAtamalari
                 .Include(o => o.Konu)
+                .Include(o => o.Konu.Kategori)
                 .Where(o => o.StudentId == id)
                 .ToList();
             ViewBag.Student = student;
             return View(konuAtamalar);
         }
-        public async Task<IActionResult> GelisimSil()
+        public async Task<IActionResult> GelisimSil(int id)
         {
-         
-            _context.OgrenciKonuAtamalari.RemoveRange(await _context.OgrenciKonuAtamalari.ToListAsync());
+
+            _context.OgrenciKonuAtamalari.RemoveRange(await _context.OgrenciKonuAtamalari.Where(x => x.EgitimYiliId == id).ToListAsync());
             await _context.SaveChangesAsync();
             return RedirectToAction("Index", "EgitimYili");
         }

@@ -3,6 +3,9 @@
     ViewData["Title"] = "Tablo Oluştur";
     string[] dalim = { "Yazılım Geliştirme", "Ağ İşletmenliği" };
     int d = ViewBag.Dal != null ? (int)ViewBag.Dal : 0;
+
+ 
+
 }
 
 <div id="tablo-container"></div>
@@ -16,6 +19,7 @@
     var dalim = ["Yazılım Geliştirme", "Ağ İşletmenliği"];
     var d = @d;
     var sayac = 1;
+    console.log(d);
     function createTabloHtml(tablo) {
         // tablo: { Student: {...}, Konular: [...] }
         var html = '';
@@ -27,7 +31,7 @@
         html += '<div class="col"><strong>Meslek Alan/Dalı : Bilişim Teknolojileri / ' + dalim[d] + '</strong></div></div>';
         html += '<div class="row"><div class="col"><strong>Öğrencinin Adı: ' + (tablo.Student?.Ad ?? "") + '</strong></div>';
         html += '<div class="col"><strong>Sınıfı : ' + (tablo.Student?.Sinif ?? "") + '</strong></div></div>';
-        html += '<table class="table table-bordered"><thead><tr><th>Kategori</th><th>Konu Başlığı</th><th>Açıklama</th><th>Yapıldı</th></tr></thead><tbody>';
+        html += '<table class="table table-bordered"><thead><tr><th>#</th><th>Kategori</th><th>Konu Başlığı</th><th>Açıklama</th><th>Yapıldı</th></tr></thead><tbody>';
         // Konular: kategori bazında
         if (Array.isArray(tablo.Konular)) {
             sayac=1;
@@ -36,7 +40,9 @@
                     kategoriKonular.forEach(function(konu) {
                         html += '<tr>';
                         html += '<td>' + sayac + '</td>';
+                        html += '<td>' + (konu.KategoriId ?? "") + '</td>';
                         html += '<td>' + (konu.Baslik ?? "") + '</td>';
+                        
                         html += '<td>' + (konu.Aciklama ?? "") + '</td>';
                         html += '<td></td>';
                     
@@ -46,7 +52,9 @@
                 } else if (kategoriKonular && typeof kategoriKonular === 'object') {
                     html += '<tr>';
                     html += '<td>' + sayac + '</td>';
+                    html += '<td>' + (kategoriKonular.KategoriId ?? "") + '</td>';
                     html += '<td>' + (kategoriKonular.Baslik ?? "") + '</td>';
+                    
                     html += '<td>' + (kategoriKonular.Aciklama ?? "") + '</td>';
                     html += '<td></td>';
                     

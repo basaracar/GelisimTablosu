@@ -24,7 +24,7 @@
                 <td>
                     <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.Id">Düzenle</a>
                     <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
-
+                    <a class="btn btn-sm btn-success" asp-action="GelisimSil" asp-controller="Student" asp-route-id="@item.Id">Gelişim Tablolarını Sil</a>
                     @if (takvimler[item.Id][0] == true)
                     {
                         <a class="btn btn-sm btn-success" asp-action="TakvimGor" asp-controller="Home"
@@ -78,7 +78,7 @@
                                 <input type="hidden" name="KonuAdet" value="1" />
                                 <input type="hidden" name="Dal" value="1" />
                                 <input type="hidden" name="EgitimYili" value="@item.Id" />
-                                <button type="submit" class="btn btn-sm btn-outline-info">Yazilim Gelişim Tablosu Gör</button>
+                                <button type="submit" class="btn btn-sm btn-outline-info">Ağ İşletmenliği Gelişim Tablosu Gör</button>
                             </form>
 
                         }
@@ -92,7 +92,7 @@
                                 </div>
                                 <input type="hidden" name="Dal" value="1" />
                                 <input type="hidden" name="EgitimYili" value="@item.Id" />
-                                <button type="submit" class="btn btn-sm btn-outline-warning">Ağ Gelişim Tablosu Ekle</button>
+                                <button type="submit" class="btn btn-sm btn-outline-warning">Ağ İşleymenliği Gelişim Tablosu Ekle</button>
                             </form>
 
                         }
