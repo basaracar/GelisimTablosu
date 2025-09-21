@@ -1,0 +1,650 @@
+[
+{ "Baslik" : "Hesap Makinesi Uygulaması", "Aciklama" : "Toplama, çıkarma, çarpma, bölme işlemleri yapan basit bir hesap makinesi.", "Zorluk" : 0, "KategoriId" : 1 },
+{ "Baslik" : "Not Ortalaması Hesaplayıcı", "Aciklama" : "Girilen ders notlarına göre ortalama hesaplayıp geçip kalma durumu gösteren uygulama.", "Zorluk" : 0, "KategoriId" : 1 },
+{ "Baslik" : "ATM Simülasyonu", "Aciklama" : "Para çekme, para yatırma, bakiye görüntüleme işlemleri yapılabilir.", "Zorluk" : 0, "KategoriId" : 1 },
+{ "Baslik" : "Sayı Tahmin Oyunu", "Aciklama" : "Bilgisayarın rastgele tuttuğu sayıyı tahmin etmeye çalışılan oyun.", "Zorluk" : 0, "KategoriId" : 1 },
+{ "Baslik" : "Şifre Güçlülüğü Kontrolü", "Aciklama" : "Girilen şifrenin uzunluğu ve karakter çeşitliliğine göre Zorluk derecesini hesaplar.", "Zorluk" : 0, "KategoriId" : 1 },
+{ "Baslik" : "Sözlük Uygulaması", "Aciklama" : "İngilizce kelimenin Türkçesini gösteren mini sözlük (hazır bir dictionary yapısı ile).", "Zorluk" : 0, "KategoriId" : 1 },
+{ "Baslik" : "Basit Rehber Uygulaması", "Aciklama" : "Kişi ekleme, silme, arama işlemleri yapılabilen telefon rehberi.", "Zorluk" : 0, "KategoriId" : 1 },
+{ "Baslik" : "Yarışma (Quiz) Uygulaması", "Aciklama" : "5-10 soruluk bir bilgi yarışması. Kullanıcıdan cevap alıp puan hesaplar.", "Zorluk" : 0, "KategoriId" : 1 },
+{ "Baslik" : "Doğum Günü Hatırlatıcı", "Aciklama" : "Kayıtlı kişilerin doğum günlerini saklar ve sorgulama yapılabilir.", "Zorluk" : 0, "KategoriId" : 1 },
+{ "Baslik" : "Çarpım Tablosu Yazdırıcı", "Aciklama" : "Kullanıcının girdiği sayıya kadar çarpım tablosu oluşturan program.", "Zorluk" : 0, "KategoriId" : 1 },
+{ "Baslik" : "Zar Atma Simülatörü", "Aciklama" : "1 ile 6 arasında rastgele zar atan uygulama. İstenirse çift zarla yapılabilir.", "Zorluk" : 0, "KategoriId" : 1 },
+{ "Baslik" : "Metin Şifreleme (Caesar Cipher)", "Aciklama" : "Girilen metni belirli bir kaydırmayla şifreleyen ve çözebilen uygulama.", "Zorluk" : 0, "KategoriId" : 1 },
+{ "Baslik" : "Kelime Sayacı", "Aciklama" : "Kullanıcının girdiği metindeki kelime ve harf sayısını bulur.", "Zorluk" : 0, "KategoriId" : 1 },
+{ "Baslik" : "Dosya Kayıt ve Okuma Uygulaması", "Aciklama" : "Kullanıcı bilgilerini .txt dosyasına kaydeder ve okur.", "Zorluk" : 0, "KategoriId" : 1 },
+{ "Baslik" : "Dijital Saat Gösterimi (Saniyelik)", "Aciklama" : "Anlık olarak saat/dakika/saniye gösteren mini saat simülasyonu. (Zaman modülü kullanılarak)", "Zorluk" : 0, "KategoriId" : 1 },
+{ "Baslik" : "Basit Takvim Görüntüleyici", "Aciklama" : "Ay ve yıl girildiğinde o ayın takvimini gösterir (calendar modülü ile).", "Zorluk" : 0, "KategoriId" : 1 },
+{ "Baslik" : "Asal Sayı Bulucu", "Aciklama" : "Girilen aralıkta asal sayıları listeler.", "Zorluk" : 0, "KategoriId" : 1 },
+{ "Baslik" : "Faktöriyel Hesaplayıcı", "Aciklama" : "Kullanıcının girdiği sayının faktöriyelini hesaplar.", "Zorluk" : 0, "KategoriId" : 1 },
+{ "Baslik" : "Mini Alışveriş Sepeti", "Aciklama" : "Kullanıcı ürün ekler, siler ve toplam fiyatı gösteren basit bir uygulama.", "Zorluk" : 0, "KategoriId" : 1 },
+{ "Baslik" : "Basit Not Defteri Uygulaması", "Aciklama" : "Kullanıcı not ekleyebilir, silebilir ve kaydedebilir.", "Zorluk" : 0, "KategoriId" : 1 },
+{ "Baslik" : "LED Yak Söndür (Butonla Kontrol)", "Aciklama" : "Bir butona basınca LED’in yanıp sönmesi.", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "Yanıp Sönen LED (Blink)", "Aciklama" : "Belirli aralıklarla yanıp sönen LED (Arduino’nun klasik ilk projesi).", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "Trafik Lambası Simülasyonu", "Aciklama" : "Kırmızı, sarı ve yeşil LED’lerle trafik ışığı döngüsü oluşturma.", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "RGB LED Renk Değişimi", "Aciklama" : "RGB LED ile renk geçişleri veya butonla renk değiştirme.", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "Potansiyometre ile LED Parlaklık Kontrolü", "Aciklama" : "Potansiyometreyi çevirerek LED’in parlaklığını ayarlama.", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "LDR ile Ortam Işığına Göre LED Kontrolü", "Aciklama" : "Ortam karardıkça LED’in yanması (ışığa duyarlı sistem).", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "Buzzer ile Uyarı Sistemi", "Aciklama" : "Buzzer’dan belirli tonlarda ses çıkarma (örneğin alarm sesi).", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "Sıcaklık ve Nem Göstergesi (DHT11 ile)", "Aciklama" : "DHT11 sensörü ile sıcaklık ve nemin seri ekrana yazdırılması.", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "Mesafe Ölçer (Ultrasonik Sensör ile)", "Aciklama" : "HC-SR04 sensörü ile cisimle mesafe ölçme.", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "Engelden Kaçan Sistem (Mini Robot)", "Aciklama" : "Ultrasonik sensör ile engelden kaçan basit robot (servo kullanılabilir).", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "Butonla Sayı Sayıcı", "Aciklama" : "Her butona basıldığında seri monitöre 1 artırarak sayıyı yazma.", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "Servo Motor ile Kapı Açma Kapatma", "Aciklama" : "Butonla veya potansiyometreyle servo motoru 0–180 derece döndürme.", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "Dijital Termometre (LCD ile Gösterim)", "Aciklama" : "DHT11 sıcaklık sensöründen alınan veriyi LCD ekranda gösterme.", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "Karanlıkta Otomatik Yanan Gece Lambası", "Aciklama" : "LDR kullanarak ortam karanlık olduğunda LED’i açma.", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "Mini Alarm Sistemi (LDR + Buzzer)", "Aciklama" : "Üzeri örtülmüş LDR açılınca alarm veren sistem.", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "Arduino ile Dice (Zar Atma Simülasyonu)", "Aciklama" : "Butona basınca rastgele 1–6 arası sayı ve LED kombinasyonu.", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "IR Uzaktan Kumanda ile LED Kontrolü", "Aciklama" : "TV kumandası gibi bir IR kumanda ile LED’leri açıp kapatma.", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "Sesle Kontrol (Ses Sensörü ile)", "Aciklama" : "Alkış sesi gibi yüksek sesle LED veya buzzer çalıştırma.", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "Parola ile LED Açma (Serial Monitör Üzerinden)", "Aciklama" : "Belirli bir parola girilince LED’in açılması.", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "Zamanlayıcı LED (Gecikmeli Kapanma)", "Aciklama" : "Butona basınca LED yanar ve 10 saniye sonra otomatik söner.", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "Toprak Nem Sensörü ile Sulama Uyarı Sistemi", "Aciklama" : "Toprak kuruysa LED yanar ve buzzer öter.", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "7 Segment Display ile Sayı Gösterimi", "Aciklama" : "0’dan 9’a kadar sayıları 7 segment üzerinde gösterme.", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "Joystick ile LED Parlaklık Kontrolü", "Aciklama" : "Joystick modülüyle bir LED’in parlaklığını veya servo pozisyonunu kontrol etme.", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "Basit Park Sensörü (Mesafeye Göre Buzzer)", "Aciklama" : "Araç park sistemi benzeri, yaklaştıkça buzzer sesi artar.", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "Klavye ile Arduino Kontrolü (Serial üzerinden)", "Aciklama" : "Klavyeden girilen komutlara göre LED aç/kapa işlemleri.", "Zorluk" : 0, "KategoriId" : 2 },
+{ "Baslik" : "Not Defteri Uygulaması", "Aciklama" : "Metin yazma, kaydetme ve düzenleme yapabilen basit bir metin editörü.", "Zorluk" : 0, "KategoriId" : 3 },
+{ "Baslik" : "Hesap Makinesi", "Aciklama" : "Temel matematiksel işlemler (toplama, çıkarma, çarpma, bölme) yapan bir uygulama.", "Zorluk" : 0, "KategoriId" : 3 },
+{ "Baslik" : "Görev Yönetim Uygulaması", "Aciklama" : "Kullanıcıların görev ekleyip, tamamlandı olarak işaretleyebileceği bir to-do listesi.", "Zorluk" : 0, "KategoriId" : 3 },
+{ "Baslik" : "Döviz Çevirici", "Aciklama" : "Farklı para birimleri arasında sabit kurlarla dönüşüm yapan bir uygulama.", "Zorluk" : 0, "KategoriId" : 3 },
+{ "Baslik" : "Kişisel Ajanda", "Aciklama" : "Tarih ve saat bazlı etkinlik ekleme, düzenleme ve hatırlatma özelliği.", "Zorluk" : 0, "KategoriId" : 3 },
+{ "Baslik" : "Sözlük Uygulaması", "Aciklama" : "Kelimelerin anlamlarını kaydedip aratılabilen bir masaüstü sözlük.", "Zorluk" : 0, "KategoriId" : 3 },
+{ "Baslik" : "Resim Görüntüleyici", "Aciklama" : "Kullanıcının seçtiği resimleri görüntüleyip yakınlaştırma/uzaklaştırma yapabilen uygulama.", "Zorluk" : 0, "KategoriId" : 3 },
+{ "Baslik" : "Bütçe Takip Sistemi", "Aciklama" : "Gelir ve giderlerin kaydedilip basit raporlar sunan bir finans uygulaması.", "Zorluk" : 0, "KategoriId" : 3 },
+{ "Baslik" : "Hava Durumu Görüntüleyici", "Aciklama" : "Sabit veri veya basit bir API ile şehirlerin hava durumunu gösteren uygulama.", "Zorluk" : 0, "KategoriId" : 3 },
+{ "Baslik" : "Basit Oyun (Yılan Oyunu)", "Aciklama" : "Klavyeyle kontrol edilen klasik yılan oyununun masaüstü versiyonu.", "Zorluk" : 0, "KategoriId" : 3 },
+{ "Baslik" : "Telefon Rehberi", "Aciklama" : "Kişi ekleme, düzenleme ve arama özellikli bir rehber uygulaması.", "Zorluk" : 0, "KategoriId" : 3 },
+{ "Baslik" : "Dosya Düzenleyici", "Aciklama" : "Belirli bir klasördeki dosyaları uzantılarına göre kategorize eden uygulama.", "Zorluk" : 0, "KategoriId" : 3 },
+{ "Baslik" : "Kronometre ve Zamanlayıcı", "Aciklama" : "Süre ölçen ve geri sayım yapabilen bir kronometre uygulaması.", "Zorluk" : 0, "KategoriId" : 3 },
+{ "Baslik" : "Basit Çizim Uygulaması", "Aciklama" : "Fare ile basit şekiller çizip renk seçimi yapılabilen bir çizim aracı.", "Zorluk" : 0, "KategoriId" : 3 },
+{ "Baslik" : "Şifre Oluşturucu", "Aciklama" : "Rastgele güvenli şifreler üreten ve kaydeden bir uygulama.", "Zorluk" : 0, "KategoriId" : 3 },
+{ "Baslik" : "Kütüphane Yönetim Sistemi", "Aciklama" : "Kitap ekleme, silme ve ödünç alma işlemlerini takip eden bir uygulama.", "Zorluk" : 0, "KategoriId" : 3 },
+{ "Baslik" : "Sınav Sonuç Hesaplayıcı", "Aciklama" : "Öğrenci notlarını girip ortalama ve başarı durumunu hesaplayan uygulama.", "Zorluk" : 0, "KategoriId" : 3 },
+{ "Baslik" : "Birim Çevirici", "Aciklama" : "Uzunluk, ağırlık, hacim gibi birimler arasında dönüşüm yapan uygulama.", "Zorluk" : 0, "KategoriId" : 3 },
+{ "Baslik" : "Rastgele Sayı Üretici", "Aciklama" : "Belirtilen aralıkta rastgele sayılar üreten ve kaydeden bir araç.", "Zorluk" : 0, "KategoriId" : 3 },
+{ "Baslik" : "Metin Analiz Aracı", "Aciklama" : "Girilen metindeki kelime ve karakter sayısını analiz eden uygulama.", "Zorluk" : 0, "KategoriId" : 3 },
+{ "Baslik" : "Kişisel Portfolyo Sayfası", "Aciklama" : "Kişisel bilgiler, beceriler ve projeleri tanıtan tek sayfalık bir portfolyo sitesi.", "Zorluk" : 0, "KategoriId" : 4 },
+{ "Baslik" : "Restoran Menü Sayfası", "Aciklama" : "Yemek kategorileri ve fiyatları içeren stilize bir restoran menüsü.", "Zorluk" : 0, "KategoriId" : 4 },
+{ "Baslik" : "Etkinlik Tanıtım Sayfası", "Aciklama" : "Bir konser veya etkinlik için tarih, yer ve detayları gösteren bir sayfa.", "Zorluk" : 0, "KategoriId" : 4 },
+{ "Baslik" : "Fotoğraf Galerisi", "Aciklama" : "Resimlerin düzenli bir ızgara düzeninde sergilendiği bir galeri sayfası.", "Zorluk" : 0, "KategoriId" : 4 },
+{ "Baslik" : "Blog Ana Sayfası", "Aciklama" : "Statik blog yazıları ve kategorilerin listelendiği bir ana sayfa tasarımı.", "Zorluk" : 0, "KategoriId" : 4 },
+{ "Baslik" : "İletişim Formu Sayfası", "Aciklama" : "Kullanıcıların ad, e-posta ve mesaj girebileceği bir iletişim formu.", "Zorluk" : 0, "KategoriId" : 4 },
+{ "Baslik" : "Ürün Tanıtım Sayfası", "Aciklama" : "Tek bir ürünün resimleri, açıklaması ve özelliklerini gösteren sayfa.", "Zorluk" : 0, "KategoriId" : 4 },
+{ "Baslik" : "Hakkımda Sayfası", "Aciklama" : "Kişisel bilgiler, fotoğraf ve sosyal medya bağlantılarının yer aldığı bir sayfa.", "Zorluk" : 0, "KategoriId" : 4 },
+{ "Baslik" : "Seyahat Blogu Sayfası", "Aciklama" : "Seyahat destinasyonlarının fotoğraflı kartlarla tanıtıldığı bir sayfa.", "Zorluk" : 0, "KategoriId" : 4 },
+{ "Baslik" : "Basit Özgeçmiş Sitesi", "Aciklama" : "Eğitim, deneyim ve becerilerin listelendiği bir CV sayfası.", "Zorluk" : 0, "KategoriId" : 4 },
+{ "Baslik" : "Yemek Tarifi Sayfası", "Aciklama" : "Bir yemek tarifinin malzemeleri ve yapılış adımlarını gösteren sayfa.", "Zorluk" : 0, "KategoriId" : 4 },
+{ "Baslik" : "Hava Durumu Kartı", "Aciklama" : "Statik veriyle bir şehrin hava durumunu gösteren stilize bir kart tasarımı.", "Zorluk" : 0, "KategoriId" : 4 },
+{ "Baslik" : "Egzersiz Takip Sayfası", "Aciklama" : "Egzersiz programlarının listelendiği ve görsel olarak düzenlenmiş bir sayfa.", "Zorluk" : 0, "KategoriId" : 4 },
+{ "Baslik" : "Film Tanıtım Sayfası", "Aciklama" : "Bir filmin afişi, özeti ve oyuncu listesinin yer aldığı bir sayfa.", "Zorluk" : 0, "KategoriId" : 4 },
+{ "Baslik" : "Düğün Davetiyesi Sayfası", "Aciklama" : "Düğün detayları ve RSVP formu içeren zarif bir davetiye tasarımı.", "Zorluk" : 0, "KategoriId" : 4 },
+{ "Baslik" : "Alışveriş Listesi Sayfası", "Aciklama" : "Kullanıcıların alışveriş listelerini görsel olarak düzenleyen bir sayfa.", "Zorluk" : 0, "KategoriId" : 4 },
+{ "Baslik" : "Müzik Çalma Listesi", "Aciklama" : "Şarkıların listelendiği ve albüm kapaklarının gösterildiği bir sayfa.", "Zorluk" : 0, "KategoriId" : 4 },
+{ "Baslik" : "Spor Salonu Tanıtımı", "Aciklama" : "Spor salonunun hizmetlerini ve programlarını tanıtan bir ana sayfa.", "Zorluk" : 0, "KategoriId" : 4 },
+{ "Baslik" : "Kitap Tanıtım Sayfası", "Aciklama" : "Bir kitabın kapağı, özeti ve yazar bilgilerinin yer aldığı sayfa.", "Zorluk" : 0, "KategoriId" : 4 },
+{ "Baslik" : "Basit Hesap Makinesi", "Aciklama" : "Dört temel matematiksel işlemi gerçekleştiren bir mobil hesap makinesi.", "Zorluk" : 0, "KategoriId" : 5 },
+{ "Baslik" : "Not Tutucu", "Aciklama" : "Kullanıcıların kısa notlar yazıp görüntüleyebileceği bir uygulama.", "Zorluk" : 0, "KategoriId" : 5 },
+{ "Baslik" : "Zamanlayıcı Uygulaması", "Aciklama" : "Geri sayım yapabilen ve alarm çalan basit bir zamanlayıcı.", "Zorluk" : 0, "KategoriId" : 5 },
+{ "Baslik" : "Rastgele Sayı Üretici", "Aciklama" : "Belirtilen aralıkta rastgele sayılar üreten bir uygulama.", "Zorluk" : 0, "KategoriId" : 5 },
+{ "Baslik" : "Metin Okuyucu", "Aciklama" : "Kullanıcının yazdığı metni sesli okuyan bir metin-konuşma uygulaması.", "Zorluk" : 0, "KategoriId" : 5 },
+{ "Baslik" : "Renk Değiştirici", "Aciklama" : "Butona basıldığında ekranın arka plan rengini değiştiren bir uygulama.", "Zorluk" : 0, "KategoriId" : 5 },
+{ "Baslik" : "Sayı Tahmin Oyunu", "Aciklama" : "Kullanıcının rastgele bir sayıyı tahmin etmeye çalıştığı bir oyun.", "Zorluk" : 0, "KategoriId" : 5 },
+{ "Baslik" : "Basit Çizim Uygulaması", "Aciklama" : "Dokunmatik ekranda basit çizimler yapmaya olanak tanıyan bir uygulama.", "Zorluk" : 0, "KategoriId" : 5 },
+{ "Baslik" : "Fener Uygulaması", "Aciklama" : "Telefonun flaşını açıp kapatan bir el feneri uygulaması.", "Zorluk" : 0, "KategoriId" : 5 },
+{ "Baslik" : "Müzik Çalar", "Aciklama" : "Cihazda yüklü bir ses dosyasını oynatıp durduran basit bir medya oynatıcı.", "Zorluk" : 0, "KategoriId" : 5 },
+{ "Baslik" : "Hava Durumu Kartı", "Aciklama" : "Statik veriyle bir şehrin hava durumunu gösteren basit bir ekran.", "Zorluk" : 0, "KategoriId" : 5 },
+{ "Baslik" : "Egzersiz Sayacı", "Aciklama" : "Kullanıcının egzersiz tekrarlarını sayan ve gösteren bir uygulama.", "Zorluk" : 0, "KategoriId" : 5 },
+{ "Baslik" : "Resim Görüntüleyici", "Aciklama" : "Önceden yüklenmiş resimleri gösteren ve geçiş yapan bir galeri uygulaması.", "Zorluk" : 0, "KategoriId" : 5 },
+{ "Baslik" : "Basit Quiz Oyunu", "Aciklama" : "Önceden tanımlı soruların yer aldığı bir bilgi yarışması uygulaması.", "Zorluk" : 0, "KategoriId" : 5 },
+{ "Baslik" : "Döviz Çevirici", "Aciklama" : "Sabit kurlarla para birimleri arasında dönüşüm yapan bir uygulama.", "Zorluk" : 0, "KategoriId" : 5 },
+{ "Baslik" : "Alışveriş Listesi", "Aciklama" : "Kullanıcıların ürün ekleyip listeleyebileceği bir alışveriş listesi uygulaması.", "Zorluk" : 0, "KategoriId" : 5 },
+{ "Baslik" : "Kronometre", "Aciklama" : "Süre ölçen ve başlat/durdur butonları olan bir kronometre uygulaması.", "Zorluk" : 0, "KategoriId" : 5 },
+{ "Baslik" : "Motivasyon Sözleri", "Aciklama" : "Rastgele motivasyonel sözler gösteren bir uygulama.", "Zorluk" : 0, "KategoriId" : 5 },
+{ "Baslik" : "Telefon Titreşim Uygulaması", "Aciklama" : "Butona basıldığında telefonun titreşim özelliğini aktive eden bir uygulama.", "Zorluk" : 0, "KategoriId" : 5 },
+{ "Baslik" : "Basit Hesap Defteri", "Aciklama" : "Gelir ve giderleri kaydedip toplamı gösteren bir finans uygulaması.", "Zorluk" : 0, "KategoriId" : 5 },
+{ "Baslik" : "Sosyal Medya Gönderi Tasarımı", "Aciklama" : "Photoshop ile Instagram için dikkat çekici bir kare veya hikaye tasarımı.", "Zorluk" : 0, "KategoriId" : 6 },
+{ "Baslik" : "Logo Tasarımı", "Aciklama" : "Photoshop’ta basit bir marka logosu oluşturma ve vektör benzeri düzenleme.", "Zorluk" : 0, "KategoriId" : 6 },
+{ "Baslik" : "Etkinlik Afişi", "Aciklama" : "Photoshop ile bir konser veya seminer için renkli bir afiş tasarımı.", "Zorluk" : 0, "KategoriId" : 6 },
+{ "Baslik" : "Fotoğraf Renk Düzenleme", "Aciklama" : "Photoshop’ta bir fotoğrafın parlaklık, kontrast ve renk tonlarını düzenleme.", "Zorluk" : 0, "KategoriId" : 6 },
+{ "Baslik" : "Kartvizit Tasarımı", "Aciklama" : "Photoshop ile profesyonel bir kartvizit şablonu oluşturma.", "Zorluk" : 0, "KategoriId" : 6 },
+{ "Baslik" : "Davetiye Tasarımı", "Aciklama" : "Photoshop’ta düğün veya doğum günü için zarif bir davetiye tasarımı.", "Zorluk" : 0, "KategoriId" : 6 },
+{ "Baslik" : "Ürün Kapağı Tasarımı", "Aciklama" : "Photoshop ile bir kitap veya albüm kapağı için görsel düzenleme.", "Zorluk" : 0, "KategoriId" : 6 },
+{ "Baslik" : "Restoran Menü Tasarımı", "Aciklama" : "Photoshop’ta yemek kategorileri ve görselleriyle bir menü tasarımı.", "Zorluk" : 0, "KategoriId" : 6 },
+{ "Baslik" : "Kolaj Fotoğraf Tasarımı", "Aciklama" : "Photoshop ile birden fazla fotoğrafı birleştirerek tematik bir kolaj oluşturma.", "Zorluk" : 0, "KategoriId" : 6 },
+{ "Baslik" : "Tipografi Posteri", "Aciklama" : "Photoshop’ta yaratıcı metin stilleriyle ilham verici bir poster tasarımı.", "Zorluk" : 0, "KategoriId" : 6 },
+{ "Baslik" : "Kısa Tanıtım Videosu", "Aciklama" : "Premiere Pro’da metin ve görsellerle bir ürün veya hizmet tanıtım videosu.", "Zorluk" : 0, "KategoriId" : 6 },
+{ "Baslik" : "Vlog Videosu Düzenleme", "Aciklama" : "Premiere Pro’da kısa bir vlog klibini kesip geçiş efektleri ekleme.", "Zorluk" : 0, "KategoriId" : 6 },
+{ "Baslik" : "Slayt Gösterisi Videosu", "Aciklama" : "Premiere Pro’da fotoğraflardan müzik eşliğinde bir slayt gösterisi oluşturma.", "Zorluk" : 0, "KategoriId" : 6 },
+{ "Baslik" : "Eğitim Videosu Tasarımı", "Aciklama" : "Premiere Pro’da metin ve görsellerle basit bir eğitim videosu düzenleme.", "Zorluk" : 0, "KategoriId" : 6 },
+{ "Baslik" : "Sosyal Medya Hikaye Videosu", "Aciklama" : "Premiere Pro’da Instagram hikayeleri için kısa bir animasyonlu video.", "Zorluk" : 0, "KategoriId" : 6 },
+{ "Baslik" : "Seyahat Videosu Montajı", "Aciklama" : "Premiere Pro’da seyahat kliplerini birleştirip müzik ve geçiş ekleme.", "Zorluk" : 0, "KategoriId" : 6 },
+{ "Baslik" : "Etkinlik Teaser Videosu", "Aciklama" : "Premiere Pro’da bir etkinlik için kısa ve heyecan verici bir teaser videosu.", "Zorluk" : 0, "KategoriId" : 6 },
+{ "Baslik" : "Fotoğraf Filtre Uygulaması", "Aciklama" : "Photoshop’ta bir fotoğrafa vintage veya modern filtre efekti uygulama.", "Zorluk" : 0, "KategoriId" : 6 },
+{ "Baslik" : "YouTube Thumbnail Tasarımı", "Aciklama" : "Photoshop ile dikkat çekici bir YouTube video küçük resmi oluşturma.", "Zorluk" : 0, "KategoriId" : 6 },
+{ "Baslik" : "Video Başlık Animasyonu", "Aciklama" : "Premiere Pro’da bir videoya basit metin animasyonları ekleme.", "Zorluk" : 0, "KategoriId" : 6 },
+{ "Baslik" : "Minimalist Saat Tasarımı", "Aciklama" : "CSS ile stilize edilmiş bir dijital veya analog saat gösteren sayfa.", "Zorluk" : 0, "KategoriId" : 4 },
+{ "Baslik" : "Kişisel Blog Sitesi", "Aciklama" : "Yazı ekleme, düzenleme, silme, yorum yapma, kategorilere ayırma.", "Zorluk" : 0, "KategoriId" : 7 },
+{ "Baslik" : "Haber Sitesi", "Aciklama" : "Admin panelinden haber ekleme, ana sayfada listeleme, detay sayfası.", "Zorluk" : 0, "KategoriId" : 7 },
+{ "Baslik" : "Kütüphane Takip Sistemi", "Aciklama" : "Kitap, yazar, kategori yönetimi; ödünç verme ve iade etme işlemleri.", "Zorluk" : 0, "KategoriId" : 7 },
+{ "Baslik" : "Online Not Sistemi (Öğrenci için)", "Aciklama" : "Öğrencilerin ders ve not bilgilerini görüntülediği sistem.", "Zorluk" : 0, "KategoriId" : 7 },
+{ "Baslik" : "Basit E-Ticaret Sitesi (Sepetsiz)", "Aciklama" : "Ürün listeleme, ürün detayları, kategori filtreleme.", "Zorluk" : 0, "KategoriId" : 7 },
+{ "Baslik" : "Ziyaretçi Defteri Uygulaması", "Aciklama" : "Ziyaretçilerin mesaj bırakabileceği bir sayfa ve admin kontrol paneli.", "Zorluk" : 0, "KategoriId" : 7 },
+{ "Baslik" : "İletişim Formu + Mesaj Kayıt Sistemi", "Aciklama" : "Kullanıcıların iletişim formu doldurup, verilerin admin panelinden görülmesi.", "Zorluk" : 0, "KategoriId" : 7 },
+{ "Baslik" : "CV Paylaşım Sitesi (Kariyer Profili)", "Aciklama" : "Kullanıcılar eğitim, deneyim, beceri gibi verileri girer ve CV görüntülenir.", "Zorluk" : 0, "KategoriId" : 7 },
+{ "Baslik" : "Etkinlik Takip Uygulaması", "Aciklama" : "Etkinlik ekleme, listeleme, kullanıcıların etkinliğe katılma durumu.", "Zorluk" : 0, "KategoriId" : 7 },
+{ "Baslik" : "Duyuru ve Haber Yönetim Paneli", "Aciklama" : "Adminlerin duyuru ekleyebileceği, kullanıcıların okuyabileceği bir platform.", "Zorluk" : 0, "KategoriId" : 7 },
+{ "Baslik" : "Sınav Takip ve Sonuç Sistemi", "Aciklama" : "Öğrenciler sınavlara katılır, admin puan girer ve öğrenci sonucu görür.", "Zorluk" : 0, "KategoriId" : 7 },
+{ "Baslik" : "Galeri Uygulaması (Resim Yükleme)", "Aciklama" : "Kullanıcılar veya admin tarafından resim yüklenip kategorilere ayrılır.", "Zorluk" : 0, "KategoriId" : 7 },
+{ "Baslik" : "Kullanıcı Kayıt / Giriş Sistemi (Authentication)", "Aciklama" : "Kayıt, giriş, çıkış işlemleri; kullanıcı yetkilendirmesi.", "Zorluk" : 0, "KategoriId" : 7 },
+{ "Baslik" : "To-Do List (Görev Takip Uygulaması)", "Aciklama" : "Kullanıcılar görev ekleyebilir, tamamlandı olarak işaretleyebilir.", "Zorluk" : 0, "KategoriId" : 7 },
+{ "Baslik" : "Yorum ve Oylama Sistemi", "Aciklama" : "Kullanıcılar içeriklere yıldızla puan verebilir ve yorum yazabilir.", "Zorluk" : 0, "KategoriId" : 7 },
+{ "Baslik" : "Online Rezervasyon Sistemi (Randevu)", "Aciklama" : "Kullanıcılar tarih ve saat seçerek randevu alabilir (örnek: berber, dişçi vb).", "Zorluk" : 0, "KategoriId" : 7 },
+{ "Baslik" : "Hava Durumu Göstergesi (API ile)", "Aciklama" : "Lokasyon girerek o şehrin güncel hava durumunu gösteren uygulama (açık hava durumu API ile).", "Zorluk" : 0, "KategoriId" : 7 },
+{ "Baslik" : "Mini Forum Uygulaması", "Aciklama" : "Konu oluşturma, yorum yazma, kullanıcılar arası etkileşim.", "Zorluk" : 0, "KategoriId" : 7 },
+{ "Baslik" : "Basit Blog Yönetim Sistemi (Admin Paneli ile)", "Aciklama" : "CRUD işlemleri: Blog ekle, sil, güncelle; kullanıcılar okuyabilir.", "Zorluk" : 0, "KategoriId" : 7 },
+{ "Baslik" : "Film / Dizi İnceleme Platformu", "Aciklama" : "Filmler listelenir, kullanıcılar yorum yapabilir ve puan verebilir.", "Zorluk" : 0, "KategoriId" : 7 },
+{ "Baslik" : "Basit Hesap Makinesi", "Aciklama" : "PHP ile form üzerinden girilen sayılarla temel matematiksel işlemler yapan bir sayfa.", "Zorluk" : 0, "KategoriId" : 8 },
+{ "Baslik" : "Döviz Çevirici", "Aciklama" : "Sabit kurlarla para birimleri arasında dönüşüm yapan bir PHP formu.", "Zorluk" : 0, "KategoriId" : 8 },
+{ "Baslik" : "Giriş Formu Kontrolü", "Aciklama" : "Kullanıcı adı ve şifreyi kontrol eden basit bir PHP login sayfası.", "Zorluk" : 0, "KategoriId" : 8 },
+{ "Baslik" : "Sayı Tahmin Oyunu", "Aciklama" : "PHP ile rastgele bir sayıyı tahmin etmeye çalışan bir web oyunu.", "Zorluk" : 0, "KategoriId" : 8 },
+{ "Baslik" : "Basit Anket Sistemi", "Aciklama" : "Kullanıcıların bir soruya oy verip sonuçları gören bir PHP anket sayfası.", "Zorluk" : 0, "KategoriId" : 8 },
+{ "Baslik" : "Metin Analiz Aracı", "Aciklama" : "Girilen metnin kelime ve karakter sayısını hesaplayan bir PHP formu.", "Zorluk" : 0, "KategoriId" : 8 },
+{ "Baslik" : "BMI Hesaplayıcı", "Aciklama" : "Kullanıcıdan boy ve kilo alarak vücut kitle indeksini hesaplayan bir sayfa.", "Zorluk" : 0, "KategoriId" : 8 },
+{ "Baslik" : "Rastgele Şifre Üretici", "Aciklama" : "PHP ile rastgele güvenli şifreler üreten bir web uygulaması.", "Zorluk" : 0, "KategoriId" : 8 },
+{ "Baslik" : "Ziyaretçi Sayacı", "Aciklama" : "Sayfa her yenilendiğinde ziyaret sayısını artıran bir PHP uygulaması.", "Zorluk" : 0, "KategoriId" : 8 },
+{ "Baslik" : "Basit Alışveriş Listesi", "Aciklama" : "Kullanıcıların ürün ekleyip listeleyebileceği bir PHP formu.", "Zorluk" : 0, "KategoriId" : 8 },
+{ "Baslik" : "Sıcaklık Dönüştürücü", "Aciklama" : "Celsius ve Fahrenheit arasında dönüşüm yapan bir PHP uygulaması.", "Zorluk" : 0, "KategoriId" : 8 },
+{ "Baslik" : "Renk Seçici", "Aciklama" : "Kullanıcıdan renk kodu alıp arka planı değiştiren bir PHP sayfası.", "Zorluk" : 0, "KategoriId" : 8 },
+{ "Baslik" : "Basit Quiz Uygulaması", "Aciklama" : "Önceden tanımlı sorularla bir bilgi yarışması yapan PHP formu.", "Zorluk" : 0, "KategoriId" : 8 },
+{ "Baslik" : "Haftanın Günü Bulucu", "Aciklama" : "Girilen tarihe göre haftanın gününü gösteren bir PHP uygulaması.", "Zorluk" : 0, "KategoriId" : 8 },
+{ "Baslik" : "Basit Not Hesaplayıcı", "Aciklama" : "Öğrenci notlarını alıp ortalamayı hesaplayan bir PHP formu.", "Zorluk" : 0, "KategoriId" : 8 },
+{ "Baslik" : "Yemek Tarifi Sayfası", "Aciklama" : "PHP ile dinamik olarak yemek tariflerini listeleyen bir sayfa.", "Zorluk" : 0, "KategoriId" : 8 },
+{ "Baslik" : "Motivasyon Sözleri", "Aciklama" : "Rastgele motivasyonel sözler gösteren bir PHP uygulaması.", "Zorluk" : 0, "KategoriId" : 8 },
+{ "Baslik" : "Birim Çevirici", "Aciklama" : "Uzunluk, ağırlık veya hacim birimlerini çeviren bir PHP formu.", "Zorluk" : 0, "KategoriId" : 8 },
+{ "Baslik" : "Basit İletişim Formu", "Aciklama" : "Kullanıcıdan ad, e-posta ve mesaj alıp ekranda gösteren bir PHP formu.", "Zorluk" : 0, "KategoriId" : 8 },
+{ "Baslik" : "Dinamik Galeri Sayfası", "Aciklama" : "PHP ile önceden tanımlı resimleri listeleyen bir galeri sayfası.", "Zorluk" : 0, "KategoriId" : 8 },
+{ "Baslik" : "Alt Ağlara Bölme", "Aciklama" : "Durum: Bir küçük ofis, 192.168.1.0/24 ağını 3 departman için bölmek istiyor: Yönetim (10 host), Satış (20 host), IT (50 host). Görev: VLSM kullanarak her departman için uygun alt ağ maskelerini, ağ adreslerini ve host aralıklarını belirleyin.", "Zorluk" : 0, "KategoriId" : 13 },
+{ "Baslik" : "Alt Ağlara Bölme", "Aciklama" : "Durum: Bir okul, 172.16.0.0/16 ağını 4 sınıfa bölmek istiyor: Sınıf A (100 host), Sınıf B (60 host), Sınıf C (30 host), Sınıf D (15 host). Görev: VLSM ile alt ağ maskelerini ve host aralıklarını hesaplayın.", "Zorluk" : 0, "KategoriId" : 13 },
+{ "Baslik" : "Alt Ağlara Bölme", "Aciklama" : "Durum: Bir kafe, 192.168.10.0/24 ağını 2 bölüme ayırmak istiyor: Müşteriler (60 host), Personel (20 host). Görev: VLSM ile alt ağ maskelerini ve host aralıklarını belirleyin.", "Zorluk" : 0, "KategoriId" : 13 },
+{ "Baslik" : "Alt Ağlara Bölme", "Aciklama" : "Durum: Bir şirket, 10.0.0.0/8 ağını 8 eşit alt ağa bölmek istiyor. Görev: Yeni alt ağ maskesini ve her alt ağdaki host sayısını hesaplayın.", "Zorluk" : 0, "KategoriId" : 13 },
+{ "Baslik" : "Alt Ağlara Bölme", "Aciklama" : "Durum: Bir ev ağı, 192.168.0.0/24 adresini 4 eşit alt ağa bölmek istiyor. Görev: Alt ağ maskesini, her alt ağın ağ adresini ve host sayısını hesaplayın.", "Zorluk" : 0, "KategoriId" : 13 },
+{ "Baslik" : "Alt Ağlara Bölme", "Aciklama" : "Durum: Bir şirket, 172.30.0.0/16 ağını 5 departman için bölmek istiyor: HR (200 host), Finans (100 host), Pazarlama (50 host), Destek (30 host), Yönetim (10 host). Görev: VLSM ile alt ağ maskelerini ve host aralıklarını belirleyin.", "Zorluk" : 0, "KategoriId" : 13 },
+{ "Baslik" : "Alt Ağlara Bölme", "Aciklama" : "Durum: Bir üniversite, 10.10.0.0/16 ağını 3 bölüme ayırmak istiyor: Kütüphane (500 host), Laboratuvar (200 host), İdari Ofis (50 host). Görev: VLSM ile alt ağ maskelerini ve host aralıklarını hesaplayın.", "Zorluk" : 0, "KategoriId" : 13 },
+{ "Baslik" : "Alt Ağlara Bölme", "Aciklama" : "Durum: Bir e-ticaret şirketi, 192.168.20.0/24 ağını 2 alt ağa bölmek istiyor: Sunucular (10 host), Çalışanlar (100 host). Görev: VLSM ile alt ağ maskelerini ve host aralıklarını belirleyin.", "Zorluk" : 0, "KategoriId" : 13 },
+{ "Baslik" : "Alt Ağlara Bölme", "Aciklama" : "Durum: Bir otel, 192.168.50.0/24 ağını 3 bölüme ayırmak istiyor: Misafir Wi-Fi (120 host), Resepsiyon (30 host), Güvenlik (10 host). Görev: VLSM ile alt ağ maskelerini ve host aralıklarını hesaplayın.", "Zorluk" : 0, "KategoriId" : 13 },
+{ "Baslik" : "Alt Ağlara Bölme", "Aciklama" : "Durum: Bir fabrika, 172.18.0.0/16 ağını 4 bölüme ayırmak istiyor: Üretim (300 host), Depo (100 host), Ofis (50 host), Yönetim (20 host). Görev: VLSM ile alt ağ maskelerini ve host aralıklarını belirleyin.", "Zorluk" : 0, "KategoriId" : 13 },
+{ "Baslik" : "Alt Ağlara Bölme", "Aciklama" : "Durum: Bir hastane, 192.168.100.0/24 ağını 3 bölüme ayırmak istiyor: Poliklinikler (80 host), Acil Servis (40 host), Yönetim (20 host). Görev: VLSM ile alt ağ maskelerini ve host aralıklarını hesaplayın.", "Zorluk" : 0, "KategoriId" : 13 },
+{ "Baslik" : "Alt Ağlara Bölme", "Aciklama" : "Durum: Bir havaalanı, 10.1.0.0/16 ağını 4 birime ayırmak istiyor: Güvenlik (150 host), Yolcu Hizmetleri (100 host), Teknik Ekip (60 host), Yönetim (30 host). Görev: VLSM ile uygun alt ağları ve maskeleri belirleyin.", "Zorluk" : 0, "KategoriId" : 13 },
+{ "Baslik" : "Alt Ağlara Bölme", "Aciklama" : "Durum: Bir yazılım firması, 172.20.0.0/16 ağını 5 departmana bölmek istiyor: Geliştirme (120 host), Test (80 host), IT (50 host), İnsan Kaynakları (20 host), Yönetim (10 host). Görev: VLSM kullanarak her birine uygun alt ağları oluşturun.", "Zorluk" : 0, "KategoriId" : 13 },
+{ "Baslik" : "Alt Ağlara Bölme", "Aciklama" : "Durum: Bir belediye binası, 192.168.200.0/24 ağını 4 alt ağa ayırmak istiyor: Halkla İlişkiler (40 host), Mali Hizmetler (30 host), Zabıta (25 host), Yönetim (10 host). Görev: VLSM ile ağları bölün ve adres aralıklarını hesaplayın.", "Zorluk" : 0, "KategoriId" : 13 },
+{ "Baslik" : "Alt Ağlara Bölme", "Aciklama" : "Durum: Bir alışveriş merkezi, 192.168.150.0/24 ağını 3 bölüme ayırmak istiyor: Mağazalar (100 host), Kamera Sistemleri (50 host), Yönetim (20 host). Görev: VLSM ile uygun alt ağları ve maskeleri belirleyin.", "Zorluk" : 0, "KategoriId" : 13 },
+{ "Baslik" : "Alt Ağlara Bölme", "Aciklama" : "Durum: Bir tren istasyonu, 10.5.0.0/16 ağını 3 bölüme ayırmak istiyor: Bilet Gişeleri (150 host), Güvenlik (100 host), Yönetim (25 host). Görev: VLSM kullanarak alt ağları belirleyin.", "Zorluk" : 0, "KategoriId" : 13 },
+{ "Baslik" : "Alt Ağlara Bölme", "Aciklama" : "Durum: Bir müzik festivali organizasyonu, 192.168.60.0/24 ağını 4 bölüme ayırmak istiyor: Sahne (80 host), Teknik Ekip (30 host), Sanatçılar (20 host), Yönetim (10 host). Görev: VLSM ile alt ağlara ayırın ve adres aralıklarını hesaplayın.", "Zorluk" : 0, "KategoriId" : 13 },
+{ "Baslik" : "Alt Ağlara Bölme", "Aciklama" : "Durum: Bir araştırma laboratuvarı, 172.31.0.0/16 ağını 4 alt ağa bölmek istiyor: Genetik Birimi (200 host), Biyokimya (100 host), IT (60 host), İdari Ofis (15 host). Görev: VLSM ile ağları planlayın.", "Zorluk" : 0, "KategoriId" : 13 },
+{ "Baslik" : "Alt Ağlara Bölme", "Aciklama" : "Durum: Bir medya ajansı, 192.168.70.0/24 ağını 3 departmana bölmek istiyor: Video Prodüksiyon (60 host), Grafik Tasarım (30 host), İdari Ofis (10 host). Görev: VLSM kullanarak uygun ağları oluşturun.", "Zorluk" : 0, "KategoriId" : 13 },
+{ "Baslik" : "Alt Ağlara Bölme", "Aciklama" : "Durum: Bir kamu kurumu, 10.2.0.0/16 ağını 6 bölüme ayırmak istiyor: Arşiv (300 host), Teknik Servis (150 host), Bilgi İşlem (80 host), Personel (60 host), Halkla İlişkiler (40 host), Yönetim (20 host). Görev: VLSM kullanarak her bölüm için ağ maskesi ve adres aralıklarını hesaplayın.", "Zorluk" : 0, "KategoriId" : 13 },
+{ "Baslik" : "Temel Anahtar Yapılandırması", "Aciklama" : "Durum: Bir küçük ofiste yeni bir 24 portlu anahtar kuruldu. Anahtar, ofis ağını yönetmek için kullanılacak. Görev: Komut arayüzü üzerinden anahtarın hostname'ini 'Office-Switch' olarak ayarlayın, yönetici şifresini yapılandırın ve konsol erişimini güvenli hale getirmek için bir parola belirleyin.", "Zorluk" : 0, "KategoriId" : 14 },
+{ "Baslik" : "Temel Anahtar Yapılandırması", "Aciklama" : "Durum: Bir okulun bilgisayar laboratuvarında 16 portlu bir anahtar kullanılıyor. Laboratuvardaki 10 bilgisayar aynı VLAN'da olmalı. Görev: Komut arayüzü üzerinden VLAN 10 oluşturun, VLAN'a 'Lab-VLAN' adını verin ve 1-10 numaralı portları bu VLAN'a atayın.", "Zorluk" : 0, "KategoriId" : 14 },
+{ "Baslik" : "Temel Anahtar Yapılandırması", "Aciklama" : "Durum: Bir kafe, müşteri Wi-Fi ağı için bir anahtara bağlı bir erişim noktası kullanıyor. Anahtar, yönetim için bir IP adresine ihtiyaç duyuyor. Görev: Komut arayüzü üzerinden anahtara VLAN 1 üzerinde 192.168.1.10/24 IP adresini atayın ve varsayılan ağ geçidini 192.168.1.1 olarak ayarlayın.", "Zorluk" : 0, "KategoriId" : 14 },
+{ "Baslik" : "Temel Anahtar Yapılandırması", "Aciklama" : "Durum: Bir e-ticaret şirketinde 24 portlu bir anahtar, sunucular ve çalışan cihazları için kullanılıyor. Güvenlik için kullanılmayan portlar kapatılmalı. Görev: Komut arayüzü üzerinden 20-24 numaralı portları devre dışı bırakın ve anahtarın hostname'ini 'Server-Switch' olarak ayarlayın.", "Zorluk" : 0, "KategoriId" : 14 },
+{ "Baslik" : "Temel Anahtar Yapılandırması", "Aciklama" : "Durum: Bir ev ağında 8 portlu bir anahtar, medya cihazlarını bağlamak için kullanılıyor. Anahtar, uzaktan yönetim için yapılandırılacak. Görev: Komut arayüzü üzerinden anahtara VLAN 1 üzerinde 192.168.0.100/24 IP adresini atayın ve Telnet erişimini etkinleştirin.", "Zorluk" : 0, "KategoriId" : 14 },
+{ "Baslik" : "Temel Anahtar Yapılandırması", "Aciklama" : "Durum: Bir hastanede 24 portlu bir anahtar, tıbbi cihazlar ve bilgisayarlar için kullanılıyor. Tıbbi cihazlar ayrı bir VLAN'da olmalı. Görev: Komut arayüzü üzerinden VLAN 20 oluşturun, VLAN'a 'Medical-VLAN' adını verin ve 1-5 numaralı portları bu VLAN'a atayın.", "Zorluk" : 0, "KategoriId" : 14 },
+{ "Baslik" : "Temel Anahtar Yapılandırması", "Aciklama" : "Durum: Bir üniversite kütüphanesinde iki 16 portlu anahtar kullanılıyor. Anahtarlar birbirine bağlanacak ve yönetim için yapılandırılacak. Görev: Komut arayüzü üzerinden birinci anahtarın hostname'ini 'Lib-Switch1' olarak ayarlayın ve 16 numaralı portu başka bir anahtara bağlanmak için trunk port olarak yapılandırın.", "Zorluk" : 0, "KategoriId" : 14 },
+{ "Baslik" : "Temel Anahtar Yapılandırması", "Aciklama" : "Durum: Bir fabrikada 24 portlu bir anahtar, üretim cihazları için kullanılıyor. Güvenlik için yalnızca belirli portlar aktif olmalı. Görev: Komut arayüzü üzerinden 1-12 numaralı portları erişim portu olarak yapılandırın, VLAN 30'a atayın ve diğer portları devre dışı bırakın.", "Zorluk" : 0, "KategoriId" : 14 },
+{ "Baslik" : "Temel Anahtar Yapılandırması", "Aciklama" : "Durum: Bir otel lobisinde 16 portlu bir PoE anahtar, IP telefonlar ve Wi-Fi AP'ler için kullanılıyor. Yönetim için anahtar yapılandırılacak. Görev: Komut arayüzü üzerinden anahtara VLAN 1 üzerinde 192.168.50.5/24 IP adresini atayın ve SSH erişimini etkinleştirin.", "Zorluk" : 0, "KategoriId" : 14 },
+{ "Baslik" : "Temel Anahtar Yapılandırması", "Aciklama" : "Durum: Bir spor salonunda 12 portlu bir anahtar, akıllı TV'ler ve bilgisayarlar için kullanılıyor. Cihazlar iki farklı VLAN'da olmalı. Görev: Komut arayüzü üzerinden VLAN 10 ('TV-VLAN') ve VLAN 20 ('PC-VLAN') oluşturun, 1-6 portları VLAN 10'a, 7-12 portları VLAN 20'ye atayın.", "Zorluk" : 0, "KategoriId" : 14 },             
+{
+    "Baslik" : "Statik Yönlendirme ile 3 Ağa Erişim",
+    "Aciklama" : "Durum: Üç farklı LAN ağına sahip küçük bir firma, bu ağları birbirine yönlendirmek istiyor. Router'lar arasında sadece statik yönlendirme kullanılacak. Görev: Her bir router’da gerekli yönlendirme komutlarını yapılandırın ve ağlar arası iletişimi sağlayın.",
+    "Zorluk" : 0,
+    "KategoriId" : 14
+},
+
+{
+    "Baslik" : "Farklı Alt Ağlar Arası Statik Yönlendirme",
+    "Aciklama" : "Durum: 192.168.1.0/24 ve 192.168.2.0/24 olmak üzere iki farklı LAN, iki farklı router ile bağlanmıştır. Görev: Statik yönlendirme yapılandırarak ağlar arası ping başarısı sağlayın.",
+    "Zorluk" : 0,
+    "KategoriId" : 14
+},
+
+{
+    "Baslik" : "Statik Yönlendirme ile Yıldız Topoloji",
+    "Aciklama" : "Durum: Merkezde bir router ve ona bağlı 3 farklı şube router’ı var. Şubelerde 3 farklı LAN ağı bulunuyor. Görev: Statik yönlendirme kullanarak merkezden tüm şubelere ulaşımı sağlayın.",
+    "Zorluk" : 0,
+    "KategoriId" : 14
+},
+
+{
+    "Baslik" : "Yedekli Statik Yönlendirme (Floating Routes)",
+    "Aciklama" : "Durum: Bir kurum, iki router arasında ana bağlantı ve yedek bağlantı olmak üzere iki yol yapılandırmak istiyor. Görev: Primary ve backup route olacak şekilde statik yönlendirme yapın.",
+    "Zorluk" : 0,
+    "KategoriId" : 14
+},
+
+{
+    "Baslik" : "2 Router, 3 Ağ: Statik Route ile İletişim",
+    "Aciklama" : "Durum: Router A'ya bağlı 192.168.10.0/24 ağı, Router B'ye bağlı 192.168.20.0/24 ve 192.168.30.0/24 ağları bulunuyor. Görev: Router A'dan diğer iki ağa erişim için yönlendirme yapılandırması yapın.",
+    "Zorluk" : 0,
+    "KategoriId" : 14
+},
+
+{
+    "Baslik" : "Statik Yönlendirme ile Default Route Kullanımı",
+    "Aciklama" : "Durum: Bir LAN sadece internete çıkış için bir yönlendirme yapmak istiyor. Görev: Varsayılan yön (default route) tanımlayarak yönlendirmeyi sağlayın.",
+    "Zorluk" : 0,
+    "KategoriId" : 14
+},
+
+{
+    "Baslik" : "Statik Yönlendirme ile Küçük Ofis Ağı",
+    "Aciklama" : "Durum: Ofiste iki router ve üç farklı ağ bulunmakta. Router'lar sadece statik yönlendirme kullanabiliyor. Görev: PC'lerin tüm ağlarla iletişim kurabilmesi için yönlendirme yapılandırması yapın.",
+    "Zorluk" : 0,
+    "KategoriId" : 14
+},
+
+{
+    "Baslik" : "Statik Yönlendirme ile İntranet Erişimi",
+    "Aciklama" : "Durum: Merkez ofis ile 2 farklı şube ofisi arasında özel bir intranet bağlantısı kurmak isteniyor. Görev: Tüm router’lara gerekli yönlendirme bilgilerini statik olarak girin.",
+    "Zorluk" : 0,
+    "KategoriId" : 14
+},
+
+{
+    "Baslik" : "Statik ve Default Route Birlikte Kullanımı",
+    "Aciklama" : "Durum: Router A, 2 yerel ağa doğrudan bağlı. İnternet erişimi ise Router B üzerinden sağlanıyor. Görev: Router A’ya bağlı yerel ağlar için statik, internete çıkış için default route yapılandırın.",
+    "Zorluk" : 0,
+    "KategoriId" : 14
+},
+  {
+    "Baslik": "Temel VLAN Yapılandırması",
+    "Aciklama": "Packet Tracer’da iki anahtar ve farklı VLAN'lara atanmış bilgisayarlarla temel VLAN iletişimi yapılandırılacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 9
+  },
+  {
+    "Baslik": "Telnet ile Anahtar Yönetimi",
+    "Aciklama": "Anahtara IP ve şifre ataması yapılarak Packet Tracer’da bir bilgisayardan Telnet ile yönetim sağlanacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 9
+  },
+  {
+    "Baslik": "SSH ile Güvenli Anahtar Yönetimi",
+    "Aciklama": "Packet Tracer’da anahtara SSH servisi yapılandırılarak güvenli bağlantı test edilecektir.",
+    "Zorluk": 0,
+    "KategoriId": 9
+  },
+  {
+    "Baslik": "Access ve Trunk Port Ayarları",
+    "Aciklama": "Farklı VLAN'lardaki portlar için access ve trunk modlarının ayarlanması ve VLAN iletişiminin sağlanması.",
+    "Zorluk": 0,
+    "KategoriId": 9
+  },
+  {
+    "Baslik": "VLAN + Telnet Yapılandırma Senaryosu",
+    "Aciklama": "Yönetim VLAN’ı oluşturulup, bu VLAN üzerinde çalışan bir anahtara Telnet bağlantısı yapılacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 9
+  },
+  {
+    "Baslik": "VLAN + SSH Yapılandırma Senaryosu",
+    "Aciklama": "SSH erişimi, yalnızca yönetim VLAN'ındaki istemcilerden sağlanacak şekilde yapılandırılacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 9
+  },
+  {
+    "Baslik": "Anahtar Port Güvenliği Yapılandırması",
+    "Aciklama": "Belirli portlara sadece kayıtlı MAC adreslerinin erişmesine izin verilerek güvenlik sağlanacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 9
+  },
+  {
+    "Baslik": "Sticky MAC ile Port Güvenliği",
+    "Aciklama": "Anahtarda otomatik MAC adres öğrenme özelliği (sticky MAC) aktif hale getirilerek güvenli bağlantı oluşturulacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 9
+  },
+  {
+    "Baslik": "Switch’ler Arası EtherChannel Bağlantısı",
+    "Aciklama": "İki anahtar arasında 2 adet hızlı ethernet portu ile EtherChannel yapılandırılacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 9
+  },
+  {
+    "Baslik": "EtherChannel + VLAN Senaryosu",
+    "Aciklama": "Trunk modda EtherChannel ile iki switch arasında çoklu VLAN iletişimi sağlanacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 9
+  },
+  {
+    "Baslik": "Spanning Tree Protocol (STP) ile Döngü Önleme",
+    "Aciklama": "Loop oluşacak şekilde yapı kurularak STP’nin aktifleşmesi ve ağın kararlı hale gelmesi gözlemlenecektir.",
+    "Zorluk": 0,
+    "KategoriId": 9
+  },
+  {
+    "Baslik": "VLAN + STP Senaryosu",
+    "Aciklama": "3 anahtar ile çoklu VLAN ortamında STP’nin çalışması gözlemlenerek döngü önlenmesi test edilecektir.",
+    "Zorluk": 0,
+    "KategoriId": 9
+  },
+  {
+    "Baslik": "Switch'te Yönetim IP'si Ayarlama",
+    "Aciklama": "Anahtarın VLAN 1 portuna IP atanarak dışarıdan yönetimi mümkün hale getirilecektir.",
+    "Zorluk": 0,
+    "KategoriId": 9
+  },
+  {
+    "Baslik": "Switch’e Konsol Şifresi ve Banner Ekleme",
+    "Aciklama": "Kullanıcıların konsol bağlantılarında uyarı mesajı gösterilecek ve şifre zorunluluğu getirilecektir.",
+    "Zorluk": 0,
+    "KategoriId": 9
+  },
+  {
+    "Baslik": "DHCP Snooping Yapılandırması",
+    "Aciklama": "Sahte DHCP sunuculara karşı güvenlik sağlamak amacıyla switch’te DHCP Snooping özelliği etkinleştirilecektir.",
+    "Zorluk": 0,
+    "KategoriId": 9
+  },
+  {
+    "Baslik": "VLAN Hopping’e Karşı Güvenlik Yapılandırması",
+    "Aciklama": "Switch spoofing ve double tagging saldırılarına karşı trunk portlara özel güvenlik önlemleri alınacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 9
+  },
+  {
+    "Baslik": "Layer 3 Switch ile VLAN’lar Arası Yönlendirme",
+    "Aciklama": "Katman 3 anahtar kullanılarak farklı VLAN’lar arasında yönlendirme yapılacaktır (SVI).",
+    "Zorluk": 0,
+    "KategoriId": 9
+  },
+  {
+    "Baslik": "Anahtarda Zamanlayıcı ile Port Otomatik Kapatma",
+    "Aciklama": "Belirli bir süre sonunda kullanılmayan portların kapanmasını sağlayan timeout yapılandırması yapılacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 9
+  },
+  {
+    "Baslik": "VLAN Yapısı + DHCP Sunucu ile IP Dağıtımı",
+    "Aciklama": "Farklı VLAN’lardaki istemcilere merkezi bir DHCP sunucudan IP dağıtımı yapılandırılacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 9
+  },
+  {
+    "Baslik": "Switch MAC Adres Tablosu Analizi",
+    "Aciklama": "Gerçek zamanlı trafik ile MAC adres tablosu doldurularak öğrenme süreci Packet Tracer üzerinde analiz edilecektir.",
+    "Zorluk": 0,
+    "KategoriId": 9
+  },
+
+
+
+ 
+  {
+    "Baslik": "OSPF ile 3 Router Arasında Yönlendirme",
+    "Aciklama": "Packet Tracer’da 3 router ve her birine bağlı LAN ağı kurularak, OSPF yönlendirme yapılandırması yapılacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 10
+  },
+  {
+    "Baslik": "EIGRP ile LAN'lar Arası İletişim",
+    "Aciklama": "Packet Tracer'da 2 router ve 3 LAN ağı kurularak EIGRP protokolü ile yönlendirme sağlanacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 10
+  },
+  {
+    "Baslik": "RIP v2 ile Temel Yönlendirme",
+    "Aciklama": "Packet Tracer'da RIP v2 protokolü kullanılarak 3 router ile birbirine bağlı ağların iletişimi sağlanacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 10
+  },
+  {
+    "Baslik": "OSPF Çoklu Alan Yapılandırması",
+    "Aciklama": "Packet Tracer'da area 0 ve area 1 olacak şekilde çok alanlı OSPF yönlendirme senaryosu uygulanacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 10
+  },
+  {
+    "Baslik": "Statik Yönlendirme ile Küçük Ofis Bağlantısı",
+    "Aciklama": "İki farklı ofis için ayrı LAN’lar kurularak router'lar arasında statik yönlendirme ile iletişim sağlanacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 10
+  },
+  {
+    "Baslik": "Default Route Yapılandırması",
+    "Aciklama": "Bir ağın internet çıkışını simüle etmek için default route yapılandırması yapılacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 10
+  },
+  {
+    "Baslik": "OSPF ile VLAN'lar Arası Yönlendirme",
+    "Aciklama": "Switch üzerinde farklı VLAN'lara sahip ağlar oluşturulup, router-on-a-stick yöntemiyle OSPF yönlendirme yapılacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 10
+  },
+  {
+    "Baslik": "Floating Static Route Senaryosu",
+    "Aciklama": "Ana bağlantı hattı kesildiğinde devreye girecek yedek statik yön tanımı Packet Tracer üzerinde yapılacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 10
+  },
+  {
+    "Baslik": "EIGRP Otomatik ve Manuel Özetleme",
+    "Aciklama": "Farklı IP bloklarına sahip ağlarda otomatik ve manuel route summarization işlemleri gerçekleştirilecektir.",
+    "Zorluk": 0,
+    "KategoriId": 10
+  },
+  {
+    "Baslik": "OSPF Router Priority Ayarı ile DR Seçimi",
+    "Aciklama": "Birden fazla router’ın bulunduğu bir OSPF ağı içinde DR seçim mekanizması simüle edilecektir.",
+    "Zorluk": 0,
+    "KategoriId": 10
+  },
+  {
+    "Baslik": "Statik Yönlendirme ile Yıldız Topoloji Yapılandırması",
+    "Aciklama": "Bir merkez router'a bağlı 3 şube router ile yıldız topoloji oluşturulup statik yönlendirme yapılandırılacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 10
+  },
+  {
+    "Baslik": "IPv6 Statik Yönlendirme",
+    "Aciklama": "IPv6 adresleme kullanılarak 2 router arasında statik yönlendirme yapılandırılacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 10
+  },
+  {
+    "Baslik": "RIP ile Loop Tespit ve Önleme",
+    "Aciklama": "RIP protokolü kullanılarak döngü oluşturulacak ve Split Horizon veya TTL teknikleriyle önlenecektir.",
+    "Zorluk": 0,
+    "KategoriId": 10
+  },
+  {
+    "Baslik": "CIDR ile Route Aggregation Uygulaması",
+    "Aciklama": "Benzer IP blokları için tek bir yönlendirme kuralı tanımlanarak CIDR uygulaması gösterilecektir.",
+    "Zorluk": 0,
+    "KategoriId": 10
+  },
+  {
+    "Baslik": "2 Router, 3 Ağ – Statik Yönlendirme ile Erişim",
+    "Aciklama": "Router A ve B üzerinde statik yönlendirme yapılandırılarak 3 farklı ağın birbirine erişimi sağlanacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 10
+  },
+  {
+    "Baslik": "EIGRP Passive Interface Kullanımı",
+    "Aciklama": "Router'larda kullanılmayan arabirimlerde EIGRP broadcast’ını engellemek için passive interface yapılandırılacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 10
+  },
+  {
+    "Baslik": "OSPF LSA Türleri Gözlemi",
+    "Aciklama": "Packet Tracer’da OSPF topolojisi kurularak LSA türlerinin davranışı debug komutlarıyla gözlemlenecektir.",
+    "Zorluk": 0,
+    "KategoriId": 10
+  },
+  {
+    "Baslik": "Router-on-a-Stick ile VLAN Yönlendirme",
+    "Aciklama": "Tek bir router arabirimi üzerinden birden fazla VLAN arasında yönlendirme yapılacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 10
+  },
+  {
+    "Baslik": "OSPF ile Bölge Müdürlüklerinin Bağlantısı",
+    "Aciklama": "Her biri farklı şehirdeki müdürlükleri temsil eden router'lar OSPF ile birbirine bağlanacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 10
+  },
+  {
+    "Baslik": "Yedekli İnternet Bağlantısı (Static + Default)",
+    "Aciklama": "Birincil bağlantı kesildiğinde varsayılan yön ile alternatif bağlantıya geçiş sağlanacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 10
+  },
+  { "Baslik": "Güvenlik Duvarı Kuralları Oluşturma", "Aciklama": "İzinli ve engelli portlar için temel kuralların oluşturulması.", "Zorluk": 0, "KategoriId": 11 },
+  { "Baslik": "Sosyal Mühendislik Senaryoları", "Aciklama": "Kullanıcı farkındalığını test etmek için sosyal mühendislik örnekleri.", "Zorluk": 0, "KategoriId": 11 },
+  { "Baslik": "Dosya Şifreleme Yöntemleri", "Aciklama": "AES ve RSA gibi algoritmalarla temel şifreleme uygulamaları.", "Zorluk": 0, "KategoriId": 11 },
+  { "Baslik": "Keylogger Yazılımlarının Tespiti", "Aciklama": "Zararlı yazılım örnekleriyle keylogger’ların analizi.", "Zorluk": 0, "KategoriId": 11 },
+  { "Baslik": "Güçlü Parola Denetimi Scripti", "Aciklama": "Kullanıcıdan alınan parolanın güvenlik seviyesini analiz eden betik.", "Zorluk": 0, "KategoriId": 11 },
+  { "Baslik": "Firewall Log Analizi", "Aciklama": "Güvenlik duvarı loglarıyla anormal trafiğin tespiti.", "Zorluk": 0, "KategoriId": 11 },
+  { "Baslik": "Kimlik Avı E-postası Tespiti", "Aciklama": "Phishing örneklerinin başlık ve içerik analizleri.", "Zorluk": 0, "KategoriId": 11 },
+  { "Baslik": "VPN Teknolojisinin Kullanımı", "Aciklama": "Veri iletiminde güvenliği sağlamak için VPN yapılandırması.", "Zorluk": 0, "KategoriId": 11 },
+  { "Baslik": "Temel Linux Güvenlik Ayarları", "Aciklama": "SSH, sudo, user izinleri ile sistem sertleştirme işlemleri.", "Zorluk": 0, "KategoriId": 11 },
+  { "Baslik": "Port Taraması ile Ağ Açığı Tespiti", "Aciklama": "Nmap gibi araçlarla açık portların tespiti ve değerlendirmesi.", "Zorluk": 0, "KategoriId": 11 },
+  { "Baslik": "Dosya Bütünlüğü Kontrolü (hash)", "Aciklama": "MD5/SHA algoritmalarıyla dosya bütünlüğü doğrulama.", "Zorluk": 0, "KategoriId": 11 },
+  { "Baslik": "Siber Saldırı Türleri", "Aciklama": "DDoS, MITM, spoofing gibi saldırıların kısa tanımları ve etkileri.", "Zorluk": 0, "KategoriId": 11 },
+  { "Baslik": "Kullanıcı Yetkilendirme Uygulaması", "Aciklama": "Rol bazlı yetkilendirme ile sistem erişim kontrolü.", "Zorluk": 0, "KategoriId": 11 },
+  { "Baslik": "İşletim Sisteminde Günlük Dosyalarının İncelenmesi", "Aciklama": "Log dosyalarında anomali taraması yapılması.", "Zorluk": 0, "KategoriId": 11 },
+  { "Baslik": "Güvenli Wi-Fi Ağ Kurulumu", "Aciklama": "SSID gizleme, WPA2 şifreleme ve MAC filtreleme uygulaması.", "Zorluk": 0, "KategoriId": 11 },
+  { "Baslik": "Veri Sızıntısı Önleme Yöntemleri", "Aciklama": "DLP araçları ve veri sızıntısını önlemeye yönelik stratejiler.", "Zorluk": 0, "KategoriId": 11 },
+  { "Baslik": "Zararlı Yazılım Türleri ve Korunma", "Aciklama": "Virüs, solucan, truva atı gibi yazılımların tanımı ve önleme yolları.", "Zorluk": 0, "KategoriId": 11 },
+  { "Baslik": "Açık Kaynak Güvenlik Araçları", "Aciklama": "Wireshark, Snort, ClamAV gibi araçların tanıtımı ve kullanım senaryosu.", "Zorluk": 0, "KategoriId": 11 },
+  { "Baslik": "Fiziksel Güvenlik Önlemleri", "Aciklama": "Sunucu odası, erişim kartları ve kamera sistemlerinin rolü.", "Zorluk": 0, "KategoriId": 11 },
+  { "Baslik": "Kimlik Doğrulama ve Yetkilendirme Arasındaki Fark", "Aciklama": "Authentication vs Authorization kavramlarının farklarının örnekle açıklanması.", "Zorluk": 0, "KategoriId": 11 },
+
+  {
+    "Baslik": "Windows Server 2022 Kurulumu (Sanal Makine)",
+    "Aciklama": "VirtualBox veya Hyper-V kullanılarak Windows Server 2022 kurulumu ve temel yapılandırmalar yapılacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 12
+  },
+  {
+    "Baslik": "Active Directory Domain Services Kurulumu",
+    "Aciklama": "Sanal makine üzerindeki Windows Server’a AD rolü eklenerek etki alanı denetleyicisi yapılandırılacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 12
+  },
+  {
+    "Baslik": "Yeni Kullanıcı ve Grup Oluşturma (AD)",
+    "Aciklama": "Active Directory üzerinde farklı kullanıcılar ve gruplar oluşturularak yetkilendirme yapılacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 12
+  },
+  {
+    "Baslik": "Group Policy (GPO) ile Masaüstü Kısıtlaması",
+    "Aciklama": "Etki alanına bağlı kullanıcılar için masaüstü simgeleri ve erişimler grup ilkesi ile kısıtlanacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 12
+  },
+  {
+    "Baslik": "Windows Server’da DNS Sunucusu Yapılandırma",
+    "Aciklama": "AD kurulu sanal sunucuda DNS servisi yapılandırılarak alan adı çözümlemesi test edilecektir.",
+    "Zorluk": 0,
+    "KategoriId": 12
+  },
+  {
+    "Baslik": "DHCP Sunucusu Kurulumu ve IP Dağıtımı",
+    "Aciklama": "Sanal sunucuya DHCP rolü eklenerek istemcilere otomatik IP adresi dağıtımı sağlanacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 12
+  },
+  {
+    "Baslik": "Ortak Paylaşımlı Klasör Oluşturma ve Yetkilendirme",
+    "Aciklama": "Ağ üzerindeki kullanıcılar için klasör paylaşımı yapılarak grup temelli izinler uygulanacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 12
+  },
+  {
+    "Baslik": "Windows Server Üzerinde Dosya Sunucusu (File Server)",
+    "Aciklama": "Dosya sunucusu rolü kurulacak, kota ve erişim politikaları ayarlanacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 12
+  },
+  {
+    "Baslik": "Remote Desktop (Uzak Masaüstü) Etkinleştirme",
+    "Aciklama": "Sunucuya uzak masaüstü bağlantısının yapılabilmesi için gerekli yapılandırma gerçekleştirilecektir.",
+    "Zorluk": 0,
+    "KategoriId": 12
+  },
+  {
+    "Baslik": "Yedekleme Aracı ile Sistem Yedeği Alma",
+    "Aciklama": "Windows Server Backup aracı ile tüm sistemin tam yedeği alınacak ve zamanlanmış görev ayarlanacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 12
+  },
+  {
+    "Baslik": "Etki Alanına Windows 10 İstemci Bilgisayar Ekleme",
+    "Aciklama": "Aynı sanal ağda bulunan istemci Windows 10 bilgisayar, AD'ye katılarak test edilecektir.",
+    "Zorluk": 0,
+    "KategoriId": 12
+  },
+  {
+    "Baslik": "Kullanıcı Oturum Açma Sınırlandırmaları",
+    "Aciklama": "Belirli kullanıcıların yalnızca belirli saatlerde oturum açabilmesi için GPO ayarı yapılacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 12
+  },
+  {
+    "Baslik": "Olay Görüntüleyici (Event Viewer) ile Hata İzleme",
+    "Aciklama": "Event Viewer kullanılarak sistem hataları, güvenlik olayları ve servis uyarıları incelenecektir.",
+    "Zorluk": 0,
+    "KategoriId": 12
+  },
+  {
+    "Baslik": "GPO ile USB Portlarını Devre Dışı Bırakma",
+    "Aciklama": "Güvenlik amacıyla kullanıcıların USB cihaz kullanımı grup ilkesiyle kısıtlanacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 12
+  },
+  {
+    "Baslik": "Windows Server’da Internet Information Services (IIS) Kurulumu",
+    "Aciklama": "Sunucuya IIS rolü eklenerek yerel web sayfası yayınlanacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 12
+  },
+  {
+    "Baslik": "Yerel Güvenlik İlkeleri ile Şifre Politikası Oluşturma",
+    "Aciklama": "Karmaşık şifre zorunluluğu ve parola süresi gibi ayarlar yapılandırılacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 12
+  },
+  {
+    "Baslik": "Disk Birleştirme ve Temizlik Görevleri Otomasyonu",
+    "Aciklama": "Disk temizliği ve birleştirme işlemleri Task Scheduler ile zamanlanacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 12
+  },
+  {
+    "Baslik": "Yazıcı Paylaştırma ve GPO ile Dağıtımı",
+    "Aciklama": "Sunucuya bağlı bir yazıcı ağ üzerinden paylaşılacak ve GPO ile istemcilere dağıtılacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 12
+  },
+  {
+    "Baslik": "Hizmetleri (Services.msc) Kullanarak Servis Başlangıcı Ayarlama",
+    "Aciklama": "Sistem hizmetlerinden biri otomatik/manuel/durdurulmuş olarak ayarlanacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 12
+  },
+  {
+    "Baslik": "Windows Defender ile Sunucu Güvenliği Taraması",
+    "Aciklama": "Sunucuda Windows Defender üzerinden tam sistem taraması yapılacaktır.",
+    "Zorluk": 0,
+    "KategoriId": 12
+  }
+
+
+]
+
+
+
+

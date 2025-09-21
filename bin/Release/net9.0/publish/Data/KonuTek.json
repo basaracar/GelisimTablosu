@@ -1,0 +1,176 @@
+[
+    {
+        "Baslik": "Basit Hesap Makinesi",
+        "Aciklama": "HTML formu üzerinden girilen iki sayı ve bir işlem türü (toplama, çıkarma vb.) ile sunucu tarafında (PHP) hesaplama yapıp sonucu aynı sayfada gösteren temel bir web uygulaması.",
+        "Zorluk": 0,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Döviz Çevirici",
+        "Aciklama": "Kullanıcının girdiği bir miktarı, seçtiği iki para birimi arasında (örneğin USD'den TRY'ye) önceden tanımlanmış sabit kurlar üzerinden çeviren basit bir PHP formu.",
+        "Zorluk": 0,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Giriş Formu Kontrolü",
+        "Aciklama": "Kullanıcı adı ve şifre alanları içeren bir HTML formu oluşturma. Gönderilen bilgileri PHP tarafında, önceden belirlenmiş bir kullanıcı adı/şifre ile karşılaştırarak 'Giriş Başarılı' veya 'Hatalı Bilgi' mesajı gösterme.",
+        "Zorluk": 0,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Sayı Tahmin Oyunu",
+        "Aciklama": "PHP'nin session (oturum) özelliğini kullanarak, sunucunun rastgele tuttuğu bir sayıyı kullanıcının tahmin etmeye çalıştığı bir web oyunu. Her tahminden sonra kullanıcıya 'daha yüksek' veya 'daha düşük' gibi ipuçları verilir.",
+        "Zorluk": 1,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Basit Anket Sistemi",
+        "Aciklama": "Bir soru ve birkaç seçenek (radio button) içeren bir anket formu oluşturma. Kullanıcı oyunu kullandıktan sonra, sonuçları bir metin dosyasında saklayarak güncel oy dağılımını (yüzdesel olarak) gösterme.",
+        "Zorluk": 1,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Metin Analiz Aracı",
+        "Aciklama": "Kullanıcının bir textarea'ya girdiği metnin karakter, kelime ve cümle sayısını PHP fonksiyonları ile hesaplayıp sonucu ekrana yazdıran basit bir araç.",
+        "Zorluk": 0,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Vücut Kitle İndeksi (BMI) Hesaplayıcı",
+        "Aciklama": "Kullanıcıdan form aracılığıyla boy (cm) ve kilo (kg) bilgilerini alıp, Vücut Kitle İndeksi'ni hesaplayan ve standarda göre (zayıf, normal, kilolu) durumu belirten bir sağlık aracı.",
+        "Zorluk": 0,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Rastgele Şifre Üretici",
+        "Aciklama": "Kullanıcının belirlediği uzunlukta ve karmaşıklıkta (rakam, özel karakter içersin mi? vb.) rastgele ve güvenli parolalar üreten bir PHP script'i.",
+        "Zorluk": 0,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Ziyaretçi Sayacı",
+        "Aciklama": "Bir web sayfasının kaç kez ziyaret edildiğini sayan basit bir sayaç. Sayfa her yenilendiğinde, bir metin dosyasındaki sayıyı okur, bir artırır ve tekrar dosyaya yazar.",
+        "Zorluk": 0,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Basit Alışveriş Listesi",
+        "Aciklama": "Kullanıcıların bir forma ürün adı yazarak listeye ekleme yapabildiği bir uygulama. Eklenen ürünler, sayfa yenilense bile kaybolmaması için PHP session'larında bir dizi içinde tutulur.",
+        "Zorluk": 1,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Sıcaklık Dönüştürücü",
+        "Aciklama": "Girilen bir sıcaklık değerini Celsius'tan Fahrenheit'a veya tam tersi yönde dönüştüren bir PHP formu. Matematiksel dönüşüm formülünü uygular.",
+        "Zorluk": 0,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Renk Kodu Seçici",
+        "Aciklama": "Kullanıcının bir renk paletinden veya bir input[type=color] alanından seçtiği rengin HEX kodunu alıp, sayfanın arka plan rengini bu renkle değiştiren interaktif bir PHP sayfası.",
+        "Zorluk": 0,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Basit Quiz Uygulaması",
+        "Aciklama": "PHP dizilerinde tanımlanmış soruları ve cevapları kullanarak çoktan seçmeli bir quiz oluşturan bir uygulama. Form gönderildikten sonra kullanıcının cevaplarını kontrol eder ve doğru sayısını gösterir.",
+        "Zorluk": 0,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Haftanın Günü Bulucu",
+        "Aciklama": "Kullanıcının girdiği bir tarihin (gün, ay, yıl), haftanın hangi gününe denk geldiğini PHP'nin tarih/zaman fonksiyonlarını kullanarak bulan bir araç.",
+        "Zorluk": 0,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Basit Not Ortalaması Hesaplayıcı",
+        "Aciklama": "Bir öğrencinin vize ve final notlarını form üzerinden alıp, %40 vize ve %60 final ağırlığıyla dönem sonu ortalamasını hesaplayan ve sonucu gösteren bir PHP script'i.",
+        "Zorluk": 0,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Dinamik Yemek Tarifi Sayfası",
+        "Aciklama": "Yemek tariflerinin bir PHP dizisinde veya basit bir veritabanında tutulduğu ve URL'den gelen bir ID'ye göre (orneksite.com/tarif.php?id=1) ilgili tarifin bilgilerini dinamik olarak sayfaya basan bir yapı.",
+        "Zorluk": 1,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Rastgele Motivasyon Sözü Gösterici",
+        "Aciklama": "Bir dizi içinde saklanan motivasyonel sözlerden, sayfa her yenilendiğinde rastgele birini seçip ekranda gösteren basit bir PHP uygulaması.",
+        "Zorluk": 0,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Birim Çevirici",
+        "Aciklama": "Metreden kilometreye, gramdan kilograma gibi uzunluk ve ağırlık birimleri arasında, kullanıcıdan alınan değeri ve birimleri dönüştüren bir PHP formu.",
+        "Zorluk": 0,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Basit İletişim Formu",
+        "Aciklama": "Kullanıcıdan ad, e-posta ve mesaj alan bir HTML formu oluşturma. Form gönderildiğinde, PHP ile bu verileri alıp ekranda 'Mesajınız Alındı' gibi bir onay mesajıyla birlikte gösterme.",
+        "Zorluk": 0,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Dinamik Resim Galerisi",
+        "Aciklama": "Belirli bir klasördeki tüm resim dosyalarını (.jpg, .png) PHP ile otomatik olarak okuyan ve bu resimleri web sayfasında küçük önizlemeler (thumbnail) halinde listeleyen bir galeri sayfası.",
+        "Zorluk": 1,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "PDO ile Güvenli Veritabanı Bağlantısı",
+        "Aciklama": "MySQL veya SQLite gibi bir veritabanına, SQL enjeksiyon saldırılarını önlemek için 'prepared statements' (hazırlanmış ifadeler) kullanarak güvenli bir şekilde bağlanan ve veri çeken (SELECT) bir PHP script'i.",
+        "Zorluk": 1,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Composer ile Paket Yönetimi",
+        "Aciklama": "PHP projelerinde dış bağımlılıkları yönetmek için standart olan Composer aracını kurma ve kullanarak projeye PHPMailer gibi popüler bir kütüphaneyi dahil edip kullanma.",
+        "Zorluk": 1,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Basit MVC Mimarisi Oluşturma",
+        "Aciklama": "Proje kodunu Model (veri ve iş mantığı), View (görünüm, HTML) ve Controller (istekleri yöneten) katmanlarına ayırarak daha düzenli ve sürdürülebilir bir uygulama yapısı oluşturma. Bu, bir framework kullanmadan MVC mantığını anlamayı sağlar.",
+        "Zorluk": 2,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "AJAX ile Form Gönderme",
+        "Aciklama": "jQuery veya saf JavaScript kullanarak, bir HTML formunun, sayfa tamamen yenilenmeden arka planda bir PHP script'ine gönderilmesini ve PHP'den dönen cevabın (örneğin 'Başarılı!') dinamik olarak sayfada gösterilmesini sağlama.",
+        "Zorluk": 2,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Resim Yükleme ve Boyutlandırma",
+        "Aciklama": "Kullanıcının bir form aracılığıyla seçtiği bir resim dosyasını sunucuya yükleyen (upload), ardından GD veya ImageMagick kütüphanesini kullanarak bu resmi belirli bir boyuta (örneğin 150x150 thumbnail) yeniden boyutlandıran bir script.",
+        "Zorluk": 2,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "JSON Web Token (JWT) ile Kimlik Doğrulama",
+        "Aciklama": "Basit bir REST API'de, kullanıcı giriş yaptığında ona özel bir JWT (JSON Web Token) üreten ve korumalı sayfalara erişim için bu token'ın kullanılmasını zorunlu kılan bir kimlik doğrulama sistemi.",
+        "Zorluk": 2,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Basit REST API Oluşturma",
+        "Aciklama": "Bir veritabanındaki 'kullanıcılar' tablosu için, GET (tüm kullanıcıları listele), POST (yeni kullanıcı ekle), PUT (kullanıcı güncelle) ve DELETE (kullanıcı sil) gibi HTTP isteklerine JSON formatında cevap veren temel bir RESTful API oluşturma.",
+        "Zorluk": 2,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "Oturum (Session) Yönetimi ile Giriş Sistemi",
+        "Aciklama": "Kullanıcı doğru bilgilerle giriş yaptığında, sunucu tarafında bir session başlatarak kullanıcı bilgilerini saklama ve kullanıcının diğer sayfalarda 'giriş yapmış' olarak tanınmasını sağlama. Çıkış yapma işlevini de içerir.",
+        "Zorluk": 1,
+        "KategoriId": 7
+    },
+    {
+        "Baslik": "E-posta Gönderme (PHPMailer)",
+        "Aciklama": "Bir iletişim formundan alınan ad, e-posta ve mesaj bilgilerini, PHPMailer kütüphanesini ve bir SMTP sunucusunu (örneğin Gmail) kullanarak belirtilen bir adrese e-posta olarak gönderen bir PHP script'i.",
+        "Zorluk": 1,
+        "KategoriId": 7
+    }
+]
