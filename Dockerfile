@@ -1,11 +1,19 @@
-# Build aşaması
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+WORKDIR /app
+EXPOSE 80
+
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
+COPY ["GelisimTablosu.csproj", "./"]
+RUN dotnet restore "GelisimTablosu.csproj"
 COPY . .
-RUN dotnet publish -c Release -o /app
+WORKDIR "/src/."
+RUN dotnet build "GelisimTablosu.csproj" -c Release -o /app/build
 
-# Runtime aşaması
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+FROM build AS publish
+RUN dotnet publish "GelisimTablosu.csproj" -c Release -o /app/publish
+
+FROM base AS final
 WORKDIR /app
-COPY --from=build /app .
-ENTRYPOINT ["dotnet", "GelisimTablosu"]
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "GelisimTablosu.dll"]
