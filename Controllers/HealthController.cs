@@ -5,7 +5,7 @@ namespace GelisimTablosu.Controllers
 {
     [Route("health")]
     [ApiController]
-    public class HealthController : ControllerBase
+    public class HealthController : Controller
     {
         [HttpGet]
         public IActionResult Get()
