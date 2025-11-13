@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using GelisimTablosu.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+// Manuel olarak mutlak yol belirt
+//builder.Environment.ContentRootPath = Directory.GetCurrentDirectory();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

@@ -20,6 +20,12 @@ RUN dotnet publish "GelisimTablosu.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+# ----------------------------------------------------
+# EKLENECEK SATIRLAR:
+# /app/data klasörünü oluştur ve onu bir volume olarak işaretle
+RUN mkdir /app/data
+VOLUME /app/data
+# ----------------------------------------------------
 ENV ASPNETCORE_URLS=http://+:8001
 ENV TZ=Europe/Istanbul
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
