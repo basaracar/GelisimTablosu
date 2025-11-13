@@ -10,7 +10,7 @@ builder.Services.AddControllersWithViews();
 
 // SQLite bağlantısı ekleniyor
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite("Data Source=App.db"));
+    options.UseSqlite("Data Source=/app/data/App.db"));
 
 var app = builder.Build();
 // // Veritabanı işlemleri
