@@ -36,7 +36,7 @@ namespace GelisimTablosu.Models
         {
             if (!Kategoriler.Any())
             {
-                var json = File.ReadAllText("Data/Kategoriler.json");
+                var json = File.ReadAllTextAsync("Data/Kategoriler.json");
                 var kategoriler = JsonSerializer.Deserialize<List<Kategori>>(json);
                 await Kategoriler.AddRangeAsync(kategoriler);
                 await SaveChangesAsync();
@@ -46,7 +46,7 @@ namespace GelisimTablosu.Models
         {
             if (!Students.Any())
             {
-                var json = File.ReadAllText("Data/Ogrenciler.json");
+                var json = File.ReadAllTextAsync("Data/Ogrenciler.json");
                 var ogrenciler = JsonSerializer.Deserialize<List<Student>>(json);
                 await Students.AddRangeAsync(ogrenciler);
                 await SaveChangesAsync();
@@ -56,7 +56,7 @@ namespace GelisimTablosu.Models
         {
             if (!Konular.Any())
             {
-                var json = File.ReadAllText("Data/yeniKonular.json");
+                var json = File.ReadAllTextAsync("Data/yeniKonular.json");
                 var konular = JsonSerializer.Deserialize<List<Konu>>(json);
                 await Konular.AddRangeAsync(konular);
                 await SaveChangesAsync();

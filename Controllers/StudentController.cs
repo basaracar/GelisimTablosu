@@ -49,6 +49,7 @@ namespace GelisimTablosu.Controllers
             }
 
 
+
             ViewBag.GelisimListe = gelisimListe;
             return View(students);
         }
